@@ -29,7 +29,7 @@ $S -F islem=radyo.logo -F kanal_key=power-fm -F "dosya=@logo.jpg"   # multipart 
 ## Her oturumda
 - canliradyo ile ilgili ilk işten önce `{"islem":"yardim"}` çağır. Katalog sunucuda üretilir ve **tek doğru kaynaktır**: tüm işlemler, parametreleri, tabloların güncel alanları, player kodları ve içerik kuralları oradadır. Bu dosyadaki örnekler yalnızca başlangıç içindir. Tek konu için: `{"islem":"yardim","konu":"radyo"}`.
 - Her yanıtta `api_surum` gelir. Aşağıdaki bilinen sürümden farklıysa `{"islem":"degisiklikler"}` ile nelerin eklendiğini oku ve kullanıcıya kısaca bildir.
-- Bilinen son sürüm: 2026-10-12.2
+- Bilinen son sürüm: 2026-10-12.3
 
 ## Başlıca işlemler (ayrıntı: `yardim`)
 - Kaynaklar (`liste`, `getir`, `ekle`, `guncelle`, `sil`): `radyo` (anahtar `kanal_key`), `kategori` (`kategori_key`), `yorum`, `mesaj`, `yonlendirme` (`source`), `tarama` (salt okunur).
