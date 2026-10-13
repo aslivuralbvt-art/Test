@@ -1,0 +1,487 @@
+<title>Ortaokul Maarif</title>
+<meta name="description" content="5. Sınıf Fen Bilimleri: Güneş'in Yapısı ve Özellikleri hap bilgi notu">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Patrick+Hand&family=Caveat:wght@600;700&display=swap">
+<style>
+/* Layout: site header, then one notebook sheet as the hero (the product itself), then a small self-test card. */
+:root {
+  /* page around the sheet */
+  --page: #eef0f4;
+  --ink-ui: #262a36;
+  --muted-ui: #5d6375;
+  --chip: #ffffff;
+  --chip-line: #d5d9e3;
+
+  /* the paper itself stays paper in both themes */
+  --paper: #fffdf7;
+  --grid: rgba(80, 130, 200, .17);
+  --margin-line: rgba(225, 80, 90, .45);
+  --ink: #2b2a33;
+  --pencil: #6b6878;
+
+  /* defter colors (set per notebook theme below) */
+  --accent: #e2558f;
+  --accent-soft: #ffd3e4;
+  --accent-2: #9b6bd6;
+  --hl: #ffe45c;
+  --hl-2: #ffc2dc;
+
+  --f-display: "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+  --f-hand: "Patrick Hand", "Comic Sans MS", "Segoe Print", cursive;
+  --f-note: "Caveat", "Segoe Print", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #1b1d25; --ink-ui: #eceef4; --muted-ui: #a3a8b8; --chip: #272a35; --chip-line: #3a3e4c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #1b1d25; --ink-ui: #eceef4; --muted-ui: #a3a8b8; --chip: #272a35; --chip-line: #3a3e4c;
+  color-scheme: dark;
+}
+[data-defter="mavi"] {
+  --accent: #2f7fd8;
+  --accent-soft: #cfe6ff;
+  --accent-2: #18a58f;
+  --hl: #c9f26b;
+  --hl-2: #a9ddff;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--page);
+  color: var(--ink-ui);
+  font-family: var(--f-hand);
+  font-size: 18px;
+  padding-inline: 16px;
+  padding-block: 0 48px;
+}
+
+/* ---------- header ---------- */
+.site-head {
+  max-width: 980px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 12px 20px; padding-block: 18px;
+}
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink-ui); }
+.brand b { font-family: var(--f-display); font-weight: 800; font-size: 1.45rem; line-height: 1; }
+.brand small { display: block; font-family: var(--f-hand); font-size: .9rem; color: var(--muted-ui); }
+.brand svg { flex: none; }
+nav.menu { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 1.05rem; }
+nav.menu a { color: var(--ink-ui); text-decoration: none; padding: 2px 0; border-bottom: 2px solid transparent; }
+nav.menu a[aria-current] { border-color: var(--accent); }
+nav.menu a:hover { border-color: var(--chip-line); }
+
+.controls {
+  max-width: 980px; min-width: 0; margin: 0 auto 18px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px;
+}
+.crumbs { font-size: 1rem; color: var(--muted-ui); margin-right: auto; }
+.crumbs span { color: var(--ink-ui); }
+.seg { display: inline-flex; background: var(--chip); border: 1.5px solid var(--chip-line); border-radius: 999px; padding: 3px; }
+.seg button {
+  font: inherit; font-size: 1rem; color: var(--ink-ui); background: none; border: 0;
+  border-radius: 999px; padding: 4px 14px; cursor: pointer;
+}
+.seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.seg button:focus-visible, .quiz button:focus-visible, nav.menu a:focus-visible { outline: 3px solid var(--hl); outline-offset: 2px; }
+.seg-label { font-size: .95rem; color: var(--muted-ui); margin-right: 6px; }
+
+/* ---------- the sheet ---------- */
+.sheet {
+  position: relative;
+  max-width: 820px; margin: 0 auto;
+  background-color: var(--paper);
+  color: var(--ink);
+  padding: 34px 34px 40px 64px;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.05), 0 12px 30px -12px rgba(30,30,60,.35);
+  transform: rotate(-.35deg);
+  overflow: hidden;
+}
+.sheet.kareli {
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.sheet.cizgili {
+  background-image: linear-gradient(transparent 31px, var(--grid) 31px, var(--grid) 32px);
+  background-size: 100% 32px;
+}
+.sheet::before { /* red margin line */
+  content: ""; position: absolute; top: 0; bottom: 0; left: 44px; width: 2px; background: var(--margin-line);
+}
+.holes { position: absolute; left: 14px; top: 40px; bottom: 40px; display: flex; flex-direction: column; justify-content: space-around; }
+.holes i { width: 14px; height: 14px; border-radius: 50%; background: var(--page); box-shadow: inset 0 2px 3px rgba(0,0,0,.25); }
+
+.tape {
+  position: absolute; top: -6px; right: 70px; width: 120px; height: 30px;
+  background: color-mix(in srgb, var(--accent-soft) 80%, transparent);
+  transform: rotate(4deg); opacity: .9;
+}
+
+.sheet-head { display: grid; grid-template-columns: 1fr auto; gap: 8px 16px; align-items: start; }
+.subject {
+  display: inline-block; font-family: var(--f-display); font-weight: 800; font-size: 1.05rem;
+  letter-spacing: .04em; text-transform: uppercase; color: #fff; background: var(--accent);
+  padding: 2px 14px 0; border-radius: 6px 14px 6px 14px; transform: rotate(-1.5deg);
+}
+h1 {
+  font-family: var(--f-display); font-weight: 800; font-size: clamp(1.9rem, 5.2vw, 2.9rem);
+  line-height: 1.05; margin: 12px 0 4px; text-wrap: balance;
+}
+.date-note { font-family: var(--f-note); font-size: 1.3rem; color: var(--pencil); text-align: right; line-height: 1.1; }
+
+.hl {
+  background: linear-gradient(100deg, transparent 2%, var(--hl) 4%, var(--hl) 96%, transparent 98%) 0 62% / 100% 58% no-repeat;
+  padding: 0 .12em; box-decoration-break: clone; -webkit-box-decoration-break: clone;
+}
+.hl2 { background-image: linear-gradient(100deg, transparent 2%, var(--hl-2) 4%, var(--hl-2) 96%, transparent 98%); }
+.circled { position: relative; white-space: nowrap; }
+.circled::after {
+  content: ""; position: absolute; inset: -2px -6px; border: 2.5px solid var(--accent);
+  border-radius: 50% 45% 55% 48%; transform: rotate(-3deg); pointer-events: none;
+}
+
+/* top row: sun diagram + size/distance */
+.top { display: grid; grid-template-columns: 1.15fr 1fr; gap: 10px 26px; align-items: center; margin-top: 10px; }
+.top > * { min-width: 0; }
+.sun-figure svg { width: 100%; height: auto; display: block; }
+.side-facts { display: grid; gap: 16px; }
+.cap { font-family: var(--f-note); font-size: 1.4rem; color: var(--accent); line-height: 1.15; margin-top: 4px; }
+.bubble {
+  position: relative; font-family: var(--f-note); font-size: 1.45rem; line-height: 1.15;
+  border: 2.5px dashed var(--accent-2); border-radius: 22px; padding: 10px 16px; background: var(--paper);
+}
+.bubble svg { width: 100%; height: auto; display: block; margin-top: 6px; }
+
+/* hap bilgi list */
+.sec-title {
+  display: flex; align-items: center; gap: 10px; margin: 26px 0 12px;
+  font-family: var(--f-display); font-weight: 800; font-size: 1.6rem;
+}
+.sec-title svg { flex: none; }
+.facts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 30px; counter-reset: f; }
+.facts li { display: grid; grid-template-columns: 38px 1fr; gap: 10px; align-items: start; font-size: 1.22rem; line-height: 1.3; min-width: 0; }
+.facts li::before {
+  counter-increment: f; content: counter(f);
+  width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
+  font-family: var(--f-display); font-weight: 800; font-size: 1.2rem; color: #fff; padding-top: 2px;
+  background: var(--accent); box-shadow: 2px 2px 0 var(--ink);
+}
+.facts li:nth-child(3n+2)::before { background: var(--accent-2); }
+.facts li:nth-child(3n)::before { background: #f29b2b; }
+
+/* bottom: unutma + dikkat */
+.bottom { display: grid; grid-template-columns: 1.4fr 1fr; gap: 18px 24px; margin-top: 26px; align-items: stretch; }
+.bottom > * { min-width: 0; }
+.unutma {
+  border: 2.5px dashed var(--ink); border-radius: 14px; padding: 12px 16px 14px; background: var(--paper);
+  font-size: 1.2rem; line-height: 1.3;
+}
+.box-title { font-family: var(--f-display); font-weight: 800; font-size: 1.15rem; display: block; margin-bottom: 2px; }
+.dikkat {
+  position: relative; background: var(--hl); padding: 14px 16px 16px; font-size: 1.2rem; line-height: 1.25;
+  transform: rotate(1.8deg); box-shadow: 3px 5px 10px -4px rgba(0,0,0,.35);
+}
+.dikkat::before {
+  content: ""; position: absolute; top: -10px; left: 50%; width: 70px; height: 20px; margin-left: -35px;
+  background: rgba(255,255,255,.6); transform: rotate(-3deg);
+}
+.signature {
+  margin-top: 18px; display: flex; justify-content: space-between; align-items: end; gap: 12px;
+  font-family: var(--f-note); font-size: 1.3rem; color: var(--pencil);
+}
+.signature .site { font-family: var(--f-display); font-weight: 600; font-size: 1rem; color: var(--accent); }
+
+.doodle { position: absolute; pointer-events: none; }
+.only-pembe, .only-mavi { display: none; }
+[data-defter="pembe"] .only-pembe, [data-defter="mavi"] .only-mavi { display: block; }
+
+/* ---------- quiz ---------- */
+.quiz {
+  max-width: 820px; margin: 34px auto 0; background: var(--chip); border: 1.5px solid var(--chip-line);
+  border-radius: 14px; padding: 20px 22px;
+}
+.quiz h2 { font-family: var(--f-display); font-weight: 800; font-size: 1.4rem; margin: 0 0 2px; }
+.quiz p.lead { margin: 0 0 14px; color: var(--muted-ui); font-size: 1.05rem; }
+.q { display: grid; grid-template-columns: 1fr auto; gap: 6px 14px; align-items: center; padding: 10px 0; border-top: 1px dashed var(--chip-line); }
+.q-text { min-width: 0; font-size: 1.15rem; }
+.q-btns { display: flex; gap: 6px; }
+.q button {
+  font: inherit; font-size: 1rem; min-width: 44px; padding: 4px 10px; cursor: pointer;
+  border: 1.5px solid var(--chip-line); border-radius: 10px; background: var(--page); color: var(--ink-ui);
+}
+.q button.right { background: #2e9d5b; border-color: #2e9d5b; color: #fff; }
+.q button.wrong { background: #d8434b; border-color: #d8434b; color: #fff; }
+.q-fb { grid-column: 1 / -1; font-size: 1.05rem; color: var(--muted-ui); }
+.score { margin-top: 10px; font-family: var(--f-display); font-weight: 600; color: var(--accent); }
+
+.foot { max-width: 820px; margin: 26px auto 0; text-align: center; font-size: .95rem; color: var(--muted-ui); }
+
+@media (max-width: 720px) {
+  .sheet { padding: 26px 18px 30px 48px; transform: none; }
+  .sheet::before { left: 34px; }
+  .holes { left: 9px; }
+  .top, .bottom, .facts { grid-template-columns: 1fr; }
+  .sheet-head { grid-template-columns: 1fr; }
+  .date-note { text-align: left; }
+  .tape { right: 30px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .rays { transform-origin: 130px 130px; animation: spin 60s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+}
+</style>
+
+<!-- shared SVG filters: crayon grain + wobbly hand-drawn edges -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="crayon" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="3" result="w"/>
+      <feDisplacementMap in="SourceGraphic" in2="w" scale="3" result="wob"/>
+      <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="1" seed="8" result="grain"/>
+      <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.8 1.2" result="mask"/>
+      <feComposite in="wob" in2="mask" operator="in"/>
+    </filter>
+    <filter id="wobble">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="5" result="w"/>
+      <feDisplacementMap in="SourceGraphic" in2="w" scale="2.5"/>
+    </filter>
+  </defs>
+</svg>
+
+<div id="app" data-defter="pembe">
+
+<header class="site-head">
+  <a class="brand" href="#" aria-label="Ortaokul Maarif ana sayfa">
+    <svg width="46" height="46" viewBox="0 0 46 46" aria-hidden="true">
+      <g filter="url(#wobble)">
+        <rect x="9" y="5" width="30" height="36" rx="4" fill="var(--accent-soft)" stroke="var(--ink-ui)" stroke-width="2.2"/>
+        <path d="M15 15h18M15 21h18M15 27h12" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round"/>
+        <g fill="none" stroke="var(--ink-ui)" stroke-width="2"><path d="M5 11h7M5 19h7M5 27h7M5 35h7"/></g>
+        <path d="M30 31l9-9 3 3-9 9-4 1z" fill="var(--hl)" stroke="var(--ink-ui)" stroke-width="1.8" stroke-linejoin="round"/>
+      </g>
+    </svg>
+    <span><b>Ortaokul Maarif</b><small>defterden hap bilgiler</small></span>
+  </a>
+  <nav class="menu" aria-label="Ana menü">
+    <a href="#" aria-current="page">Ders Notları</a>
+    <a href="#">Yazılı Soruları</a>
+    <a href="#">Yazılı Oluştur</a>
+    <a href="#">Planlayıcılar</a>
+  </nav>
+</header>
+
+<div class="controls">
+  <div class="crumbs">5. Sınıf › Fen Bilimleri › <span>Güneş'in Yapısı ve Özellikleri</span></div>
+  <div><span class="seg-label">Defterim:</span>
+    <div class="seg" role="group" aria-label="Defter teması">
+      <button id="t-pembe" data-set-defter="pembe" aria-pressed="true">Pembe</button>
+      <button id="t-mavi" data-set-defter="mavi" aria-pressed="false">Mavi</button>
+    </div>
+  </div>
+  <div><span class="seg-label">Kâğıt:</span>
+    <div class="seg" role="group" aria-label="Kâğıt türü">
+      <button id="k-kareli" data-set-kagit="kareli" aria-pressed="true">Kareli</button>
+      <button id="k-cizgili" data-set-kagit="cizgili" aria-pressed="false">Çizgili</button>
+    </div>
+  </div>
+</div>
+
+<main>
+<article class="sheet kareli" id="sheet">
+  <div class="holes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="tape" aria-hidden="true"></div>
+
+  <!-- theme doodles -->
+  <svg class="doodle only-pembe" style="top:120px;right:22px" width="54" height="54" viewBox="0 0 54 54" aria-hidden="true">
+    <g filter="url(#crayon)"><g fill="var(--accent)"><circle cx="27" cy="14" r="9"/><circle cx="40" cy="27" r="9"/><circle cx="27" cy="40" r="9"/><circle cx="14" cy="27" r="9"/></g><circle cx="27" cy="27" r="7" fill="var(--hl)"/></g>
+  </svg>
+  <svg class="doodle only-mavi" style="top:110px;right:20px" width="56" height="64" viewBox="0 0 56 64" aria-hidden="true">
+    <g filter="url(#crayon)" transform="rotate(30 28 32)">
+      <path d="M28 4c10 8 13 22 10 36H18C15 26 18 12 28 4z" fill="var(--accent-soft)" stroke="var(--ink)" stroke-width="2"/>
+      <circle cx="28" cy="22" r="5" fill="var(--accent)" stroke="var(--ink)" stroke-width="2"/>
+      <path d="M18 34l-8 10 10-2M38 34l8 10-10-2" fill="var(--accent)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M22 42l6 14 6-14z" fill="#f29b2b"/>
+    </g>
+  </svg>
+
+  <div class="sheet-head">
+    <div>
+      <span class="subject">5. Sınıf · Fen Bilimleri</span>
+      <h1>Güneş'in <span class="hl">Yapısı</span> ve Özellikleri</h1>
+    </div>
+    <div class="date-note">Ekim 2026<br>Hap bilgi kartı ✎</div>
+  </div>
+
+  <div class="top">
+    <figure class="sun-figure" style="margin:0">
+      <svg viewBox="0 0 400 250" role="img" aria-labelledby="sunT">
+        <title id="sunT">Güneş'in kesiti: dışta yüzey, ortada merkez (çekirdek)</title>
+        <defs>
+          <clipPath id="wedge"><path d="M130 130 L130 30 A100 100 0 0 1 230 130 Z"/></clipPath>
+          <path id="ray" d="M130 6 L139 26 L121 26 Z"/>
+        </defs>
+        <g filter="url(#crayon)">
+          <g class="rays" fill="#f7b32b">
+            <use href="#ray"/><use href="#ray" transform="rotate(30 130 130)"/><use href="#ray" transform="rotate(60 130 130)"/>
+            <use href="#ray" transform="rotate(90 130 130)"/><use href="#ray" transform="rotate(120 130 130)"/><use href="#ray" transform="rotate(150 130 130)"/>
+            <use href="#ray" transform="rotate(180 130 130)"/><use href="#ray" transform="rotate(210 130 130)"/><use href="#ray" transform="rotate(240 130 130)"/>
+            <use href="#ray" transform="rotate(270 130 130)"/><use href="#ray" transform="rotate(300 130 130)"/><use href="#ray" transform="rotate(330 130 130)"/>
+          </g>
+          <circle cx="130" cy="130" r="100" fill="#ffc93c"/>
+          <circle cx="130" cy="130" r="100" fill="none" stroke="#f08c1f" stroke-width="5"/>
+          <g clip-path="url(#wedge)">
+            <circle cx="130" cy="130" r="100" fill="#f08c1f"/>
+            <circle cx="130" cy="130" r="74" fill="#ef6a2b"/>
+            <circle cx="130" cy="130" r="46" fill="#e2452f"/>
+            <circle cx="130" cy="130" r="22" fill="#fff1a8"/>
+          </g>
+          <path d="M130 130 L130 30 M130 130 L230 130" stroke="#7a3b10" stroke-width="2.5"/>
+          <!-- face -->
+          <circle cx="98" cy="150" r="5" fill="#2b2a33"/><circle cx="72" cy="150" r="5" fill="#2b2a33"/>
+          <path d="M74 168 q11 10 22 0" fill="none" stroke="#2b2a33" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="62" cy="164" r="7" fill="#ff8aa8" opacity=".7"/><circle cx="108" cy="164" r="7" fill="#ff8aa8" opacity=".7"/>
+        </g>
+        <!-- labels -->
+        <g fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" filter="url(#wobble)">
+          <path d="M214 74 C238 62 250 58 262 58"/><path d="M256 52 l7 6 -8 5"/>
+          <path d="M140 124 C190 110 230 128 258 150"/><path d="M251 151 l8 0 -2 -8"/>
+        </g>
+        <g font-family="Patrick Hand, cursive" fill="var(--ink)">
+          <text x="266" y="52" font-size="21">Yüzey</text>
+          <text x="266" y="74" font-size="17" fill="var(--pencil)">≈ 6000 °C</text>
+          <text x="262" y="166" font-size="21">Merkez</text>
+          <text x="262" y="186" font-size="17" fill="var(--pencil)">(çekirdek)</text>
+          <text x="262" y="206" font-size="17" fill="var(--pencil)">≈ 15 milyon °C</text>
+        </g>
+      </svg>
+      <figcaption class="cap">Güneş katmanlardan oluşur. Merkeze gidildikçe sıcaklık artar!</figcaption>
+    </figure>
+
+    <div class="side-facts">
+      <div class="bubble">
+        Dünya'yı <span class="circled">109 kez</span> yan yana dizersek Güneş'in çapı kadar olur.
+        <svg viewBox="0 0 280 46" aria-hidden="true">
+          <g filter="url(#crayon)">
+            <circle cx="10" cy="23" r="5" fill="#3d8be0"/><circle cx="10" cy="23" r="2.3" fill="#4fbf6a"/>
+            <rect x="24" y="20" width="180" height="6" rx="3" fill="#3d8be0" opacity=".35"/>
+            <path d="M210 4 a22 22 0 0 1 0 38" fill="#ffc93c"/>
+          </g>
+          <text x="216" y="30" font-family="Patrick Hand, cursive" font-size="15" fill="var(--ink)">...Güneş</text>
+        </svg>
+      </div>
+      <div class="bubble" style="border-color: var(--accent)">
+        Dünya'ya uzaklığı yaklaşık <span class="hl hl2">150 milyon km</span>.
+        Işığı bize yaklaşık <b>8 dakikada</b> ulaşır.
+        <svg viewBox="0 0 280 40" aria-hidden="true">
+          <g filter="url(#crayon)">
+            <circle cx="18" cy="20" r="15" fill="#ffc93c"/>
+            <circle cx="262" cy="20" r="8" fill="#3d8be0"/><path d="M257 16 q4 -3 8 1 q-2 6 -6 5z" fill="#4fbf6a"/>
+          </g>
+          <path d="M40 20 H244" stroke="var(--ink)" stroke-width="2" stroke-dasharray="7 6"/>
+          <path d="M238 14 l8 6 -8 6" fill="none" stroke="var(--ink)" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sec-title">
+    <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><g filter="url(#crayon)"><path d="M17 2l4.5 9.5 10.3 1.3-7.6 7.2 2 10.3L17 25.3 7.8 30.3l2-10.3L2.2 12.8l10.3-1.3z" fill="var(--hl)" stroke="var(--ink)" stroke-width="1.8"/></g></svg>
+    Güneş'in Özellikleri
+  </h2>
+  <ol class="facts">
+    <li><span>Güneş bir <span class="hl">yıldızdır</span>. Dünya'ya <b>en yakın</b> yıldızdır.</span></li>
+    <li><span>Kendi <span class="hl">ısısını ve ışığını</span> üretir; ısı ve ışık kaynağıdır.</span></li>
+    <li><span><b>Gazlardan</b> oluşur; büyük kısmı <span class="hl hl2">hidrojen</span> ve <span class="hl hl2">helyumdur</span>.</span></li>
+    <li><span><b>Küre</b> şeklindedir ve <span class="hl">katmanlardan</span> oluşur.</span></li>
+    <li><span>Çapı, Dünya'nın çapının yaklaşık <span class="hl">109 katıdır</span>.</span></li>
+    <li><span>Kendi <span class="hl hl2">ekseni etrafında</span> döner.</span></li>
+  </ol>
+
+  <div class="bottom">
+    <div class="unutma">
+      <b class="box-title">Unutma!</b>
+      Güneş olmasaydı Dünya'da <span class="hl">canlılar yaşayamazdı</span>. Bitkiler besinini Güneş ışığıyla üretir, biz de ısınmak ve görmek için Güneş'e ihtiyaç duyarız.
+    </div>
+    <div class="dikkat">
+      <b class="box-title">Sınavda dikkat!</b>
+      Güneş bir gezegen <u>değildir</u>, <b>yıldızdır</b>. Bu soru yazılılarda çok çıkar!
+    </div>
+  </div>
+
+  <div class="signature">
+    <span>Başarılar! ☺</span>
+    <span class="site">ortaokulmaarif.com</span>
+  </div>
+</article>
+
+<section class="quiz" aria-labelledby="quizT">
+  <h2 id="quizT">Kendini dene</h2>
+  <p class="lead">Doğru mu, yanlış mı? Notu okuduktan sonra işaretle.</p>
+  <div id="qs"></div>
+  <div class="score" id="score" aria-live="polite"></div>
+</section>
+</main>
+
+<p class="foot">Örnek tasarım · Bilgiler yayın öncesi MEB ders kitabıyla karşılaştırılacaktır.</p>
+</div>
+
+<script>
+(function () {
+  var app = document.getElementById('app');
+  var sheet = document.getElementById('sheet');
+
+  function press(group, btn) {
+    document.querySelectorAll('[' + group + ']').forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+  }
+  function setDefter(v) {
+    app.setAttribute('data-defter', v);
+    press('data-set-defter', document.querySelector('[data-set-defter="' + v + '"]'));
+    try { localStorage.setItem('om-defter', v); } catch (e) {}
+  }
+  function setKagit(v) {
+    sheet.classList.remove('kareli', 'cizgili'); sheet.classList.add(v);
+    press('data-set-kagit', document.querySelector('[data-set-kagit="' + v + '"]'));
+    try { localStorage.setItem('om-kagit', v); } catch (e) {}
+  }
+  document.querySelectorAll('[data-set-defter]').forEach(function (b) { b.addEventListener('click', function () { setDefter(b.dataset.setDefter); }); });
+  document.querySelectorAll('[data-set-kagit]').forEach(function (b) { b.addEventListener('click', function () { setKagit(b.dataset.setKagit); }); });
+  try {
+    var d = localStorage.getItem('om-defter'); if (d === 'pembe' || d === 'mavi') setDefter(d);
+    var k = localStorage.getItem('om-kagit'); if (k === 'kareli' || k === 'cizgili') setKagit(k);
+  } catch (e) {}
+
+  var questions = [
+    { t: 'Güneş bir gezegendir.', a: false, why: 'Güneş bir yıldızdır.' },
+    { t: "Güneş, Dünya'ya en yakın yıldızdır.", a: true, why: 'Doğru! En yakın yıldızımız Güneş.' },
+    { t: "Güneş'in yüzeyi, merkezinden daha sıcaktır.", a: false, why: 'Merkeze gidildikçe sıcaklık artar.' },
+    { t: 'Güneş kendi ekseni etrafında döner.', a: true, why: 'Doğru! Güneş de kendi ekseni etrafında döner.' }
+  ];
+  var box = document.getElementById('qs'), done = 0, correct = 0;
+  questions.forEach(function (q, i) {
+    var row = document.createElement('div'); row.className = 'q';
+    row.innerHTML = '<div class="q-text">' + (i + 1) + '. ' + q.t + '</div>' +
+      '<div class="q-btns"><button id="q' + i + 'd" type="button">D</button><button id="q' + i + 'y" type="button">Y</button></div>' +
+      '<div class="q-fb" hidden></div>';
+    var btns = row.querySelectorAll('button'), fb = row.querySelector('.q-fb');
+    btns.forEach(function (b, j) {
+      b.addEventListener('click', function () {
+        if (row.dataset.done) return;
+        row.dataset.done = '1'; done++;
+        var said = j === 0, ok = said === q.a;
+        if (ok) correct++;
+        b.classList.add(ok ? 'right' : 'wrong');
+        if (!ok) btns[q.a ? 0 : 1].classList.add('right');
+        fb.textContent = (ok ? '✔ ' : '✘ ') + q.why; fb.hidden = false;
+        if (done === questions.length) document.getElementById('score').textContent = correct + ' / ' + questions.length + ' doğru' + (correct === questions.length ? ' Harikasın!' : '');
+      });
+    });
+    box.appendChild(row);
+  });
+})();
+</script>
