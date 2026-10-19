@@ -143,8 +143,7 @@ ${[8, 30, 52, 74, 92].map((y, i) => `<div class="deco" style="left:1mm;top:${y}%
 
 ${d.icerik.map(b => block(b, t)).join('\n')}
 
-<div class="pb"></div>
-<div class="hd">${svg[t.motifs[2]](t.c1, 22)} Yazılıya Hazırlık Soruları ${svg[t.motifs[3]](t.c2, 22)}</div>
+<div class="hd" style="break-before:page">${svg[t.motifs[2]](t.c1, 22)} Yazılıya Hazırlık Soruları ${svg[t.motifs[3]](t.c2, 22)}</div>
 ${sorular}
 
 <div class="panel">
@@ -152,8 +151,7 @@ ${sorular}
   <ul class="chk">${kontrol}</ul>
 </div>
 
-<div class="pb"></div>
-<div class="hd">${svg[t.motifs[1]](t.c1, 22)} Cevap Anahtarı ${svg[t.motifs[0]](t.c2, 22)}</div>
+<div class="hd" style="break-before:page">${svg[t.motifs[1]](t.c1, 22)} Cevap Anahtarı ${svg[t.motifs[0]](t.c2, 22)}</div>
 <p class="note" style="text-align:center;margin-bottom:4mm">Önce soruları kendin çöz, sonra buradan kontrol et. Açık uçlu sorularda kendi cümlelerinle yazdığın doğru cevaplar da kabul edilir.</p>
 <ol class="ans">${cevaplar}</ol>
 </td></tr></tbody></table>
