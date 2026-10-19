@@ -19,7 +19,6 @@ const THEMES = {
     ink: '#5a2a4a', line: '#e7b6cc', arrow: '#c76aa0',
     days: ['#ff8fb8', '#b48ef0', '#ffa98a', '#7fc8e8', '#f6a6d6'],
     motifs: ['flower', 'heart', 'butterfly', 'flower', 'heart', 'star'],
-    motto: 'Her gün biraz daha çiçek açıyorum!',
   },
   erkek: {
     file: 'Haftalik-Odev-Plani-ERKEK.pdf',
@@ -28,7 +27,6 @@ const THEMES = {
     ink: '#183457', line: '#b5cde8', arrow: '#3f86d8',
     days: ['#3b8ef0', '#20b3a5', '#ff9a3c', '#7b6cf0', '#3fbf62'],
     motifs: ['rocket', 'star', 'planet', 'bolt', 'star', 'planet'],
-    motto: 'Hedefe tam yol ileri!',
   },
 };
 
@@ -83,7 +81,6 @@ function dayBlock(t, d, idx) {
       <div class="aftlines">
         <div class="aline"><b class="box"></b><div class="wline"></div></div>
         <div class="aline"><b class="box"></b><div class="wline"></div></div>
-        <div class="aline"><b class="box"></b><div class="wline"></div></div>
       </div>
     </div>
   </section>`;
@@ -95,40 +92,15 @@ function header(t) {
     <div class="tag">Türkiye Yüzyılı Maarif Modeli · Ortaokul</div>
     <h1>${svg[t.motifs[0]](t.c1, 30)} ${t.title} ${svg[t.motifs[1]](t.c2, 30)}</h1>
     <div class="meta">
-      <span>Adım Soyadım: <i style="width:52mm"></i></span>
-      <span>Sınıfım: <i style="width:16mm"></i></span>
-      <span>Hafta: <i style="width:20mm"></i> – <i style="width:20mm"></i></span>
+      <span>Adım Soyadım: <i style="width:36mm"></i></span>
+      <span>Sınıfım: <i style="width:10mm"></i></span>
+      <span>Hafta: <i style="width:14mm"></i> – <i style="width:14mm"></i></span>
+      <span>Okuma kitabım: <i style="width:34mm"></i></span>
     </div>
   </header>`;
 }
 
-function readingAndNotes(t) {
-  const dn = ['Pzt', 'Salı', 'Çar', 'Per', 'Cuma', 'Cmt', 'Paz'];
-  return `
-  <section class="extra">
-    <div class="card" style="border-color:${t.c2}">
-      <div class="cardh" style="background:${t.c2}">${svg[t.motifs[2]]('#fff', 16)} OKUMA KİTABIM</div>
-      <div class="kv">Kitabın adı: <i></i></div>
-      <div class="kv">Yazarı: <i></i></div>
-      <div class="kv">Bitirme tarihi: <i></i></div>
-      <div class="pages">${dn.map(d => `<div class="pg"><span>${d}</span><div class="pgbox"></div><small>sayfa</small></div>`).join('')}</div>
-      <div class="kv" style="margin-top:1mm">En sevdiğim cümle / karakter:</div>
-      <div class="nlines">${'<div class="nline"></div>'.repeat(4)}</div>
-    </div>
-    <div class="card" style="border-color:${t.c1}">
-      <div class="cardh" style="background:${t.c1}">${svg[t.motifs[3]]('#fff', 16)} HAFTA SONU &amp; NOTLARIM</div>
-      <div class="nlines">${'<div class="nline"></div>'.repeat(8)}</div>
-      <div class="sign">
-        <span>Bu hafta kendimi değerlendiriyorum:</span>
-        <span class="stars">${svg.star(t.c3, 20).repeat(5)}</span>
-      </div>
-      <div class="kv">Veli imzası: <i></i></div>
-    </div>
-  </section>
-  <div class="motto">${svg[t.motifs[4]](t.c1, 18)} ${t.motto} ${svg[t.motifs[5]](t.c2, 18)}</div>`;
-}
-
-function page(t, content, seed, n) {
+function page(t, content, seed) {
   return `<div class="page">
     <div class="frame"></div>
     ${borderDeco(t, seed)}
@@ -137,8 +109,7 @@ function page(t, content, seed, n) {
 }
 
 function html(t) {
-  const p1 = header(t) + DAYS.slice(0, 3).map((d, i) => dayBlock(t, d, i)).join('');
-  const p2 = DAYS.slice(3).map((d, i) => dayBlock(t, d, i + 3)).join('') + readingAndNotes(t);
+  const body = header(t) + DAYS.map((d, i) => dayBlock(t, d, i)).join('');
   return `<!doctype html><html lang="tr"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -146,56 +117,40 @@ function html(t) {
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Nunito', sans-serif; color: ${t.ink}; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 .page { width: 210mm; height: 297mm; position: relative; overflow: hidden; page-break-after: always; background: ${t.c5}; }
-.frame { position: absolute; inset: 6mm 9mm; border: 1.6mm solid ${t.c3}; border-radius: 7mm;
+.frame { position: absolute; inset: 5mm 9mm; border: 1.6mm solid ${t.c3}; border-radius: 7mm;
   box-shadow: inset 0 0 0 0.6mm #fff, inset 0 0 0 1.2mm ${t.c4}; background: #fff; }
 .deco { position: absolute; width: 24px; height: 24px; }
-.inner { position: absolute; inset: 10mm 14mm 9mm 14mm; display: flex; flex-direction: column; gap: 2.6mm; }
+.inner { position: absolute; inset: 8.5mm 14mm 8.5mm 14mm; display: flex; flex-direction: column; justify-content: space-between; }
 .pno { position: absolute; bottom: 7.5mm; right: 50%; transform: translateX(50%); font-size: 8pt; color: ${t.c2}; background:#fff; padding: 0 2mm; }
 header { text-align: center; }
 .tag { display: inline-block; font-size: 7.5pt; font-weight: 800; letter-spacing: .5px; color: #fff; background: linear-gradient(90deg, ${t.c1}, ${t.c2}); padding: .6mm 3.5mm; border-radius: 9mm; }
-h1 { font-family: 'Baloo 2', cursive; font-size: 24pt; font-weight: 800; line-height: 1.1; margin-top: .8mm;
+h1 { font-family: 'Baloo 2', cursive; font-size: 18pt; font-weight: 800; line-height: 1.1; margin-top: .8mm;
   color: ${t.c1}; display: flex; align-items: center; justify-content: center; gap: 3mm; }
-.meta { display: flex; justify-content: center; gap: 6mm; font-size: 9.5pt; font-weight: 700; margin-top: 1mm; }
+.meta { display: flex; justify-content: center; gap: 3.5mm; font-size: 8pt; font-weight: 700; margin-top: .6mm; white-space: nowrap; }
 i { display: inline-block; border-bottom: 1.4px dotted ${t.ink}; height: 4mm; vertical-align: bottom; font-style: normal; }
 .day { }
-.dayhead { display: grid; grid-template-columns: 40mm 1fr 62mm 36mm; align-items: end; gap: 0 2mm; margin-bottom: .8mm; }
-.dayname { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 13pt; color: #fff; padding: .2mm 3.5mm 0; border-radius: 3mm 3mm 3mm 0;
+.dayhead { display: grid; grid-template-columns: 40mm 1fr 62mm 36mm; align-items: end; gap: 0 2mm; margin-bottom: .2mm; }
+.dayname { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 10.5pt; color: #fff; padding: 0 3mm; border-radius: 3mm 3mm 3mm 0;
   display: inline-flex; align-items: center; gap: 1.5mm; width: max-content; line-height: 1.5; }
 .daydate { font-size: 9pt; font-weight: 700; }
 .daydate i { width: 26mm; }
 .colh { font-family: 'Baloo 2', cursive; font-size: 8.5pt; font-weight: 800; color: ${t.c2}; letter-spacing: .6px; text-align: center; }
 table { width: 100%; border-collapse: separate; border-spacing: 0; }
-td { height: 10.4mm; vertical-align: bottom; padding-bottom: 1.1mm; }
+td { height: 6.1mm; vertical-align: bottom; padding-bottom: .5mm; line-height: 1.25; }
 td.les { width: 33mm; }
-.chip { display: inline-block; font-weight: 800; font-size: 9.5pt; padding: .3mm 2.5mm; border: 1.3px solid; border-radius: 4mm; background: ${t.c5}; white-space: nowrap; }
-td.arr { width: 7mm; text-align: center; padding-bottom: 1.6mm; }
+.chip { display: inline-block; font-weight: 800; font-size: 8.5pt; padding: 0 2.2mm; border: 1.3px solid; border-radius: 4mm; background: ${t.c5}; white-space: nowrap; }
+td.arr { width: 7mm; text-align: center; padding-bottom: .5mm; line-height: 0; }
 td.hw { }
 td.due { width: 36mm; }
-.wline { border-bottom: 1.5px dashed ${t.line}; height: 5mm; }
+.wline { border-bottom: 1.5px dashed ${t.line}; height: 3.6mm; }
 tr + tr td { border-top: 0; }
-.after { border: 1.4px solid; border-radius: 3mm; position: relative; margin-top: 1.4mm; padding: 3.2mm 3mm 1.6mm; background: ${t.c5}; }
+.after { border: 1.4px solid; border-radius: 3mm; position: relative; margin-top: 1.8mm; padding: 2mm 3mm 1mm; background: ${t.c5}; }
 .aftlabel { position: absolute; top: -2.4mm; left: 4mm; color: #fff; font-size: 7.5pt; font-weight: 800; letter-spacing: .6px; padding: 0 2.5mm; border-radius: 2mm; line-height: 4.4mm; }
-.aline { display: flex; align-items: end; gap: 2mm; height: 7mm; }
+.aline { display: flex; align-items: end; gap: 2mm; height: 5.2mm; }
 .aline .wline { flex: 1; height: auto; }
 .box { width: 3.6mm; height: 3.6mm; border: 1.4px solid ${t.c2}; border-radius: 1mm; flex: none; background:#fff; }
-.extra { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin-top: 2mm; flex: 1; }
-.card { border: 1.4px solid; border-radius: 4mm; padding: 6mm 4mm 3mm; position: relative; background: ${t.c5}; display: flex; flex-direction: column; gap: 2.2mm; }
-.cardh { position: absolute; top: -3mm; left: 4mm; color: #fff; font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 9.5pt; padding: 0 3mm; border-radius: 2.5mm; display: flex; align-items: center; gap: 1.5mm; line-height: 6mm; }
-.kv { font-size: 9pt; font-weight: 700; display: flex; align-items: end; gap: 1.5mm; }
-.kv i { flex: 1; }
-.pages { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1.2mm; margin-top: 1mm; }
-.pg { text-align: center; font-size: 7.5pt; font-weight: 800; }
-.pg small { display: block; font-size: 6pt; font-weight: 600; opacity: .7; }
-.pgbox { height: 8mm; border: 1.3px dashed ${t.c2}; border-radius: 2mm; background: #fff; margin-top: .6mm; }
-.nlines { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; }
-.nline { border-bottom: 1.5px dashed ${t.line}; height: 6.4mm; }
-.sign { display: flex; justify-content: space-between; align-items: center; font-size: 8.5pt; font-weight: 700; margin-top: 1mm; }
-.stars svg { margin-left: .5mm; }
-.stars svg polygon { stroke: ${t.c2}; stroke-width: 1.5; }
-.motto { text-align: center; font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 11pt; color: ${t.c2}; display: flex; align-items: center; justify-content: center; gap: 2mm; }
 </style></head><body>
-${page(t, p1, 0, 1)}
-${page(t, p2, 2, 2)}
+${page(t, body, 0)}
 </body></html>`;
 }
 
