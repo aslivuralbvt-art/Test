@@ -208,8 +208,8 @@ export default {
 <p>a) Olay nerede geçmektedir? &nbsp; b) Olay ne zaman yaşanmıştır? &nbsp; c) Elif kitabın arasında ne buldu? &nbsp; d) Nermin Hanım’ın gözleri neden doldu?</p>`, lines: 4 },
     { q: '<p><b>Metnin anahtar kelimelerinden dördünü yazınız. Bu kelimelerden yararlanarak metne yeni bir başlık öneriniz.</b></p>', lines: 3 },
     { q: '<p><b>“Kitapların, insanları birbirine bağlayan görünmez köprüler olduğunu anladı.” cümlesinde “görünmez köprüler” ifadesiyle ne anlatılmak istenmektedir? Açıklayınız.</b></p>', lines: 3 },
-    { q: '<p><b>Metinde geçen “gözleri dolmak” deyiminin anlamını yazınız. Bu deyimi kendi kuracağınız bir cümlede kullanınız.</b></p>', lines: 3 },
-    { q: '<p><b>Aşağıdaki afişi inceleyiniz.</b> a) Afişte verilmek istenen mesaj nedir? b) Afişi kim hazırlamıştır? c) Afişteki hangi görsel unsurlar mesajı desteklemektedir?</p>', svg: afisSu, lines: 4 },
+    { q: '<p><b>Metinde geçen “gözleri dolmak” deyiminin anlamını yazınız. Bu deyimi kendi kuracağınız bir cümlede kullanınız.</b></p>', lines: 2 },
+    { q: '<p><b>Aşağıdaki afişi inceleyiniz.</b> a) Afişte verilmek istenen mesaj nedir? b) Afişi kim hazırlamıştır? c) Afişteki hangi görsel unsurlar mesajı desteklemektedir?</p>', svg: afisSu, lines: 3 },
     { q: `<p><b>Aşağıdaki kelimelerin eş anlamlısını ya da zıt anlamlısını yazınız.</b></p>
 <table class="tbl"><thead><tr><th>Kelime</th><th>Eş anlamlısı</th><th>Kelime</th><th>Zıt anlamlısı</th></tr></thead><tbody>
 <tr><td>yanıt</td><td></td><td>eski</td><td></td></tr>
@@ -217,7 +217,7 @@ export default {
 <tr><td>armağan</td><td></td><td>erken</td><td></td></tr></tbody></table>`, lines: 0 },
     { q: '<p><b>“yüz” kelimesini iki farklı anlamda kullanarak iki cümle kurunuz.</b></p>', lines: 2 },
     { q: `<p><b>Aşağıdaki cümlelerdeki yazım yanlışlarını bulup cümleleri doğru biçimde yeniden yazınız.</b></p>
-<p>a) kardeşim de okula gidiyormu?<br>b) Yaz tatilinde izmir’e gittik, oradaki deniz çok güzeldi.<br>c) Bu kitabı üç günde bitirdim, sende okumalısın.<br>d) Cumhuriyet, 29 ekim 1923’te ilan edildi.<br>e) Bu kelimenin yazılışını TDK’ya sordum.</p>`, lines: 4 },
+<p>a) kardeşim de okula gidiyormu?<br>b) Yaz tatilinde izmir’e gittik, oradaki deniz çok güzeldi.<br>c) Bu kitabı üç günde bitirdim, sende okumalısın.<br>d) Cumhuriyet, 29 ekim 1923’te ilan edildi.<br>e) Bu kelimenin yazılışını TDK’ya sordum.</p>`, lines: 3 },
     { q: `<p><b>Aşağıdaki cümlelerde ayraç içine uygun noktalama işaretlerini koyunuz.</b></p>
 <p>a) Çantama kalem( ) silgi( ) cetvel ve defter koydum( )<br>b) Eyvah( ) Otobüsü kaçırdık( )<br>c) Öğretmenimiz şöyle dedi( ) ( )Yarın müzeye gideceğiz.( )<br>d) Bugün kütüphaneye gidecek misin( )<br>e) Ankara( )ya 2026( )da taşındık.</p>`, lines: 0 },
     { q: `<p><b>Aşağıdaki paragrafı eş anlamlı ve betimleyici kelimeler kullanarak zenginleştirip yeniden yazınız.</b></p>

@@ -39,13 +39,18 @@ function phaseCycle() {
   const ex = 250, ey = 215, ri = 92, ro = 158;
   let s = `<svg width="640" height="430" viewBox="0 0 640 430" xmlns="http://www.w3.org/2000/svg" font-family="Nunito, sans-serif">`;
   // Güneş ışınları
-  s += `<circle cx="640" cy="215" r="62" fill="#ffb627"/><text x="604" y="219" font-size="14" font-weight="800" fill="#7a3d00">GÜNEŞ</text>`;
-  for (let y = 60; y <= 370; y += 44) s += `<path d="M570 ${y} H500" stroke="#f5a623" stroke-width="2" stroke-dasharray="6 5"/><path d="M506 ${y - 5} L498 ${y} L506 ${y + 5}" fill="none" stroke="#f5a623" stroke-width="2"/>`;
-  s += `<text x="500" y="40" font-size="11" fill="#b06b00" font-weight="700">Güneş ışınları</text>`;
+  s += `<circle cx="595" cy="215" r="40" fill="#ffb627"/><text x="595" y="219" text-anchor="middle" font-size="12" font-weight="800" fill="#7a3d00">GÜNEŞ</text>`;
+  for (let y = 60; y <= 370; y += 44) if (Math.abs(y - 215) > 50) s += `<path d="M560 ${y} H480" stroke="#f5a623" stroke-width="2" stroke-dasharray="6 5"/><path d="M486 ${y - 5} L478 ${y} L486 ${y + 5}" fill="none" stroke="#f5a623" stroke-width="2"/>`;
+  s += `<path d="M550 215 H480" stroke="#f5a623" stroke-width="2" stroke-dasharray="6 5"/><path d="M486 210 L478 215 L486 220" fill="none" stroke="#f5a623" stroke-width="2"/>`;
+  s += `<text x="480" y="40" font-size="11" fill="#b06b00" font-weight="700">Güneş ışınları</text>`;
   // yörünge
   s += `<circle cx="${ex}" cy="${ey}" r="${ri}" fill="none" stroke="#9aa3b5" stroke-width="1.5" stroke-dasharray="5 4"/>`;
-  s += `<path d="M${ex - 62} ${ey - 68} l-4 12 l12 -3" fill="none" stroke="#6b7280" stroke-width="2"/>`;
-  s += `<text x="${ex - 120}" y="${ey - 80}" font-size="10.5" fill="#4b5563" font-weight="700">dolanma yönü</text>`;
+  {
+    const th = (160 * Math.PI) / 180, px = ex + ri * Math.cos(th), py = ey - ri * Math.sin(th);
+    const dx = -Math.sin(th), dy = -Math.cos(th), nx = -dy, ny = dx;
+    s += `<polygon points="${px + 9 * dx},${py + 9 * dy} ${px - 4 * dx + 6 * nx},${py - 4 * dy + 6 * ny} ${px - 4 * dx - 6 * nx},${py - 4 * dy - 6 * ny}" fill="#6b7280"/>`;
+    s += `<text x="${px - 10}" y="${py - 8}" font-size="10.5" text-anchor="end" fill="#4b5563" font-weight="700">dolanma yönü</text>`;
+  }
   // Dünya (Güneş'e bakan yarısı gündüz)
   s += `<circle cx="${ex}" cy="${ey}" r="24" fill="#1d4f91"/><path d="M${ex} ${ey - 24} A24 24 0 0 1 ${ex} ${ey + 24}Z" fill="#4aa3df"/><circle cx="${ex}" cy="${ey}" r="24" fill="none" stroke="#123" stroke-width="1"/>`;
   s += `<text x="${ex}" y="${ey + 4}" font-size="10" text-anchor="middle" fill="#fff" font-weight="800">DÜNYA</text>`;
@@ -106,7 +111,8 @@ function sizes() {
 function dynamometer(val = 6, labels = true, w = 260) {
   const top = 50, step = 18; // 0 N çizgisi y = top + 20
   const y0 = top + 20, yv = y0 + val * step;
-  let s = `<svg width="${w}" height="330" viewBox="0 0 ${labels ? 300 : 160} 330" xmlns="http://www.w3.org/2000/svg" font-family="Nunito, sans-serif">`;
+  const vbw = labels ? 300 : 160;
+  let s = `<svg width="${w}" height="${Math.round((330 * w) / vbw)}" viewBox="0 0 ${vbw} 330" xmlns="http://www.w3.org/2000/svg" font-family="Nunito, sans-serif">`;
   s += `<circle cx="70" cy="22" r="13" fill="none" stroke="#555" stroke-width="4"/><rect x="66" y="33" width="8" height="12" fill="#555"/>`;
   s += `<rect x="45" y="${top - 6}" width="50" height="${10 * step + 52}" rx="8" fill="#e8eef7" stroke="#557" stroke-width="2"/>`;
   for (let i = 0; i <= 10; i++) {
@@ -131,7 +137,7 @@ function dynamometer(val = 6, labels = true, w = 260) {
     s += `<line x1="83" y1="22" x2="185" y2="22" stroke="#999"/><text x="190" y="26" font-size="11.5" font-weight="800" fill="#333">Tutma halkası</text>`;
     s += L(top + 40, 70, 'Esnek yay');
     s += L(yv, yv + 8, 'Gösterge (ibre)');
-    s += L(y0 + 4 * step, 165, 'Ölçek (N)');
+    s += L(y0 + 2 * step, 112, 'Ölçek (N)');
     s += `<line x1="72" y1="${hy + 10}" x2="185" y2="${hy + 6}" stroke="#999"/><text x="190" y="${hy + 10}" font-size="11.5" font-weight="800" fill="#333">Kanca</text>`;
   }
   return s + `</svg>`;
@@ -301,7 +307,7 @@ export default {
     { q: '<p>Güneş, Dünya ve Ay\'ı hacimleri büyükten küçüğe olacak şekilde sıralayınız. Güneş bu kadar büyük olduğu hâlde gökyüzünde neden küçük görünür?</p>', lines: 3 },
     { q: '<p>Bir modelde Dünya 1 cm çapında bir nohut ile gösteriliyor. Bu modelde Güneş\'in çapı yaklaşık kaç cm olmalıdır? Ay için hangi nesneyi seçersiniz?</p>', lines: 2 },
     { q: '<p>Aşağıdaki olaylarda kuvvetin cisim üzerindeki etkisini yazınız.<br>a) Kalecinin gelen topu tutması: ..................<br>b) Oyun hamurunun sıkılması: ..................<br>c) Duran oyuncak arabanın itilmesi: ..................<br>d) Gelen topa kafa vurularak topun başka yöne gitmesi: ..................</p>', lines: 0 },
-    { q: '<p>Yandaki dinamometre kaç N gösteriyor? "N" neyin kısaltmasıdır? Kancaya daha ağır bir cisim asılırsa yayda ne değişir?</p>', svg: dynamometer(7, false, 120), lines: 3 },
+    { q: '<p>Yandaki dinamometre kaç N gösteriyor? "N" neyin kısaltmasıdır? Kancaya daha ağır bir cisim asılırsa yayda ne değişir?</p>', svg: dynamometer(7, false, 90), lines: 3 },
     { q: '<p>Ölçüm aralıkları 0–10 N ve 0–50 N olan iki dinamometreniz var. Yaklaşık 30 N\'luk bir kuvveti ölçmek için hangisini seçersiniz? Nedenini açıklayınız.</p>', lines: 2 },
   ],
 
