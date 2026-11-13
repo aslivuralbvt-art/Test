@@ -1,6 +1,7 @@
 # Marka Profili: Mira
 
 ## Hesap
+- **YouTube kanalı:** Bedenine Yolculuk (sunucu: Mira)
 - **Tür:** AI ile üretilmiş dijital karakter (kurgusal)
 - **Niş:** Vakti az olanlar için kısa hareket, esneme ve sağlıklı küçük alışkanlıklar
 - **Motto:** Mükemmel değil, sürdürülebilir.
@@ -36,3 +37,26 @@ Referans görsel: Mevcut iki parktaki yoga videosundan alınan net bir yüz kare
 - Ağrı ve sakatlık içeriklerinde: "Ağrın devam ediyorsa bir uzmana danış."
 - Sahte yorum, sahte öğrenci hikâyesi ya da uydurma rakam kullanma
 - Her video gerçek bir şey öğretmeli: hareketin adı, tekrar sayısı, kime uygun olduğu
+
+## YouTube kanal açıklaması (uzun versiyon, 912 karakter)
+
+```
+Vakti olmayanlar için günde birkaç dakikalık hareket, esneme ve küçük sağlıklı alışkanlıklar. 🌿
+
+Ben Mira. Bedenine Yolculuk'ta seni kusursuz bir spor programına değil, her gün atabileceğin küçük adımlara davet ediyorum. Mottomuz: Mükemmel değil, sürdürülebilir.
+
+Bu kanalda neler var?
+☀️ Sabah uyanış ve esneme rutinleri
+🪑 Masa başı çalışanlar için boyun, bel ve omuz hareketleri
+⏱️ Ekipmansız 5–10 dakikalık evde egzersizler
+🌙 Uyku öncesi rahatlama hareketleri
+🧘 Yeni başlayanlar için yoga ve mobilite
+
+📅 Her gün yeni bir Shorts, her hafta bir uzun rutin.
+
+Kendi temponda ilerle. Bir sağlık sorunun ya da devam eden bir ağrın varsa egzersize başlamadan önce doktoruna veya fizyoterapistine danış.
+
+🤖 Mira, yapay zekâ ile üretilmiş dijital bir karakterdir. Videolardaki hareketler ve bilgiler gerçektir; karakter kurgusaldır.
+
+Yolculuğa katılmak için abone ol, hangi bölge için rutin istediğini yorumlara yaz. 💚
+```
