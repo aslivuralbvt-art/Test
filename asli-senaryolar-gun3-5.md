@@ -1,12 +1,12 @@
-# Mira: 3–5. gün senaryoları
+# Aslı: 3–5. gün senaryoları
 
 Karakter kartı: `marka-profili.md`. Her video promptunun başına kartı ekleyin ve
-`mira-referans` görselini video aracına yükleyin.
+`asli-referans` görselini video aracına yükleyin.
 
 Genel üretim notları:
 - Her çekim 4–5 sn, tek eylem ve tek kamera hareketi içeriyor. Çekimleri ayrı ayrı
   üretip CapCut'ta birleştirin.
-- Mira konuşmuyor, sesli anlatım (voiceover) kullanılıyor. Dudak senkronu gerekmiyor.
+- Aslı konuşmuyor, sesli anlatım (voiceover) kullanılıyor. Dudak senkronu gerekmiyor.
   Seslendirmeyi CapCut'ın Türkçe yazıdan sese özelliğiyle ya da kendi sesinizle yapın.
 - AI videolarda hareket bazen yanlış çıkıyor (diz içe kapanıyor, kol bükülüyor gibi).
   Öğretici içerikte yanlış form güveni bozar: hatalı çekimi yeniden üretin.
@@ -15,14 +15,14 @@ Genel üretim notları:
 
 ---
 
-## 3. gün (Çar 18 Kasım, 19:30): Tanışma, "Ben Mira"
+## 3. gün (Çar 18 Kasım, 19:30): Tanışma, "Ben Aslı"
 
 Süre: yaklaşık 20 sn · Sütun: İlişki · Müzik: sıcak, akustik gitar, hafif pozitif
 
 | Saniye | Görüntü | Seslendirme | Ekran yazısı |
 |---|---|---|---|
 | 0–2 | Ç1: Kameraya yakın plan, gülümseyip el sallıyor | "Ben gerçek değilim." | **Ben gerçek değilim 👀** |
-| 2–6 | Ç1 devam | "Yapay zekâyla üretilmiş dijital bir karakterim. Adım Mira." | Merhaba, ben Mira 🌿 |
+| 2–6 | Ç1 devam | "Yapay zekâyla üretilmiş dijital bir karakterim. Adım Aslı." | Merhaba, ben Aslı 🌿 |
 | 6–10 | Ç2: Salonda yoga matını açıyor | "Ama burada göstereceğim hareketler tamamen gerçek." | Hareketler gerçek ✅ |
 | 10–14 | Ç3: Matta oturarak yana esneme | "Vakti olmayanlar için günde birkaç dakika: esneme, hareket, küçük alışkanlıklar." | Günde birkaç dakika |
 | 14–17 | Ç4: Cam şişeden su içip gülüyor | "Mükemmel değil, sürdürülebilir." | Mükemmel değil, sürdürülebilir |
@@ -36,34 +36,34 @@ Alternatif hook'lar:
 ### Video promptları
 
 ```
-SHOT 1 (4 s): Mira (see character) stands in a sunny green park, looks into the
+SHOT 1 (4 s): Aslı (see character) stands in a sunny green park, looks into the
 camera, smiles warmly and gives a small friendly wave. Camera: static, close-up
 from chest up, eye level. Lighting: soft warm morning sun. Style: photorealistic,
 authentic vlog look. Motion: natural, relaxed. Aspect ratio 9:16. No text.
 ```
 
 ```
-SHOT 2 (4 s): Mira (see character) kneels in a bright minimalist living room with
+SHOT 2 (4 s): Aslı (see character) kneels in a bright minimalist living room with
 plants and unrolls a grey-taupe yoga mat on a light wooden floor. Camera: static,
 wide shot from slightly above. Lighting: soft morning window light. Style:
 photorealistic lifestyle video. Motion: smooth and calm. Aspect ratio 9:16. No text.
 ```
 
 ```
-SHOT 3 (4 s): Mira (see character) sits cross-legged on her yoga mat in the bright
+SHOT 3 (4 s): Aslı (see character) sits cross-legged on her yoga mat in the bright
 living room and slowly reaches one arm over her head into a gentle side stretch,
 eyes softly closed. Camera: static, full-body, eye level. Lighting: soft window
 light. Style: photorealistic. Motion: slow, smooth stretch. Aspect ratio 9:16. No text.
 ```
 
 ```
-SHOT 4 (4 s): Mira (see character) sits on her yoga mat, drinks water from a glass
+SHOT 4 (4 s): Aslı (see character) sits on her yoga mat, drinks water from a glass
 bottle, then laughs naturally. Camera: static, medium shot. Lighting: warm morning
 light. Style: candid, photorealistic. Motion: natural. Aspect ratio 9:16. No text.
 ```
 
 ```
-SHOT 5 (3 s): Mira (see character) in the living room looks into the camera and
+SHOT 5 (3 s): Aslı (see character) in the living room looks into the camera and
 gives a small confident nod with a warm smile. Camera: slow push-in, close-up.
 Lighting: soft window light. Style: photorealistic. Aspect ratio 9:16. No text.
 ```
@@ -80,13 +80,13 @@ Her gün birkaç dakika, mükemmel değil sürdürülebilir.
 Takip et → her gün 1 küçük adım.
 
 🤖 AI ile üretilmiş dijital karakter
-#mira #evdehareket #esneme #sağlıklıyaşam #yogabaşlangıç #shorts
+#bedenineyolculuk #evdehareket #esneme #sağlıklıyaşam #yogabaşlangıç #shorts
 ```
 
 Uzun:
 ```
 Ben gerçek değilim 👀
-Yapay zekâyla üretilmiş dijital bir karakterim, adım Mira.
+Yapay zekâyla üretilmiş dijital bir karakterim, adım Aslı.
 
 Ama burada paylaşacağım hareketler gerçek:
 🌿 Evde ya da parkta birkaç dakikalık rutinler
@@ -96,7 +96,7 @@ Ama burada paylaşacağım hareketler gerçek:
 Sence ilk hangi rutini paylaşayım? Yorumlara yaz 👇
 
 🤖 AI ile üretilmiş dijital karakter
-#mira #evdehareket #esneme #sağlıklıyaşam #yogabaşlangıç #masabaşı #shorts
+#bedenineyolculuk #evdehareket #esneme #sağlıklıyaşam #yogabaşlangıç #masabaşı #shorts
 ```
 
 ---
@@ -123,7 +123,7 @@ Alternatif hook'lar:
 ### Video promptları
 
 ```
-SHOT 1 (5 s): Mira (see character), wearing an oversized cream cardigan over her
+SHOT 1 (5 s): Aslı (see character), wearing an oversized cream cardigan over her
 sage green top, sits at a wooden desk in a bright home office leaning toward her
 laptop, then rubs the back of her neck with a tired expression. Camera: static,
 medium shot, eye level. Lighting: soft daylight from a window. Style:
@@ -131,7 +131,7 @@ photorealistic, relatable office vlog. Motion: natural. Aspect ratio 9:16. No te
 ```
 
 ```
-SHOT 2 (5 s): Mira (see character), in a cream cardigan, sits upright on her desk
+SHOT 2 (5 s): Aslı (see character), in a cream cardigan, sits upright on her desk
 chair, shoulders relaxed, and slowly tilts her head to the right, bringing her ear
 toward her shoulder, eyes closed. Camera: static, front view, chest-up framing.
 Lighting: soft window light. Style: photorealistic fitness tutorial. Motion: slow,
@@ -139,7 +139,7 @@ gentle, controlled; shoulders stay down. Aspect ratio 9:16. No text.
 ```
 
 ```
-SHOT 3 (5 s): Mira (see character), in a cream cardigan, sits upright on her desk
+SHOT 3 (5 s): Aslı (see character), in a cream cardigan, sits upright on her desk
 chair and gently draws her chin straight back, creating a slight double chin,
 then releases. Camera: static, side profile, chest-up framing. Lighting: soft
 window light. Style: photorealistic fitness tutorial. Motion: small, slow,
@@ -147,7 +147,7 @@ controlled; head stays level, no tilting. Aspect ratio 9:16. No text.
 ```
 
 ```
-SHOT 4 (5 s): Mira (see character), in a cream cardigan, sits on her desk chair and
+SHOT 4 (5 s): Aslı (see character), in a cream cardigan, sits on her desk chair and
 rolls both shoulders backward in big slow circles. Camera: static, slight
 three-quarter angle, waist-up framing. Lighting: soft window light. Style:
 photorealistic fitness tutorial. Motion: slow, smooth, symmetrical. Aspect ratio
@@ -155,7 +155,7 @@ photorealistic fitness tutorial. Motion: slow, smooth, symmetrical. Aspect ratio
 ```
 
 ```
-SHOT 5 (3 s): Mira (see character), in a cream cardigan, sits relaxed at her desk,
+SHOT 5 (3 s): Aslı (see character), in a cream cardigan, sits relaxed at her desk,
 exhales and smiles at the camera. Camera: slow push-in, close-up. Lighting: soft
 window light. Style: photorealistic. Aspect ratio 9:16. No text.
 ```
@@ -222,7 +222,7 @@ Alternatif hook'lar:
 ### Video promptları
 
 ```
-SHOT 1 (4 s): Mira (see character) sits on a beige sofa in a bright minimalist
+SHOT 1 (4 s): Aslı (see character) sits on a beige sofa in a bright minimalist
 living room, raises one eyebrow at the camera with a playful skeptical smile, then
 stands up. Camera: static, medium shot, eye level. Lighting: warm evening lamp
 light mixed with soft daylight. Style: photorealistic, relatable vlog. Motion:
@@ -230,14 +230,14 @@ natural. Aspect ratio 9:16. No text.
 ```
 
 ```
-SHOT 2 (4 s): Mira (see character) marches briskly in place on her yoga mat in the
+SHOT 2 (4 s): Aslı (see character) marches briskly in place on her yoga mat in the
 bright living room, swinging her arms naturally, smiling. Camera: static,
 full-body, eye level. Lighting: soft warm light. Style: photorealistic fitness
 video. Motion: steady rhythmic pace. Aspect ratio 9:16. No text.
 ```
 
 ```
-SHOT 3 (5 s): Mira (see character) performs a slow bodyweight squat on her yoga mat,
+SHOT 3 (5 s): Aslı (see character) performs a slow bodyweight squat on her yoga mat,
 feet shoulder-width apart, knees tracking over toes, hips pushing back as if
 sitting on a chair, chest up, arms extended forward, then stands up. Camera:
 static, three-quarter side view, full-body. Lighting: soft warm light. Style:
@@ -246,7 +246,7 @@ ratio 9:16. No text.
 ```
 
 ```
-SHOT 4 (5 s): Mira (see character) does a wall push-up against a plain white wall
+SHOT 4 (5 s): Aslı (see character) does a wall push-up against a plain white wall
 in her living room, hands at shoulder height, body in a straight line from head to
 heels, slowly bending elbows and pushing back. Camera: static, side view,
 full-body. Lighting: soft warm light. Style: photorealistic fitness tutorial with
@@ -254,7 +254,7 @@ correct form. Motion: slow, controlled. Aspect ratio 9:16. No text.
 ```
 
 ```
-SHOT 5 (5 s): Mira (see character) lies on her back on the yoga mat, knees bent,
+SHOT 5 (5 s): Aslı (see character) lies on her back on the yoga mat, knees bent,
 feet flat, and lifts her hips into a glute bridge, holding briefly at the top,
 then lowers slowly. Camera: static, side view at mat level, full-body. Lighting:
 soft warm light. Style: photorealistic fitness tutorial with correct form. Motion:
@@ -262,7 +262,7 @@ slow, controlled. Aspect ratio 9:16. No text.
 ```
 
 ```
-SHOT 6 (5 s): Mira (see character) rests in child's pose on her yoga mat, arms
+SHOT 6 (5 s): Aslı (see character) rests in child's pose on her yoga mat, arms
 extended forward, forehead down, breathing slowly and deeply, back gently rising
 and falling. Camera: slow push-in, side view at mat level. Lighting: soft warm
 light. Style: photorealistic, calm. Motion: very slow breathing. Aspect ratio 9:16.

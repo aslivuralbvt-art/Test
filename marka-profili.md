@@ -1,7 +1,7 @@
-# Marka Profili: Mira
+# Marka Profili: Aslı
 
 ## Hesap
-- **YouTube kanalı:** Bedenine Yolculuk (sunucu: Mira)
+- **YouTube kanalı:** Bedenine Yolculuk (sunucu: Aslı)
 - **Tür:** AI ile üretilmiş dijital karakter (kurgusal)
 - **Niş:** Vakti az olanlar için kısa hareket, esneme ve sağlıklı küçük alışkanlıklar
 - **Motto:** Mükemmel değil, sürdürülebilir.
@@ -14,7 +14,7 @@
 ## Karakter kartı (her promptta aynen kullan)
 
 ```
-CHARACTER: Mira, 35-year-old woman, soft oval face, light eyes, platinum ash-blonde
+CHARACTER: Aslı, 35-year-old woman, soft oval face, light eyes, platinum ash-blonde
 shoulder-length hair tied in a loose low bun with a few loose strands, fair skin,
 thin round metal-frame glasses, warm friendly smile, slim athletic build,
 signature outfit: sage green sports crop top, high-waisted charcoal black leggings,
@@ -23,7 +23,7 @@ vibe: positive, grounded, encouraging
 ```
 
 Referans görsel: Mevcut iki parktaki yoga videosundan alınan net bir yüz karesi
-(video karakteri = resmî Mira).
+(video karakteri = resmî Aslı).
 
 ## Görsel dünya
 - **Mekânlar:** Sabah ışığında yeşil park, sade ve aydınlık bir oturma odası, bitkiler
@@ -43,7 +43,7 @@ Referans görsel: Mevcut iki parktaki yoga videosundan alınan net bir yüz kare
 ```
 Vakti olmayanlar için günde birkaç dakikalık hareket, esneme ve küçük sağlıklı alışkanlıklar. 🌿
 
-Ben Mira. Bedenine Yolculuk'ta seni kusursuz bir spor programına değil, her gün atabileceğin küçük adımlara davet ediyorum. Mottomuz: Mükemmel değil, sürdürülebilir.
+Ben Aslı. Bedenine Yolculuk'ta seni kusursuz bir spor programına değil, her gün atabileceğin küçük adımlara davet ediyorum. Mottomuz: Mükemmel değil, sürdürülebilir.
 
 Bu kanalda neler var?
 ☀️ Sabah uyanış ve esneme rutinleri
@@ -56,7 +56,7 @@ Bu kanalda neler var?
 
 Kendi temponda ilerle. Bir sağlık sorunun ya da devam eden bir ağrın varsa egzersize başlamadan önce doktoruna veya fizyoterapistine danış.
 
-🤖 Mira, yapay zekâ ile üretilmiş dijital bir karakterdir. Videolardaki hareketler ve bilgiler gerçektir; karakter kurgusaldır.
+🤖 Aslı, yapay zekâ ile üretilmiş dijital bir karakterdir. Videolardaki hareketler ve bilgiler gerçektir; karakter kurgusaldır.
 
 Yolculuğa katılmak için abone ol, hangi bölge için rutin istediğini yorumlara yaz. 💚
 ```
