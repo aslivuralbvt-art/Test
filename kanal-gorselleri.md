@@ -21,7 +21,7 @@ Yazıları AI'a yazdırmayın. Türkçe karakterler (ı, ğ, ş) bozuk çıkabil
 
 Ortak giriş (her promptun başına):
 ```
-This is Aslı, my fictional character. Keep her face, glasses, hair and features
+This is me, Aslı. This reference photo is my real face. Keep my face, glasses, hair and features
 exactly the same as in this reference image.
 ```
 
@@ -54,7 +54,7 @@ gözlükler parlamamalı.
 
 Varyasyon A: Parkta sabah (videolarla aynı dünya, önerilen)
 ```
-This is Aslı, my fictional character. Keep her face, glasses, hair and features
+This is me, Aslı. This reference photo is my real face. Keep my face, glasses, hair and features
 exactly the same as in this reference image.
 
 Create a very wide landscape banner image. A sunny green park in the early
@@ -71,7 +71,7 @@ peaceful, airy. Widest landscape format possible. No text, no logo, no watermark
 
 Varyasyon B: Aydınlık salon (minimal)
 ```
-This is Aslı, my fictional character. Keep her face, glasses, hair and features
+This is me, Aslı. This reference photo is my real face. Keep my face, glasses, hair and features
 exactly the same as in this reference image.
 
 Create a very wide landscape banner image. A bright minimalist living room with

@@ -1,37 +1,43 @@
 # Aslı: 3–5. gün senaryoları
 
 Karakter kartı: `marka-profili.md`. Her video promptunun başına kartı ekleyin ve
-`asli-referans` görselini video aracına yükleyin.
+`asli-referans` görselini (Aslı'nın kendi fotoğrafı) video aracına yükleyin.
+
+Kanalın yüzü gerçek Aslı; videolardaki görüntüler onun yapay zekâ ile üretilmiş
+hâli. Seslendirmeyi mümkünse Aslı kendi sesiyle yapsın: en güçlü güven sinyali bu.
 
 Genel üretim notları:
 - Her çekim 4–5 sn, tek eylem ve tek kamera hareketi içeriyor. Çekimleri ayrı ayrı
   üretip CapCut'ta birleştirin.
-- Aslı konuşmuyor, sesli anlatım (voiceover) kullanılıyor. Dudak senkronu gerekmiyor.
-  Seslendirmeyi CapCut'ın Türkçe yazıdan sese özelliğiyle ya da kendi sesinizle yapın.
+- AI Aslı konuşmuyor, sesli anlatım (voiceover) kullanılıyor. Dudak senkronu gerekmiyor.
+  Seslendirmeyi kendi sesinizle yapın (yedek seçenek: CapCut'ın Türkçe yazıdan sese özelliği).
 - AI videolarda hareket bazen yanlış çıkıyor (diz içe kapanıyor, kol bükülüyor gibi).
   Öğretici içerikte yanlış form güveni bozar: hatalı çekimi yeniden üretin.
-- Her açıklamanın sonuna "🤖 AI ile üretilmiş dijital karakter" notunu ekleyin ve
-  platformun AI etiketini açın.
+- Her açıklamanın sonuna "🤖 Videodaki görüntüler yapay zekâ ile üretildi" notunu ekleyin
+  ve platformun AI etiketini açın (YouTube'da yüklerken "Değiştirilmiş veya sentetik
+  içerik" sorusuna "Evet" deyin).
 
 ---
 
-## 3. gün (Çar 18 Kasım, 19:30): Tanışma, "Ben Aslı"
+## 3. gün (Çar 18 Kasım, 19:30): Tanışma, "Bu ben… bu da AI ben"
 
 Süre: yaklaşık 20 sn · Sütun: İlişki · Müzik: sıcak, akustik gitar, hafif pozitif
+Gereken: Aslı'nın gerçek fotoğrafı (yeşil arka planlı profil fotoğrafı) + 4 AI çekimi.
+Seslendirme: Aslı'nın kendi sesi.
 
 | Saniye | Görüntü | Seslendirme | Ekran yazısı |
 |---|---|---|---|
-| 0–2 | Ç1: Kameraya yakın plan, gülümseyip el sallıyor | "Ben gerçek değilim." | **Ben gerçek değilim 👀** |
-| 2–6 | Ç1 devam | "Yapay zekâyla üretilmiş dijital bir karakterim. Adım Aslı." | Merhaba, ben Aslı 🌿 |
-| 6–10 | Ç2: Salonda yoga matını açıyor | "Ama burada göstereceğim hareketler tamamen gerçek." | Hareketler gerçek ✅ |
-| 10–14 | Ç3: Matta oturarak yana esneme | "Vakti olmayanlar için günde birkaç dakika: esneme, hareket, küçük alışkanlıklar." | Günde birkaç dakika |
+| 0–3 | Gerçek fotoğraf, CapCut'ta yavaş yakınlaşma (zoom) | "Bu benim. Gerçek Aslı." | **Bu benim 👋 (gerçek)** |
+| 3–6 | Ç1: AI Aslı parkta el sallıyor | "Bu da yapay zekâyla ürettiğim dijital hâlim." | **Bu da AI hâlim 🤖** |
+| 6–10 | Ç2: Salonda yoga matını açıyor | "Neden mi? Her gün çekim yapacak vaktim yok. Tıpkı senin spora vaktin olmadığı gibi." | Vaktim yok… senin gibi 😅 |
+| 10–14 | Ç3: Matta oturup yana esniyor | "Ama hareketler gerçek. Hepsini ben seçiyorum, sen de evde benimle yap." | Hareketler gerçek ✅ |
 | 14–17 | Ç4: Cam şişeden su içip gülüyor | "Mükemmel değil, sürdürülebilir." | Mükemmel değil, sürdürülebilir |
 | 17–20 | Ç5: Kameraya bakıp başını sallıyor | "Her gün bir küçük adım için takip et." | **Takip et → her gün 1 küçük adım** |
 
 Alternatif hook'lar:
-1. "Seninle spor yapacak kişi gerçek değil. Ama sonuçlar gerçek olabilir."
-2. "Yapay zekâ seni spora başlatabilir mi? Deneyelim."
-3. "Spor hocan bir yapay zekâ olsaydı?"
+1. "Bu ben değilim. Ama aslında benim."
+2. "Spor videosu çekecek vaktim yok. O yüzden yapay zekâ çekiyor."
+3. "Gerçek ben mi, yapay zekâ ben mi? Farkı bulabilir misin?"
 
 ### Video promptları
 
@@ -75,18 +81,19 @@ yerine `in a bright minimalist living room with plants` yazın.
 
 Kısa:
 ```
-Ben gerçek değilim ama hareketler gerçek 🌿
-Her gün birkaç dakika, mükemmel değil sürdürülebilir.
+Bu benim, bu da yapay zekâ ile ürettiğim dijital hâlim 👋🤖
+Hareketler gerçek: her gün birkaç dakika, mükemmel değil sürdürülebilir.
 Takip et → her gün 1 küçük adım.
 
-🤖 AI ile üretilmiş dijital karakter
+🤖 Videodaki görüntüler yapay zekâ ile üretildi
 #bedenineyolculuk #evdehareket #esneme #sağlıklıyaşam #yogabaşlangıç #shorts
 ```
 
 Uzun:
 ```
-Ben gerçek değilim 👀
-Yapay zekâyla üretilmiş dijital bir karakterim, adım Aslı.
+Merhaba, ben Aslı 👋
+Her gün çekim yapacak vaktim yok, o yüzden videolarda yapay zekâ ile ürettiğim
+dijital hâlimi kullanıyorum.
 
 Ama burada paylaşacağım hareketler gerçek:
 🌿 Evde ya da parkta birkaç dakikalık rutinler
@@ -95,7 +102,7 @@ Ama burada paylaşacağım hareketler gerçek:
 
 Sence ilk hangi rutini paylaşayım? Yorumlara yaz 👇
 
-🤖 AI ile üretilmiş dijital karakter
+🤖 Videodaki görüntüler yapay zekâ ile üretildi
 #bedenineyolculuk #evdehareket #esneme #sağlıklıyaşam #yogabaşlangıç #masabaşı #shorts
 ```
 
@@ -175,7 +182,7 @@ Sandalyeden kalkmadan 3 boyun hareketi 🪑
 Yavaş yap, ağrı olursa dur. Kaydet, öğle arası yap 🔖
 Ağrın devam ediyorsa bir uzmana danış.
 
-🤖 AI ile üretilmiş dijital karakter
+🤖 Videodaki görüntüler yapay zekâ ile üretildi
 #boyunağrısı #masabaşı #ofisegzersizi #esneme #duruş #evdehareket #shorts
 ```
 
@@ -192,7 +199,7 @@ Ağrın devam ediyorsa bir fizyoterapiste ya da doktora danış.
 
 Masa başında çalışan arkadaşına gönder 📩
 
-🤖 AI ile üretilmiş dijital karakter
+🤖 Videodaki görüntüler yapay zekâ ile üretildi
 #boyunağrısı #masabaşı #ofisegzersizi #esneme #duruş #evdehareket #shorts
 ```
 
@@ -287,7 +294,7 @@ Her hareket 1 dakika, ekipman yok:
 
 Yaptıysan yorumlara "5dk" yaz 💪
 
-🤖 AI ile üretilmiş dijital karakter
+🤖 Videodaki görüntüler yapay zekâ ile üretildi
 #5dakika #evdeegzersiz #ekipmansız #yenibaşlayanlar #evdehareket #sağlıklıyaşam #shorts
 ```
 
@@ -306,6 +313,6 @@ Her hareketi 1 dakika yap:
 Kendi temponda yap. Bir sağlık sorunun varsa başlamadan önce doktoruna danış.
 Yaptıysan yorumlara "5dk" yaz 💪
 
-🤖 AI ile üretilmiş dijital karakter
+🤖 Videodaki görüntüler yapay zekâ ile üretildi
 #5dakika #evdeegzersiz #ekipmansız #yenibaşlayanlar #evdehareket #sağlıklıyaşam #shorts
 ```

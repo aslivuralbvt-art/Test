@@ -2,7 +2,8 @@
 
 ## Hesap
 - **YouTube kanalı:** Bedenine Yolculuk (sunucu: Aslı)
-- **Tür:** AI ile üretilmiş dijital karakter (kurgusal)
+- **Tür:** Gerçek kişi (Aslı, kanalın yüzü) + videolarda yapay zekâ ile üretilmiş dijital hâli
+- **Profil fotoğrafı:** Aslı'nın gerçek fotoğrafı (arka planı flu yeşillik)
 - **Niş:** Vakti az olanlar için kısa hareket, esneme ve sağlıklı küçük alışkanlıklar
 - **Motto:** Mükemmel değil, sürdürülebilir.
 - **Hedef kitle:** 22–40 yaş, masa başı çalışan, spora başlamak isteyen ama vakti olmayanlar
@@ -14,16 +15,18 @@
 ## Karakter kartı (her promptta aynen kullan)
 
 ```
-CHARACTER: Aslı, 35-year-old woman, soft oval face, light eyes, platinum ash-blonde
-shoulder-length hair tied in a loose low bun with a few loose strands, fair skin,
-thin round metal-frame glasses, warm friendly smile, slim athletic build,
+CHARACTER: Aslı, woman in her 30s, soft oval face, grey-green eyes, platinum
+ash-blonde hair swept to one side and tied in a loose low bun with a few loose
+strands, fair skin, thin round dark metal-frame glasses, berry-red lipstick,
+small earrings, warm friendly closed-mouth smile, slim athletic build,
 signature outfit: sage green sports crop top, high-waisted charcoal black leggings,
 black smartwatch, barefoot on a grey-taupe yoga mat,
 vibe: positive, grounded, encouraging
 ```
 
-Referans görsel: Mevcut iki parktaki yoga videosundan alınan net bir yüz karesi
-(video karakteri = resmî Aslı).
+Referans görsel: Aslı'nın kendi fotoğrafı (`asli-referans`). AI videolarda yüz
+gerçek Aslı'ya benzesin diye her üretimde bu fotoğraf yüklenir.
+Mevcut iki park videosu da kullanılır.
 
 ## Görsel dünya
 - **Mekânlar:** Sabah ışığında yeşil park, sade ve aydınlık bir oturma odası, bitkiler
@@ -32,13 +35,15 @@ Referans görsel: Mevcut iki parktaki yoga videosundan alınan net bir yüz kare
 - **Format:** 9:16 dikey, en az 1080×1920
 
 ## Kurallar
-- Her paylaşımda "🤖 AI ile üretilmiş dijital karakter" notu + platform AI etiketi
+- Her paylaşımda "🤖 Videodaki görüntüler yapay zekâ ile üretildi" notu + platform AI etiketi
+  (YouTube: "Değiştirilmiş veya sentetik içerik" → Evet)
+- Gerçek fotoğraf ya da gerçek video kullanıldığında bunu AI içerikten ayırarak belirt
 - Sağlık konusunda kesin vaat yok ("ağrını bitirir" değil, "rahatlatmaya yardımcı olabilir")
 - Ağrı ve sakatlık içeriklerinde: "Ağrın devam ediyorsa bir uzmana danış."
 - Sahte yorum, sahte öğrenci hikâyesi ya da uydurma rakam kullanma
 - Her video gerçek bir şey öğretmeli: hareketin adı, tekrar sayısı, kime uygun olduğu
 
-## YouTube kanal açıklaması (uzun versiyon, 912 karakter)
+## YouTube kanal açıklaması (uzun versiyon)
 
 ```
 Vakti olmayanlar için günde birkaç dakikalık hareket, esneme ve küçük sağlıklı alışkanlıklar. 🌿
@@ -56,7 +61,7 @@ Bu kanalda neler var?
 
 Kendi temponda ilerle. Bir sağlık sorunun ya da devam eden bir ağrın varsa egzersize başlamadan önce doktoruna veya fizyoterapistine danış.
 
-🤖 Aslı, yapay zekâ ile üretilmiş dijital bir karakterdir. Videolardaki hareketler ve bilgiler gerçektir; karakter kurgusaldır.
+🤖 Ben gerçek Aslı'yım; vaktim az olduğu için videolardaki görüntülerimi yapay zekâ ile üretiyorum. Hareketleri ve anlatımı ben seçiyorum.
 
 Yolculuğa katılmak için abone ol, hangi bölge için rutin istediğini yorumlara yaz. 💚
 ```
