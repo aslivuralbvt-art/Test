@@ -21,12 +21,23 @@ Marka kuralları: `marka-profili.md`. Örnek tarif: `videolar/tarifler/asli-havu
      konuşuyor mu?
    - Sesi kontrol et: `ffmpeg -i <video> -lavfi showspectrumpic=s=1200x400:fscale=log:stop=8000 spec.png`.
      Konuşma, spektrogramda yatay harmonik çizgiler olarak görünür.
+   - Konuşma varsa yazıya çevir ki ekran yazıları söylenenle eşleşsin. Gerekirse önce
+     `pip install faster-whisper` ile kur. Sesi
+     `ffmpeg -i <video> -ar 16000 -ac 1 speech.wav` ile çıkar, numpy dizisi olarak ver
+     (dosya yolu verilirse `av` sürüm hatası çıkıyor):
+     `WhisperModel('small', device='cpu', compute_type='int8').transcribe(dizi, word_timestamps=True)`.
+     Kelime zamanlarını kart zamanlaması için kullan, metni tarifte `konusma` alanına yaz.
 
 3. **Tarifi doldur** (`videolar/tarifler/<ad>.json`):
    - `muzik`:
      - `tohum`: her videoda farklı bir sayı ver (0–3 akor dizisini, arpej desenini değiştirir).
      - `konusma_var`: konuşma varsa `true`. Ses yoksa araç bunu kendisi algılar.
      - `seviye_db`: -4 (konuşmanın yaklaşık 11 dB altı).
+     - `yok`: Kullanıcı müzik istemezse `true`. Bu durumda sadece orijinal ses temizlenir
+       ve -14 LUFS'a getirilir, müzik dosyası üretilmez.
+   - `yazi_y`: Kartların dikey konumu (varsayılan 230). Yüz üstteyse 1050–1180 arası kullan.
+     Tek tek kartlar için `y` alanı verilebilir; liste gibi alt alta açılan kartlarda
+     yaklaşık 128 px aralık bırak. `"no": ""` verilirse kart numarasız olur (bilgi kartı).
    - `hook`: En fazla 5 kelime, ilk 1.5–2 sn. İsteğe bağlı kısa bir `alt` satırı.
    - `adimlar`: Her poz için bir kart.
      - `baslik`: Poz adı, en fazla 3–4 kelime.

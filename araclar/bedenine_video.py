@@ -220,12 +220,12 @@ def build_overlays(spec, tmp, dur):
     if h:
         p = os.path.join(tmp, "hook.png")
         lines = [(h["metin"], title, WHITE)] + ([(h["alt"], sub, CREAM)] if h.get("alt") else [])
-        card_png(p, lines, y, center=True)
+        card_png(p, lines, h.get("y", y), center=True)
         items.append((p, h.get("bas", 0.0), h["bit"]))
     for i, s in enumerate(spec.get("adimlar", [])):
         p = os.path.join(tmp, f"adim{i}.png")
         lines = [(s["baslik"], step_t, WHITE)] + [(a, small, CREAM) for a in s.get("altlar", [])]
-        card_png(p, lines, y, badge=str(s.get("no", i + 1)))
+        card_png(p, lines, s.get("y", y), badge=str(s.get("no", i + 1)))
         items.append((p, s["bas"], s.get("bit", dur + 0.2)))
     c = spec.get("cta")
     if c:
@@ -302,7 +302,13 @@ def make_thumbnails(spec, video, out_prefix, tmp):
 
 
 # ---------------------------------------------------------------- ana akış
-def audio_graph(has_audio, konusma, muzik_db, dur, music_idx):
+def audio_graph(has_audio, konusma, muzik_db, dur, music_idx, muziksiz=False):
+    if muziksiz:
+        end = f"afade=t=out:st={max(dur - 0.28, 0):.2f}:d=0.28,loudnorm=I=-14:TP=-1.5:LRA=9[a]"
+        if not has_audio:
+            return f"anullsrc=r=48000:cl=stereo,atrim=0:{dur:.3f}[a]"
+        return ("[0:a]highpass=f=80,acompressor=threshold=-22dB:ratio=2.5:attack=10:release=150:makeup=2,"
+                f"aformat=sample_rates=48000:channel_layouts=stereo,{end}")
     fo = max(dur - 1.2, 0)
     mus = f"[{music_idx}:a]highpass=f=140,volume={muzik_db}dB,atrim=0:{dur:.3f},afade=t=out:st={fo:.2f}:d=1.2"
     end = f"afade=t=out:st={max(dur - 0.28, 0):.2f}:d=0.28,loudnorm=I=-14:TP=-1.5:LRA=9[a]"
@@ -345,22 +351,28 @@ def main():
     tmp = tempfile.mkdtemp(prefix="bedenine_")
     try:
         m = spec.get("muzik", {})
-        music = os.path.join(tmp, "muzik.wav")
-        make_music(music, dur + 1.0, seed=m.get("tohum", 0), bpm=m.get("bpm", 96))
-        shutil.copy(music, prefix + "-muzik.wav")
-        agraph = audio_graph(has_audio, m.get("konusma_var", has_audio), m.get("seviye_db", -4), dur, 1)
+        muziksiz = bool(m.get("yok"))
+        music_in = []
+        if not muziksiz:
+            music = os.path.join(tmp, "muzik.wav")
+            make_music(music, dur + 1.0, seed=m.get("tohum", 0), bpm=m.get("bpm", 96))
+            shutil.copy(music, prefix + "-muzik.wav")
+            music_in = ["-i", music]
+        agraph = audio_graph(has_audio, m.get("konusma_var", has_audio), m.get("seviye_db", -4), dur, 1,
+                             muziksiz=muziksiz)
+        first_ov = 1 if muziksiz else 2
         enc = ["-c:v", "libx264", "-preset", "slow", "-crf", "17", "-profile:v", "high", "-r", "24",
                "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart"]
 
         plain = prefix + "-1080p.mp4"
-        run(["ffmpeg", "-v", "error", "-y", "-i", src, "-i", music, "-filter_complex",
+        run(["ffmpeg", "-v", "error", "-y", "-i", src, *music_in, "-filter_complex",
              f"[0:v]{ENHANCE},format=yuv420p[v];{agraph}", "-map", "[v]", "-map", "[a]", *enc, plain])
 
         items = build_overlays(spec, tmp, dur)
         inputs, chain, last = [], [], "base"
         for i, (png, st, en) in enumerate(items):
             inputs += ["-loop", "1", "-t", f"{dur + 0.2:.2f}", "-framerate", "24", "-i", png]
-            idx = i + 2
+            idx = i + first_ov
             chain.append(f"[{idx}]format=rgba,fade=t=in:st={st}:d=0.25:alpha=1,"
                          f"fade=t=out:st={max(en - 0.25, st)}:d=0.25:alpha=1[o{i}]")
             chain.append(f"[{last}][o{i}]overlay=enable='between(t,{st},{en})'[x{i}]")
@@ -369,7 +381,7 @@ def main():
         if not items:
             fc = f"[0:v]{ENHANCE},format=yuv420p[v];{agraph}"
         yazili = prefix + "-1080p-yazili.mp4"
-        run(["ffmpeg", "-v", "error", "-y", "-i", src, "-i", music, *inputs, "-filter_complex", fc,
+        run(["ffmpeg", "-v", "error", "-y", "-i", src, *music_in, *inputs, "-filter_complex", fc,
              "-map", "[v]", "-map", "[a]", "-t", f"{dur:.3f}", *enc, yazili])
 
         kb = spec.get("kapak_basa")

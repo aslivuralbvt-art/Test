@@ -1,0 +1,25 @@
+{
+  "ad": "asli-oksitosin",
+  "kaynak": "../kaynak/asli-oksitosin.mp4",
+  "cikti_klasoru": "..",
+  "yazi_y": 1080,
+  "muzik": { "yok": true },
+  "konusma": "Oksitosin bağ, sevgi ve güven demektir. Sana 'güvendeyim' hissini veren harika bir kimyasaldır. Sevdiklerine sarıl, onlarla vakit geçir ve birine içten bir teşekkür et.",
+  "hook": { "metin": "Oksitosin nedir?", "alt": "Bağ, sevgi ve güven demek", "bas": 0.0, "bit": 2.85 },
+  "adimlar": [
+    { "no": "", "baslik": "\"Güvendeyim\" hissi", "altlar": ["Bunu sana oksitosin hissettirir"], "bas": 2.85, "bit": 5.95 },
+    { "no": 1, "baslik": "Sevdiklerine sarıl", "bas": 6.05, "y": 1050 },
+    { "no": 2, "baslik": "Onlarla vakit geçir", "bas": 7.05, "y": 1178 },
+    { "no": 3, "baslik": "İçten teşekkür et", "bas": 8.45, "y": 1306 }
+  ],
+  "kapak": {
+    "kare": 8.0,
+    "etiket": "SEVGİ HORMONU",
+    "buyuk": "OKSİTOSİN",
+    "alt": "Sarıl, vakit geçir, teşekkür et",
+    "yatay_ikinci_kare": 9.6,
+    "yatay_kirpma_1": [0, 150, 1080, 1350],
+    "yatay_kirpma_2": [0, 300, 1080, 1500]
+  },
+  "aciklama": "Oksitosin: bağ, sevgi ve güven 🤍\nSana \"güvendeyim\" hissini veren kimyasal.\n\nBugün dene:\n1. Sevdiklerine sarıl\n2. Onlarla vakit geçir\n3. Birine içten teşekkür et\n\nBugün kime sarılacaksın? Yorumlara yaz 👇\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi\n#bedenineyolculuk #oksitosin #mutlulukhormonları #sevgi #iyihisset #farkındalık #shorts"
+}
