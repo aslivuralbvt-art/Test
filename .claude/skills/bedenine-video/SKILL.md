@@ -55,14 +55,32 @@ Marka kuralları: `marka-profili.md`. Örnek tarif: `videolar/tarifler/asli-havu
    - Kapaklara da bak.
    - Bir sorun varsa tarifi düzelt ve tekrar çalıştır.
 
-6. **Teslim et:**
+6. **Shorts kapak seçenekleri (kullanıcı kapak isterse):**
+   - Üç cesur kapak hazırla, hepsi 1080×1920:
+     - **A:** Soru + yakın plan yüz
+     - **B:** Bölünmüş görüntü (üstte yüz, altta hareket) + sarı şerit
+     - **C:** Kısa komut (ör. "DUR. NEFES AL.")
+   - Yazı stili: büyük beyaz ve sarı (#FFD640) harfler, koyu kontür, terrakota (#D6623C)
+     süre etiketi, üstte küçük "BEDENİNE YOLCULUK" etiketi.
+   - Yazıları yüzün üstüne koyma. Yüz üstteyse yazıları gövde hizasına indir ve altına
+     sayfanın sonuna kadar uzanan yumuşak bir karartma koy (ani biten geçiş çizgi bırakır).
+   - Kapak karesinde gözler açık olmalı; yüz kareleri ızgarasıyla kontrol et.
+   - Akış önizlemesi yap (240 px genişlikte üç kapak yan yana) ve okunurluğu kontrol et.
+   - Dosyaları `<ad>-shorts-kapak-A/B/C.jpg` olarak kaydet.
+   - Kullanıcı seçince tarife şunu ekle ve aracı tekrar çalıştır:
+     `"kapak_basa": {"dosya": "../<ad>-shorts-kapak-X.jpg", "sure": 0.5}`.
+     Bu adım `<ad>-1080p-yazili-kapakli.mp4` dosyasını üretir: kapak ilk 0.5 sn görünür,
+     0.15 sn geçişle videoya bağlanır, ses kesintisiz devam eder.
+
+7. **Teslim et:**
    - Değişiklikleri commit edip push et.
    - Kullanıcıya şu dosyaları SendUserFile ile gönder: `<ad>-1080p-yazili.mp4`, iki kapak,
      ve `<ad>-aciklama.txt` içeriği.
    - YouTube'da "Değiştirilmiş veya sentetik içerik → Evet" seçmesini hatırlat.
 
 ## Çıktılar (`videolar/`)
-- `<ad>-1080p-yazili.mp4`: Yüklenecek ana dosya.
+- `<ad>-1080p-yazili-kapakli.mp4`: Kapak seçildiyse yüklenecek ana dosya.
+- `<ad>-1080p-yazili.mp4`: Kapak seçilmediyse yüklenecek ana dosya.
 - `<ad>-1080p.mp4`: Yazısız sürüm.
 - `<ad>-kapak-dikey-1080x1920.jpg`: Shorts, Reels ve TikTok kapağı.
 - `<ad>-kapak-yatay-1280x720.jpg`: Yatay YouTube kapağı.

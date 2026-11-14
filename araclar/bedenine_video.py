@@ -372,6 +372,19 @@ def main():
         run(["ffmpeg", "-v", "error", "-y", "-i", src, "-i", music, *inputs, "-filter_complex", fc,
              "-map", "[v]", "-map", "[a]", "-t", f"{dur:.3f}", *enc, yazili])
 
+        kb = spec.get("kapak_basa")
+        if kb:  # seçilen kapağı videonun ilk anına yerleştir (ses kesintisiz devam eder)
+            img = kb["dosya"] if os.path.isabs(kb["dosya"]) else os.path.normpath(os.path.join(base, kb["dosya"]))
+            sure = float(kb.get("sure", 0.5))
+            gecis = 0.15
+            run(["ffmpeg", "-v", "error", "-y", "-i", yazili, "-loop", "1", "-t", f"{sure + gecis:.2f}",
+                 "-framerate", "24", "-i", img, "-filter_complex",
+                 f"[1]scale={W}:{H},format=rgba,fade=t=out:st={sure:.2f}:d={gecis}:alpha=1[k];"
+                 f"[0:v][k]overlay=eof_action=pass,format=yuv420p[v]",
+                 "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-preset", "slow", "-crf", "17",
+                 "-profile:v", "high", "-r", "24", "-c:a", "copy", "-movflags", "+faststart",
+                 prefix + "-1080p-yazili-kapakli.mp4"])
+
         if spec.get("kapak"):
             make_thumbnails(spec, plain, prefix, tmp)
         if spec.get("aciklama"):
