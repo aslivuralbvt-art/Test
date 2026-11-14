@@ -65,3 +65,11 @@ Kendi temponda ilerle. Bir sağlık sorunun ya da devam eden bir ağrın varsa e
 
 Yolculuğa katılmak için abone ol, hangi bölge için rutin istediğini yorumlara yaz. 💚
 ```
+
+## Video düzenleme standardı
+Her yeni video aynı tarzda düzenlenir: `araclar/bedenine_video.py` + `.claude/skills/bedenine-video/`.
+- Görüntü: 1080×1920, hafif gürültü azaltma, keskinlik, sıcak ve canlı renk
+- Müzik: Her video için kodla üretilen orijinal, telifsiz, yumuşak müzik (konuşmanın ~11 dB altında, konuşurken kısılır)
+- Ses: -14 LUFS (YouTube standardı)
+- Ekran yazıları: Üstte hook kartı → numaralı poz kartları (adaçayı rozet) → yeşil CTA etiketi
+- Kapak: Dikey 1080×1920 + yatay 1280×720, "BEDENİNE YOLCULUK" etiketi, büyük beyaz başlık

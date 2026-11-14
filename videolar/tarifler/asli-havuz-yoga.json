@@ -1,0 +1,21 @@
+{
+  "ad": "asli-havuz-yoga",
+  "kaynak": "../kaynak/asli-havuz-yoga.mp4",
+  "cikti_klasoru": "..",
+  "muzik": { "tohum": 0, "seviye_db": -4, "konusma_var": true },
+  "hook": { "metin": "Güne 10 saniyeyle başla", "alt": "Benimle birlikte yap", "bas": 0.0, "bit": 1.65 },
+  "adimlar": [
+    { "no": 1, "baslik": "Dört ayak pozisyonu", "altlar": ["Eller omuz, dizler kalça hizasında"], "bas": 1.6, "bit": 3.15 },
+    { "no": 2, "baslik": "Aşağı bakan köpek", "altlar": ["Kalçanı yukarı it, nefesini takip et", "Dizlerin hafif bükük olabilir"], "bas": 3.15, "bit": 7.55 },
+    { "no": 3, "baslik": "Topuklarına otur", "altlar": ["Derin bir nefes al, rahatla"], "bas": 7.55 }
+  ],
+  "cta": { "metin": "Kaydet, yarın sabah dene", "bas": 8.4 },
+  "kapak": {
+    "kare": 0.04,
+    "etiket": "SABAH ESNEMESİ",
+    "buyuk": "10 SANİYE",
+    "alt": "Sırtını aç, güne hafif başla",
+    "yatay_ikinci_kare": 6.6
+  },
+  "aciklama": "Güne 10 saniyelik bir esnemeyle başla 🌿\nDört ayak pozisyonundan aşağı bakan köpek pozuna geç, nefesini takip et.\n\nKaydet, yarın sabah dene 🔖\nAğrın varsa bir uzmana danış.\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi\n#bedenineyolculuk #sabahesnemesi #aşağıbakanköpek #yoga #evdehareket #shorts"
+}

@@ -1,0 +1,81 @@
+---
+name: bedenine-video
+description: Bedenine Yolculuk kanalı için gönderilen bir videoyu kanalın standart tarzında düzenler (1080x1920 görüntü iyileştirme, telifsiz orijinal arka plan müziği, konuşma altında müzik kısma, zamanlı ekran yazıları, dikey ve yatay kapak, açıklama metni). Kullanıcı Aslı / Bedenine Yolculuk için yeni bir video gönderdiğinde, "videoyu düzenle", "aynısını uygula", "kapak yap", "müzik ekle", "ekran yazısı ekle" dediğinde kullan.
+---
+
+# Bedenine Yolculuk video düzenleme
+
+Tüm adımları `araclar/bedenine_video.py` yapar. Senin işin videoyu izleyip doğru **tarifi**
+(JSON) yazmak, aracı çalıştırmak ve sonucu kontrol etmek.
+Marka kuralları: `marka-profili.md`. Örnek tarif: `videolar/tarifler/asli-havuz-yoga.json`.
+
+## Adımlar
+
+1. **Kaynağı kopyala.** Gönderilen videoyu `videolar/kaynak/<ad>.mp4` olarak kopyala.
+   `<ad>`: küçük harf, Türkçe karaktersiz, tireli (ör. `asli-boyun-esneme`).
+
+2. **Videoyu incele.**
+   - Önce kısa bir tarif yaz (sadece `ad`, `kaynak`, `cikti_klasoru`).
+   - `python3 araclar/bedenine_video.py videolar/tarifler/<ad>.json --kareler` çalıştır.
+   - Çıkan zaman damgalı kare çizelgesine bak: pozlar hangi saniyede değişiyor, karakter
+     konuşuyor mu?
+   - Sesi kontrol et: `ffmpeg -i <video> -lavfi showspectrumpic=s=1200x400:fscale=log:stop=8000 spec.png`.
+     Konuşma, spektrogramda yatay harmonik çizgiler olarak görünür.
+
+3. **Tarifi doldur** (`videolar/tarifler/<ad>.json`):
+   - `muzik`:
+     - `tohum`: her videoda farklı bir sayı ver (0–3 akor dizisini, arpej desenini değiştirir).
+     - `konusma_var`: konuşma varsa `true`. Ses yoksa araç bunu kendisi algılar.
+     - `seviye_db`: -4 (konuşmanın yaklaşık 11 dB altı).
+   - `hook`: En fazla 5 kelime, ilk 1.5–2 sn. İsteğe bağlı kısa bir `alt` satırı.
+   - `adimlar`: Her poz için bir kart.
+     - `baslik`: Poz adı, en fazla 3–4 kelime.
+     - `altlar`: 1–2 kısa talimat.
+     - `bas` / `bit`: Saniye. Kartlar arka arkaya gelir. Kartlar 0.25 sn'lik geçişle değişir;
+       pozun gerçekten başladığı ana göre ayarla.
+   - `cta`: Son 1.5–2 sn, ör. "Kaydet, yarın sabah dene". Poz kartının altında y=500'de çıkar.
+   - `kapak`:
+     - `kare`: Yüzün net ve gülümsediği saniye.
+     - `etiket`: Kısa konu, BÜYÜK HARF.
+     - `buyuk`: 1–2 kelime, BÜYÜK HARF, örneğin süre.
+     - `alt`: Fayda cümlesi.
+     - `yatay_ikinci_kare`: Hareketin en net göründüğü saniye.
+   - `aciklama`: Hook satırı, kısa talimat, CTA, sağlık uyarısı (gerekirse), AI notu,
+     en fazla 10 hashtag. AI notu her zaman şu olmalı:
+     `🤖 Videodaki görüntüler yapay zekâ ile üretildi`.
+
+4. **Çalıştır.** `python3 araclar/bedenine_video.py videolar/tarifler/<ad>.json` komutunu
+   çalıştır (10 sn'lik video yaklaşık 1 dk sürer).
+
+5. **Kontrol et:**
+   - Yazılı videodan saniyede 1 kare alıp bak:
+     `ffmpeg -i <ad>-1080p-yazili.mp4 -vf "fps=1,scale=216:-1,tile=10x1" -frames:v 1 kontrol.jpg`.
+   - Yazılar yüzü kapatmamalı ve doğru pozla eşleşmeli.
+   - Yazılar Shorts güvenli alanında kalmalı: üstte y≈230–650. Alt %25'i ve sağ kenarı boş bırak.
+   - Kapaklara da bak.
+   - Bir sorun varsa tarifi düzelt ve tekrar çalıştır.
+
+6. **Teslim et:**
+   - Değişiklikleri commit edip push et.
+   - Kullanıcıya şu dosyaları SendUserFile ile gönder: `<ad>-1080p-yazili.mp4`, iki kapak,
+     ve `<ad>-aciklama.txt` içeriği.
+   - YouTube'da "Değiştirilmiş veya sentetik içerik → Evet" seçmesini hatırlat.
+
+## Çıktılar (`videolar/`)
+- `<ad>-1080p-yazili.mp4`: Yüklenecek ana dosya.
+- `<ad>-1080p.mp4`: Yazısız sürüm.
+- `<ad>-kapak-dikey-1080x1920.jpg`: Shorts, Reels ve TikTok kapağı.
+- `<ad>-kapak-yatay-1280x720.jpg`: Yatay YouTube kapağı.
+- `<ad>-muzik.wav`: Bu videonun orijinal müziği.
+- `<ad>-aciklama.txt`: Açıklama metni.
+
+## Kurallar
+- **Sağlık:** Kesin vaat verme ("ağrını geçirir" yazma). Ağrı, bel ya da boyun konularında
+  "Ağrın varsa bir uzmana danış" ekle.
+- **Müzik:** Hazır parça indirme. Sadece aracın ürettiği müziği kullan. Kullanıcı kendi
+  müziğini isterse YouTube Ses Kütüphanesi'ni öner.
+- **Görüntü kalitesi:** İyileştirme klasik yöntemle yapılıyor (ffmpeg), AI ile büyütme değil.
+  Kullanıcıya böyle anlat; abartma.
+- **Video yönü:** Video yatay ya da kare gelirse araç kırparak 9:16'ya getirir. Önemli bir
+  kısım kesiliyorsa kullanıcıya söyle.
+- **Kontrol:** Müziği dinleyemediğini, sadece seviye ve spektrumla kontrol ettiğini dürüstçe belirt.
