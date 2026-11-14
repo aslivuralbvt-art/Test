@@ -1,0 +1,63 @@
+{
+  "ad": "asli-nefes-meditasyon",
+  "kaynak": "../kaynak/asli-nefes-meditasyon.mp4",
+  "cikti_klasoru": "..",
+  "yazi_y": 1170,
+  "muzik": {
+    "tohum": 1,
+    "bpm": 80,
+    "seviye_db": -4,
+    "konusma_var": true
+  },
+  "hook": {
+    "metin": "Stresliysen bunu dene",
+    "alt": "Rahatça otur, benimle nefes al",
+    "bas": 0.0,
+    "bit": 2.45
+  },
+  "adimlar": [
+    {
+      "no": 1,
+      "baslik": "Elini göğsüne koy",
+      "altlar": [
+        "Burnundan 4 sayarak nefes al",
+        "4 sayarak yavaşça ver"
+      ],
+      "bas": 2.4,
+      "bit": 7.45
+    },
+    {
+      "no": 2,
+      "baslik": "Nefesini fark et",
+      "altlar": [
+        "Gözlerini kapatabilirsin"
+      ],
+      "bas": 7.45
+    }
+  ],
+  "cta": {
+    "metin": "Kaydet, akşam dene",
+    "bas": 8.4,
+    "y": 1040
+  },
+  "kapak": {
+    "kare": 8.5,
+    "etiket": "NEFES MOLASI",
+    "buyuk": "10 SANİYE",
+    "alt": "Dur, nefes al, sakinleş",
+    "yatay_ikinci_kare": 4.25,
+    "yatay_kirpma_1": [
+      0,
+      120,
+      1080,
+      1320
+    ],
+    "yatay_kirpma_2": [
+      0,
+      300,
+      1080,
+      1500
+    ]
+  },
+  "aciklama": "Stresli bir gün mü? 10 saniye dur ve benimle nefes al 🕯️\nRahatça bağdaş kur, elini göğsüne koy. Burnundan 4 sayarak al, 4 sayarak ver.\n\nKaydet, akşam dene 🔖\nNefes alırken baş dönmesi hissedersen normal nefesine dön.\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi\n#bedenineyolculuk #nefesegzersizi #meditasyon #stresyönetimi #rahatla #evdeyoga #shorts"
+}
