@@ -48,7 +48,7 @@ Marka kuralları: `marka-profili.md`. Örnek tarif: `videolar/tarifler/asli-havu
      zamanlarını transkriptten al. Örnek:
      `{"tur": "tik", "bas": 5.2, "sure": 1.3, "x": 800, "y": 1230, "boyut": 340}`.
      - Türler: `tik` (onay), `odul` (kupa + konfeti), `hedef` (tahta + ok), `kalp` (atan kalp),
-       `gunes` (dönen ışınlı güneş), `su` (damla + halka), `ay` (hilal + yıldızlar), `yildiz` (parlayan yıldız).
+       `gunes` (dönen ışınlı güneş), `su` (damla + halka), `ay` (hilal + yıldızlar), `yildiz` (parlayan yıldız), `hediye` (renkli ambalajlı kutu açılır, konfeti).
      - Her efektin kendi telifsiz ses efekti var. `"ses": false` ile kapatılır, `ses_db` ile
        seviyesi ayarlanır (varsayılan -12; tekrar eden efektlerde -16).
      - Efektleri yüzün ve kartların dışına yerleştir. Animasyonlar `araclar/efektler.py`.

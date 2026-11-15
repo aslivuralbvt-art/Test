@@ -180,6 +180,19 @@ def make_sfx(path, tur):
             u = tt[:n - k]
             x[k:] += np.sin(2 * np.pi * 70 * u) * np.exp(-u * 18) * amp
         x += tone(880, 0.8, 5, 0.25, start=0.05, total=0.9)
+    elif tur == "hediye":  # sallanma tıkırtısı + açılma "pop"u + yükselen zil
+        n = int(sr * 1.8)
+        x = np.zeros(n)
+        rnd = np.random.default_rng(4)
+        for st in (0.38, 0.47, 0.56, 0.64):
+            k = int(sr * st)
+            m = int(sr * 0.04)
+            x[k:k + m] += rnd.standard_normal(m) * np.exp(-np.arange(m) / sr * 90) * 0.35
+        k = int(sr * 0.75)
+        u = np.arange(int(sr * 0.12)) / sr
+        x[k:k + len(u)] += np.sin(2 * np.pi * (260 + 900 * u / 0.12) * u) * np.exp(-u * 30) * 0.9
+        x += sum(tone(f, 0.9, 5, 0.6, start=0.8 + i * 0.07, total=1.8)
+                 for i, f in enumerate([1046.5, 1318.5, 1568.0, 2093.0]))
     elif tur == "gunes":
         x = sum(tone(f, 1.0, 4, 0.5, start=i * 0.05, total=1.3) for i, f in enumerate([784, 988, 1175, 1568, 1976]))
     elif tur == "su":

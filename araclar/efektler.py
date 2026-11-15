@@ -11,6 +11,7 @@ Türler:
   su    : su damlası düşer, halka yayılır
   ay    : hilal ve parıldayan yıldızlar (uyku/akşam)
   yildiz: parlayan yıldız ve kıvılcımlar
+  hediye: renkli ambalajlı hediye kutusu zıplar, sallanır, kapağı açılır; ışık ve konfeti fışkırır
 Her efekt: giriş animasyonu + bekleme + çıkış (sure saniye toplam).
 
 Kullanım (bedenine_video.py içinden çağrılır):
@@ -406,8 +407,134 @@ def frame_yildiz(t, total, S):
     return img
 
 
+GIFT_BODY = (226, 72, 96)
+GIFT_STRIPE = (255, 140, 160)
+GIFT_DOT = (255, 214, 64)
+GIFT_TEAL = (64, 178, 170)
+RIBBON = (255, 200, 50)
+RIBBON_D = (214, 150, 20)
+
+
+def _wrapped_rect(w, h, seed=0):
+    """Renkli desenli ambalaj kâğıdı ile kaplı dikdörtgen."""
+    im = Image.new("RGBA", (w, h), GIFT_BODY + (255,))
+    d = ImageDraw.Draw(im)
+    st = max(6, w // 9)
+    for x in range(-h, w + h, st * 3):  # çapraz şeritler
+        d.polygon([(x, 0), (x + st, 0), (x + st - h, h), (x - h, h)], fill=GIFT_STRIPE + (255,))
+    rnd = random.Random(seed)
+    r = max(3, w // 30)
+    for _ in range(max(8, int(h / 9))):
+        x, y = rnd.uniform(0, w), rnd.uniform(0, h)
+        col = GIFT_DOT if rnd.random() < 0.6 else GIFT_TEAL
+        d.ellipse([x - r, y - r, x + r, y + r], fill=col + (255,))
+    m = Image.new("L", (w, h), 0)
+    ImageDraw.Draw(m).rounded_rectangle([0, 0, w - 1, h - 1], radius=max(4, w // 22), fill=255)
+    im.putalpha(m)
+    return im
+
+
+def frame_hediye(t, total, S):
+    img = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    c = S / 2
+    # açılış zamanı
+    t_open = 0.75
+    # ışık hüzmeleri (kapak açılınca)
+    op = ease_out((t - t_open) / 0.35)
+    if op > 0:
+        rays = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+        rd = ImageDraw.Draw(rays)
+        oy = c - S * 0.02
+        Rr = S * 0.55 * op
+        rot = t * 0.7
+        for i in range(10):
+            a0 = -math.pi / 2 + (i - 4.5) * 0.22 + math.sin(rot + i) * 0.03
+            a1 = a0 + 0.1
+            rd.polygon([(c, oy), (c + Rr * math.cos(a0), oy + Rr * math.sin(a0)),
+                        (c + Rr * math.cos(a1), oy + Rr * math.sin(a1))], fill=GOLD_L + (120,))
+        glow = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+        ImageDraw.Draw(glow).ellipse([c - S * 0.22, oy - S * 0.14, c + S * 0.22, oy + S * 0.10], fill=(255, 240, 180, 200))
+        img.alpha_composite(glow.filter(ImageFilter.GaussianBlur(S * 0.05)))
+        img.alpha_composite(rays.filter(ImageFilter.GaussianBlur(2)))
+
+    # kutu: zıplayarak gelir, sallanır
+    sc = ease_out_back(t / 0.35, s=2.0)
+    if sc > 0.02:
+        bw, bh = int(S * 0.46), int(S * 0.34)
+        lw, lh = int(S * 0.52), int(S * 0.11)
+        box = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+        bx, by = int(c - bw / 2), int(c + S * 0.02)
+        body = _wrapped_rect(bw, bh, 1)
+        bd = ImageDraw.Draw(body)
+        rbw = max(6, int(bw * 0.15))
+        bd.rectangle([bw // 2 - rbw // 2, 0, bw // 2 + rbw // 2, bh], fill=RIBBON + (255,))
+        bd.rectangle([bw // 2 + rbw // 2 - 3, 0, bw // 2 + rbw // 2, bh], fill=RIBBON_D + (255,))
+        bd.rectangle([0, 0, bw, int(bh * 0.06)], fill=(0, 0, 0, 45))
+        box.alpha_composite(body, (bx, by))
+        # kapak + fiyonk (açılınca yukarı kalkar ve döner)
+        lift = ease_out((t - t_open) / 0.3)
+        lid = Image.new("RGBA", (lw, lh + int(S * 0.16)), (0, 0, 0, 0))
+        lp = _wrapped_rect(lw, lh, 2)
+        ld = ImageDraw.Draw(lp)
+        ld.rectangle([lw // 2 - rbw // 2, 0, lw // 2 + rbw // 2, lh], fill=RIBBON + (255,))
+        lid.alpha_composite(lp, (0, int(S * 0.16)))
+        fd = ImageDraw.Draw(lid)
+        cx0, cy0 = lw / 2, S * 0.16
+        L = S * 0.13
+        for k in (-1, 1):  # fiyonk halkaları
+            fd.ellipse([cx0 + (k * L * 1.05) - L * 0.62, cy0 - L * 0.95, cx0 + (k * L * 1.05) + L * 0.62, cy0 - L * 0.05],
+                       fill=RIBBON + (255,))
+            fd.ellipse([cx0 + (k * L * 1.05) - L * 0.32, cy0 - L * 0.7, cx0 + (k * L * 1.05) + L * 0.32, cy0 - L * 0.3],
+                       fill=RIBBON_D + (255,))
+            fd.polygon([(cx0, cy0), (cx0 + k * L * 0.6, cy0 + L * 0.9), (cx0 + k * L * 0.25, cy0 + L * 0.9)], fill=RIBBON_D + (255,))
+        fd.ellipse([cx0 - L * 0.3, cy0 - L * 0.55, cx0 + L * 0.3, cy0 - L * 0.05], fill=RIBBON + (255,))
+        if lift > 0:
+            lid = lid.rotate(-22 * lift, resample=Image.BICUBIC, expand=True)
+        lx = int(c - lid.width / 2 + lift * S * 0.14)
+        ly = int(by - lh - S * 0.16 - lift * S * 0.20)
+        box.alpha_composite(lid, (lx, max(0, ly)))
+        # sallanma (açılmadan önce)
+        wob = math.sin((t - 0.35) * 30) * 6 * max(0, 1 - abs(t - 0.55) / 0.2) if 0.35 < t < t_open else 0
+        if wob:
+            box = box.rotate(wob, resample=Image.BICUBIC, center=(c, by + bh))
+        box = _shadow(box, blur=10, off=(4, 8), alpha=110)
+        if sc != 1:
+            tw = max(1, int(S * sc))
+            box = box.resize((tw, tw), Image.LANCZOS)
+            img.alpha_composite(box, (int(c - tw / 2), int(c - tw / 2)))
+        else:
+            img.alpha_composite(box)
+
+    # içinden fışkıran konfeti ve yıldızlar
+    cp = (t - t_open) / 1.0
+    if 0 <= cp <= 1:
+        d = ImageDraw.Draw(img)
+        rnd = random.Random(9)
+        cols = [GOLD, (226, 72, 96), GIFT_TEAL, (120, 170, 255), (255, 255, 255)]
+        oy = c - S * 0.02
+        for i in range(26):
+            ang = -math.pi / 2 + rnd.uniform(-0.9, 0.9)
+            sp = rnd.uniform(0.35, 0.6) * S
+            x = c + math.cos(ang) * sp * ease_out(cp)
+            y = oy + math.sin(ang) * sp * ease_out(cp) + (cp ** 2) * S * 0.30
+            col = rnd.choice(cols)
+            a = int(255 * (1 - cp ** 1.5))
+            if i % 5 == 0:
+                _star(d, x, y, S * 0.03, col + (a,))
+            else:
+                s_ = S * 0.014
+                rot = rnd.uniform(0, math.pi) + cp * 8
+                pts = [(x + s_ * math.cos(rot + k * math.pi / 2) * (1.8 if k % 2 == 0 else 0.8),
+                        y + s_ * math.sin(rot + k * math.pi / 2) * (1.8 if k % 2 == 0 else 0.8)) for k in range(4)]
+                d.polygon(pts, fill=col + (a,))
+    a = _alpha_env(t, total)
+    if a < 1:
+        img.putalpha(img.split()[3].point(lambda v: int(v * a)))
+    return img
+
+
 FRAMES = {"tik": frame_tik, "odul": frame_odul, "hedef": frame_hedef,
-          "kalp": frame_kalp, "gunes": frame_gunes, "su": frame_su, "ay": frame_ay, "yildiz": frame_yildiz}
+          "kalp": frame_kalp, "gunes": frame_gunes, "su": frame_su, "ay": frame_ay, "yildiz": frame_yildiz, "hediye": frame_hediye}
 
 
 def render_effect(tur, klasor, boyut=360, sure=1.6, fps=24):
