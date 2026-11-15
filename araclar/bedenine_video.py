@@ -171,6 +171,25 @@ def make_sfx(path, tur):
     elif tur == "odul":
         x = sum(tone(f, 0.9, 5, 0.8, start=i * 0.08, total=1.3)
                 for i, f in enumerate([1046.5, 1318.5, 1568.0, 2093.0]))
+    elif tur == "kalp":  # küt-küt kalp atışı + yumuşak tını
+        n = int(sr * 0.9)
+        tt = np.arange(n) / sr
+        x = np.zeros(n)
+        for st, amp in ((0.0, 1.0), (0.22, 0.8)):
+            k = int(sr * st)
+            u = tt[:n - k]
+            x[k:] += np.sin(2 * np.pi * 70 * u) * np.exp(-u * 18) * amp
+        x += tone(880, 0.8, 5, 0.25, start=0.05, total=0.9)
+    elif tur == "gunes":
+        x = sum(tone(f, 1.0, 4, 0.5, start=i * 0.05, total=1.3) for i, f in enumerate([784, 988, 1175, 1568, 1976]))
+    elif tur == "su":
+        n = int(sr * 0.4)
+        tt = np.arange(n) / sr
+        x = np.sin(2 * np.pi * (500 + 1400 * tt / 0.4) * tt) * np.exp(-tt * 16)
+    elif tur == "ay":
+        x = tone(659.3, 1.2, 3, 0.8, total=1.4) + tone(987.8, 1.0, 3.5, 0.5, start=0.15, total=1.4)
+    elif tur == "yildiz":
+        x = sum(tone(f, 0.5, 9, 0.5, start=i * 0.04, total=0.8) for i, f in enumerate([2637, 3136, 3520, 4186]))
     else:  # hedef
         n = int(sr * 0.5)
         tt = np.arange(n) / sr

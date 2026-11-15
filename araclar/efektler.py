@@ -6,13 +6,18 @@ Türler:
   tik   : adaçayı yeşili daire büyüyerek gelir, beyaz onay işareti çizilir, kıvılcımlar saçılır
   odul  : altın kupa zıplayarak gelir, arkasında dönen ışık hüzmeleri ve konfeti
   hedef : hedef tahtası belirir, ok saplanır
+  kalp  : kalp atarak belirir, küçük kalpler yükselir
+  gunes : dönen ışınlı güneş
+  su    : su damlası düşer, halka yayılır
+  ay    : hilal ve parıldayan yıldızlar (uyku/akşam)
+  yildiz: parlayan yıldız ve kıvılcımlar
 Her efekt: giriş animasyonu + bekleme + çıkış (sure saniye toplam).
 
 Kullanım (bedenine_video.py içinden çağrılır):
   render_effect(tur, klasor, boyut=360, sure=1.6, fps=24)
 """
 import math, os, random
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 SAGE = (122, 150, 108)
 SAGE_D = (92, 118, 82)
@@ -235,7 +240,174 @@ def frame_hedef(t, total, S):
     return img
 
 
-FRAMES = {"tik": frame_tik, "odul": frame_odul, "hedef": frame_hedef}
+HEART = (226, 84, 92)
+HEART_L = (255, 150, 160)
+SKY = (110, 180, 230)
+NIGHT = (70, 80, 140)
+
+
+def _heart_poly(cx, cy, r, n=80):
+    pts = []
+    for i in range(n):
+        a = 2 * math.pi * i / n
+        x = 16 * math.sin(a) ** 3
+        y = -(13 * math.cos(a) - 5 * math.cos(2 * a) - 2 * math.cos(3 * a) - math.cos(4 * a))
+        pts.append((cx + x * r / 17, cy + y * r / 17))
+    return pts
+
+
+def frame_kalp(t, total, S):
+    img = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    c = S / 2
+    R = S * 0.30
+    sc = ease_out_back(t / 0.30, s=2.0)
+    beat = 1 + 0.07 * max(0, math.sin((t - 0.35) * 2 * math.pi * 1.6)) if t > 0.35 else 1
+    r = R * sc * beat
+    if r > 1:
+        glow = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+        ImageDraw.Draw(glow).polygon(_heart_poly(c, c + S * 0.02, r * 1.25), fill=HEART_L + (120,))
+        img.alpha_composite(glow.filter(ImageFilter.GaussianBlur(S * 0.04)))
+        d = ImageDraw.Draw(img)
+        d.polygon(_heart_poly(c, c + S * 0.02, r), fill=HEART + (255,))
+        d.ellipse([c - r * 0.55, c - r * 0.42, c - r * 0.25, c - r * 0.18], fill=(255, 220, 225, 170))
+    # small hearts floating up
+    fp = (t - 0.3) / 1.2
+    if 0 <= fp <= 1:
+        rnd = random.Random(11)
+        for i in range(5):
+            x = c + rnd.uniform(-S * 0.38, S * 0.38)
+            y = c + S * 0.25 - fp * S * rnd.uniform(0.35, 0.55)
+            rr = S * rnd.uniform(0.035, 0.06)
+            d.polygon(_heart_poly(x, y, rr), fill=HEART_L + (int(230 * (1 - fp)),))
+    img = _shadow(img)
+    a = _alpha_env(t, total)
+    if a < 1:
+        img.putalpha(img.split()[3].point(lambda v: int(v * a)))
+    return img
+
+
+def frame_gunes(t, total, S):
+    img = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    c = S / 2
+    sc = ease_out_back(t / 0.35)
+    R = S * 0.17 * sc
+    if R > 1:
+        glow = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+        ImageDraw.Draw(glow).ellipse([c - R * 2.1, c - R * 2.1, c + R * 2.1, c + R * 2.1], fill=(255, 220, 120, 120))
+        img.alpha_composite(glow.filter(ImageFilter.GaussianBlur(S * 0.06)))
+        d = ImageDraw.Draw(img)
+        rot = t * 0.8
+        for i in range(12):
+            a = rot + 2 * math.pi * i / 12
+            r1, r2 = R * 1.35, R * (1.95 if i % 2 == 0 else 1.7)
+            w = R * 0.22
+            p1 = (c + r1 * math.cos(a - 0.12), c + r1 * math.sin(a - 0.12))
+            p2 = (c + r2 * math.cos(a), c + r2 * math.sin(a))
+            p3 = (c + r1 * math.cos(a + 0.12), c + r1 * math.sin(a + 0.12))
+            d.polygon([p1, p2, p3], fill=GOLD + (255,))
+        d.ellipse([c - R, c - R, c + R, c + R], fill=GOLD_L + (255,))
+        d.ellipse([c - R * 0.82, c - R * 0.82, c + R * 0.82, c + R * 0.82], fill=(255, 205, 80, 255))
+    img = _shadow(img, alpha=70)
+    a = _alpha_env(t, total)
+    if a < 1:
+        img.putalpha(img.split()[3].point(lambda v: int(v * a)))
+    return img
+
+
+def frame_su(t, total, S):
+    img = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    c = S / 2
+    fall = ease_out(t / 0.35)
+    cy = c - S * 0.3 * (1 - fall)
+    r = S * 0.17
+    if t > 0.02:
+        pts = []
+        for i in range(60):
+            a = 2 * math.pi * i / 60
+            x = r * math.sin(a) * (1 - 0.5 * (1 + math.cos(a)) / 2 * 0)
+            y = -r * math.cos(a)
+            if math.cos(a) > 0:
+                k = math.cos(a)
+                x *= (1 - k) ** 0.9
+                y = -r * (0.3 + 1.6 * k)
+            pts.append((c + x, cy + y))
+        d.polygon(pts, fill=SKY + (255,))
+        d.ellipse([c - r * 0.45, cy - r * 0.35, c - r * 0.15, cy + r * 0.1], fill=(255, 255, 255, 170))
+    rp = (t - 0.35) / 0.8
+    if 0 <= rp <= 1:
+        for k in range(2):
+            q = max(0, rp - k * 0.25)
+            rr = S * (0.2 + 0.25 * ease_out(q))
+            d.ellipse([c - rr, cy + r * 0.95 - rr * 0.22, c + rr, cy + r * 0.95 + rr * 0.22],
+                      outline=SKY + (int(220 * (1 - q)),), width=max(2, int(S * 0.012)))
+    img = _shadow(img)
+    a = _alpha_env(t, total)
+    if a < 1:
+        img.putalpha(img.split()[3].point(lambda v: int(v * a)))
+    return img
+
+
+def _star(d, cx, cy, r, col, inner=0.45):
+    pts = []
+    for i in range(10):
+        rr = r if i % 2 == 0 else r * inner
+        a = -math.pi / 2 + i * math.pi / 5
+        pts.append((cx + rr * math.cos(a), cy + rr * math.sin(a)))
+    d.polygon(pts, fill=col)
+
+
+def frame_ay(t, total, S):
+    img = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    c = S / 2
+    sc = ease_out_back(t / 0.35)
+    R = S * 0.25 * sc
+    if R > 1:
+        moon = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+        md = ImageDraw.Draw(moon)
+        md.ellipse([c - R, c - R, c + R, c + R], fill=(255, 236, 170, 255))
+        cut = Image.new("L", (S, S), 0)
+        ImageDraw.Draw(cut).ellipse([c - R * 0.55, c - R * 1.15, c + R * 1.45, c + R * 0.85], fill=255)
+        moon.putalpha(ImageChops.subtract(moon.split()[3], cut))
+        img.alpha_composite(_shadow(moon, alpha=80))
+    d = ImageDraw.Draw(img)
+    for i, (dx, dy, rr, ph) in enumerate([(0.28, -0.22, 0.05, 0.0), (0.33, 0.12, 0.035, 0.7), (0.12, -0.36, 0.03, 1.3)]):
+        tw = 0.6 + 0.4 * math.sin((t - 0.3) * 7 + ph)
+        if t > 0.25 + i * 0.1:
+            _star(d, c + dx * S, c + dy * S, rr * S * tw, (255, 245, 200, 255))
+    a = _alpha_env(t, total)
+    if a < 1:
+        img.putalpha(img.split()[3].point(lambda v: int(v * a)))
+    return img
+
+
+def frame_yildiz(t, total, S):
+    img = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    c = S / 2
+    sc = ease_out_back(t / 0.3, s=2.2)
+    r = S * 0.30 * sc
+    if r > 1:
+        glow = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+        _star(ImageDraw.Draw(glow), c, c, r * 1.25, GOLD_L + (130,))
+        img.alpha_composite(glow.filter(ImageFilter.GaussianBlur(S * 0.04)))
+        d = ImageDraw.Draw(img)
+        _star(d, c, c, r, GOLD + (255,))
+        _star(d, c - r * 0.08, c - r * 0.1, r * 0.45, GOLD_L + (200,))
+    sp = (t - 0.3) / 0.6
+    if 0 <= sp <= 1:
+        _sparkles(d, c, c, S * 0.28, ease_out(sp), 12, 5, GOLD_L, size=S * 0.02)
+    img = _shadow(img)
+    a = _alpha_env(t, total)
+    if a < 1:
+        img.putalpha(img.split()[3].point(lambda v: int(v * a)))
+    return img
+
+
+FRAMES = {"tik": frame_tik, "odul": frame_odul, "hedef": frame_hedef,
+          "kalp": frame_kalp, "gunes": frame_gunes, "su": frame_su, "ay": frame_ay, "yildiz": frame_yildiz}
 
 
 def render_effect(tur, klasor, boyut=360, sure=1.6, fps=24):
