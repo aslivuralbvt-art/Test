@@ -80,7 +80,12 @@ Marka kuralları: `marka-profili.md`. Örnek tarif: `videolar/tarifler/asli-havu
    - Kapaklara da bak.
    - Bir sorun varsa tarifi düzelt ve tekrar çalıştır.
 
-6. **Shorts kapak seçenekleri (kullanıcı kapak isterse):**
+6. **Shorts kapak seçenekleri (her videoda varsayılan olarak yapılır):**
+   - Araç: `python3 araclar/shorts_kapak.py videolar/tarifler/<ad>.json`. Tarife
+     `shorts_kapak` bölümü ekle (kareler, satırlar, etiketler; ayrıntı aracın başında).
+     Örnek: `videolar/tarifler/asli-gogus-acma.json`. Önizleme: `<ad>-shorts-kapak-onizleme.jpg`.
+   - Kullanıcı seçmeden önce C kapağını başa ekleyip `-kapakli` sürümünü de hazırla;
+     kullanıcı başka kapak seçerse `kapak_basa` dosyasını değiştirip aracı tekrar çalıştır.
    - Üç cesur kapak hazırla, hepsi 1080×1920:
      - **A:** Soru + yakın plan yüz
      - **B:** Bölünmüş görüntü (üstte yüz, altta hareket) + sarı şerit
@@ -99,8 +104,8 @@ Marka kuralları: `marka-profili.md`. Örnek tarif: `videolar/tarifler/asli-havu
 
 7. **Teslim et:**
    - Değişiklikleri commit edip push et.
-   - Kullanıcıya şu dosyaları SendUserFile ile gönder: `<ad>-1080p-yazili.mp4`, iki kapak,
-     ve `<ad>-aciklama.txt` içeriği.
+   - Kullanıcıya şu dosyaları SendUserFile ile gönder: `<ad>-1080p-yazili-kapakli.mp4`,
+     A/B/C Shorts kapakları, dikey ve yatay kapak, `<ad>-aciklama.txt`; başlık önerilerini mesajda ver.
    - YouTube'da "Değiştirilmiş veya sentetik içerik → Evet" seçmesini hatırlat.
 
 ## Çıktılar (`videolar/`)

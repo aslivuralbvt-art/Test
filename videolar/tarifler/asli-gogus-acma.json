@@ -1,0 +1,163 @@
+{
+  "ad": "asli-gogus-acma",
+  "kaynak": "../kaynak/asli-gogus-acma.mp4",
+  "cikti_klasoru": "..",
+  "yazi_y": 1100,
+  "muzik": {
+    "tohum": 3,
+    "bpm": 84,
+    "seviye_db": -4,
+    "konusma_var": true
+  },
+  "konusma": "Sabahları evden çıkmadan önce derin bir nefes ve göğüs açma. Ellerinizi sırtınızda kenetleyin ve kürek kemiklerini sıkıştırın. Omurganızı dikleştirip zihninizi açın.",
+  "hook": {
+    "metin": "Evden çıkmadan önce",
+    "alt": "Sabah göğüs açma ritüeli",
+    "bas": 0.0,
+    "bit": 1.85
+  },
+  "adimlar": [
+    {
+      "no": 1,
+      "baslik": "Derin nefes al",
+      "altlar": [
+        "Göğsünü genişçe aç"
+      ],
+      "bas": 1.85,
+      "bit": 4.1
+    },
+    {
+      "no": 2,
+      "baslik": "Elleri sırtta kenetle",
+      "altlar": [
+        "Kürek kemiklerini sıkıştır"
+      ],
+      "bas": 4.1,
+      "bit": 7.85
+    },
+    {
+      "no": 3,
+      "baslik": "Omurganı dikleştir",
+      "altlar": [
+        "Zihnini güne aç"
+      ],
+      "bas": 7.85,
+      "bit": 10.0
+    },
+    {
+      "no": "",
+      "baslik": "Her sabah bir nefes",
+      "altlar": [
+        "Bedenine Yolculuk"
+      ],
+      "bas": 10.0,
+      "y": 1100
+    }
+  ],
+  "uzat": 1.5,
+  "cta": {
+    "metin": "Kaydet, yarın sabah dene",
+    "bas": 10.05,
+    "y": 1340
+  },
+  "efektler": [
+    {
+      "tur": "gunes",
+      "bas": 0.1,
+      "sure": 1.6,
+      "x": 880,
+      "y": 560,
+      "boyut": 280
+    },
+    {
+      "tur": "tik",
+      "bas": 6.95,
+      "sure": 1.2,
+      "x": 880,
+      "y": 560,
+      "boyut": 260,
+      "ses_db": -14
+    },
+    {
+      "tur": "yildiz",
+      "bas": 9.55,
+      "sure": 1.2,
+      "x": 880,
+      "y": 560,
+      "boyut": 260
+    }
+  ],
+  "kapak": {
+    "kare": 9.4,
+    "etiket": "SABAH RİTÜELİ",
+    "buyuk": "GÖĞÜS AÇ",
+    "alt": "Nefes al, kenetle, dikleş",
+    "yatay_ikinci_kare": 5.5,
+    "yatay_kirpma_1": [
+      0,
+      150,
+      1080,
+      1350
+    ],
+    "yatay_kirpma_2": [
+      0,
+      640,
+      1080,
+      1840
+    ]
+  },
+  "aciklama": "Evden çıkmadan önce bunu dene 🌿\nOmuzların öne mi düşüyor? Güne göğsünü açarak başla.\n\n1⃣ Derin bir nefes al, göğsünü genişçe aç\n2⃣ Ellerini sırtında kenetle, kürek kemiklerini sıkıştır\n3⃣ Omurganı dikleştir, zihnini güne aç\n\nBirkaç nefes boyunca kal, acele etme.\n\n📌 Kaydet, yarın sabah dene\n👇 Sabahları ilk ne yapıyorsun? Yorumlara yaz\n\nBen Aslı. Bedenine Yolculuk'ta her gün birkaç saniyelik küçük adımlar.\nAğrın varsa ya da hareket sırasında ağrı hissedersen dur, bir uzmana danış.\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi\n#bedenineyolculuk #sabahrituali #göğüsaçma #duruş #masabaşı #esneme #mobilite #nefesegzersizi #sağlıklıyaşam #shorts",
+  "shorts_kapak": {
+    "yazi_y": 1060,
+    "A": {
+      "kare": 2.4,
+      "satirlar": [
+        [
+          "OMUZLARIN",
+          "b"
+        ],
+        [
+          "ÖNE Mİ",
+          "b"
+        ],
+        [
+          "DÜŞÜYOR?",
+          "s"
+        ]
+      ],
+      "etiket": "3 ADIM · SABAH RİTÜELİ"
+    },
+    "B": {
+      "ust_kare": 8.5,
+      "alt_kare": 5.5,
+      "ust_kirp": 40,
+      "alt_kirp": 620,
+      "serit": "SABAH RİTÜELİ",
+      "satirlar": [
+        [
+          "GÖĞÜS AÇMA",
+          "b"
+        ]
+      ],
+      "etiket": "3 ADIM · EVDEN ÇIKMADAN ÖNCE"
+    },
+    "C": {
+      "kare": 0.05,
+      "satirlar": [
+        [
+          "DUR.",
+          "b"
+        ],
+        [
+          "GÖĞSÜNÜ AÇ.",
+          "s"
+        ]
+      ],
+      "etiket": "EVDEN ÇIKMADAN ÖNCE"
+    }
+  },
+  "kapak_basa": {
+    "dosya": "../asli-gogus-acma-shorts-kapak-C.jpg",
+    "sure": 0.5
+  }
+}
