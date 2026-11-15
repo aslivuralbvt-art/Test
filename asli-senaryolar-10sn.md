@@ -514,3 +514,44 @@ kullanılabilir.
   cümle eklemeyin.
 - Videolar geldiğinde: "Bedenine Yolculuk tarzında düzenle" deyin. Müzik isteyip
   istemediğinizi de söyleyin. Konuşmalı videolarda müziksiz versiyon daha temiz duyulabilir.
+
+---
+
+# EK: Endorfin (yeni sürüm, kullanıcının senaryosu) · Mutluluk Hormonları 3. Aşama
+
+**Konuşma (asıl, 26 kelime):**
+> "Egzersiz yaptığında kendini iyi hissediyor musun? İşte bu, egzersiz sonrası salgılanan mutluluk ve ağrı kesici hormonumuz endorfin. Peki sen en çok hangi egzersizle bedenine yolculuk yapıyorsun?"
+
+**Kısa yedek (20 kelime):**
+> "Egzersizden sonra kendini iyi hissediyor musun? İşte bu, endorfin: doğal mutluluk ve ağrı kesici hormonun. Sen hangi egzersizle bedenine yolculuk yapıyorsun?"
+
+**Prompt:**
+```
+Vertical 9:16 video, 10 seconds, photorealistic, cinematic natural style.
+CHARACTER: Aslı, a woman in her late 30s, soft oval face, grey-green eyes,
+platinum ash-blonde hair swept to one side in a loose low bun with loose strands,
+thin round dark metal-frame glasses, berry-red lipstick, small gold hoop earrings,
+warm friendly smile.
+SETTING: The terrace of a luxurious villa in nature. A light stone deck with an
+infinity pool behind her; beyond the pool's edge the calm blue sea stretches to
+the horizon, framed by olive trees and green hills. Golden morning sunlight.
+She wears a matching sage green athletic set: a sports bra top and high-waisted
+leggings. She sits cross-legged on a grey yoga mat on the deck, as if she has
+just finished a workout: relaxed shoulders, a light healthy glow on her skin,
+calm deep breath, a small towel and a glass water bottle beside the mat.
+She takes one relaxed breath, smiles, looks into the camera and speaks in
+Turkish, clearly and warmly, at a natural pace:
+"Egzersiz yaptığında kendini iyi hissediyor musun? İşte bu, egzersiz sonrası salgılanan mutluluk ve ağrı kesici hormonumuz endorfin. Peki sen en çok hangi egzersizle bedenine yolculuk yapıyorsun?"
+On the final question she tilts her head slightly with a curious, inviting smile.
+Camera: static, eye level, medium shot (head to knees), very slow push-in.
+The pool and sea are clearly visible behind her, softly in focus.
+Lighting: warm golden sunlight, soft sea breeze moving her loose hair strands.
+No subtitles, no on-screen text, no background music, no logo.
+```
+
+**Ekran yazıları ve efektler:** Hook "Egzersizden sonra iyi mi hissediyorsun?" · "mutluluk" → yıldız ·
+"ağrı kesici" → kalp · son soru kartı · kapanış kartı "Yorumlara yaz 👇 · 3. Aşama"
+
+**Kapak:** "EGZERSİZDEN SONRA NEDEN İYİ HİSSEDİYORSUN?" + "3. AŞAMA · ENDORFİN"
+
+**Başlık:** `Egzersizden Sonra Neden İyi Hissediyorsun? 🧘‍♀️ #endorfin #mutlulukhormonları`
