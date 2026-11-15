@@ -1,6 +1,6 @@
 {
-  "ad": "asli-gogus-acma",
-  "kaynak": "../kaynak/asli-gogus-acma.mp4",
+  "ad": "asli-nefes-acma",
+  "kaynak": "../kaynak/asli-nefes-acma.mp4",
   "cikti_klasoru": "..",
   "yazi_y": 1100,
   "muzik": {
@@ -12,7 +12,7 @@
   "konusma": "Sabahları evden çıkmadan önce derin bir nefes ve göğüs açma. Ellerinizi sırtınızda kenetleyin ve kürek kemiklerini sıkıştırın. Omurganızı dikleştirip zihninizi açın.",
   "hook": {
     "metin": "Evden çıkmadan önce",
-    "alt": "Sabah göğüs açma ritüeli",
+    "alt": "10 saniyelik sabah ritüeli",
     "bas": 0.0,
     "bit": 1.85
   },
@@ -21,7 +21,7 @@
       "no": 1,
       "baslik": "Derin nefes al",
       "altlar": [
-        "Göğsünü genişçe aç"
+        "Ciğerlerini yavaşça doldur"
       ],
       "bas": 1.85,
       "bit": 4.1
@@ -88,9 +88,9 @@
     }
   ],
   "kapak": {
-    "kare": 9.4,
-    "etiket": "SABAH RİTÜELİ",
-    "buyuk": "GÖĞÜS AÇ",
+    "kare": 8.5,
+    "etiket": "10 SANİYELİK RİTÜEL",
+    "buyuk": "NEFES AÇ",
     "alt": "Nefes al, kenetle, dikleş",
     "yatay_ikinci_kare": 5.5,
     "yatay_kirpma_1": [
@@ -101,31 +101,27 @@
     ],
     "yatay_kirpma_2": [
       0,
-      640,
+      250,
       1080,
-      1840
+      1465
     ]
   },
-  "aciklama": "Evden çıkmadan önce bunu dene 🌿\nOmuzların öne mi düşüyor? Güne göğsünü açarak başla.\n\n1⃣ Derin bir nefes al, göğsünü genişçe aç\n2⃣ Ellerini sırtında kenetle, kürek kemiklerini sıkıştır\n3⃣ Omurganı dikleştir, zihnini güne aç\n\nBirkaç nefes boyunca kal, acele etme.\n\n📌 Kaydet, yarın sabah dene\n👇 Sabahları ilk ne yapıyorsun? Yorumlara yaz\n\nBen Aslı. Bedenine Yolculuk'ta her gün birkaç saniyelik küçük adımlar.\nAğrın varsa ya da hareket sırasında ağrı hissedersen dur, bir uzmana danış.\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi\n#bedenineyolculuk #sabahrituali #göğüsaçma #duruş #masabaşı #esneme #mobilite #nefesegzersizi #sağlıklıyaşam #shorts",
+  "aciklama": "Evden çıkmadan önce 10 saniye ayır 🌿\nOmuzların öne mi düşüyor? Güne ferah bir nefesle başla.\n\n1⃣ Derin bir nefes al, ciğerlerini yavaşça doldur\n2⃣ Ellerini sırtında kenetle, kürek kemiklerini sıkıştır\n3⃣ Omurganı dikleştir, zihnini güne aç\n\nBirkaç nefes boyunca kal, acele etme.\n\n📌 Kaydet, yarın sabah dene\n👇 Sabahları ilk ne yapıyorsun? Yorumlara yaz\n\nBen Aslı. Bedenine Yolculuk'ta her gün birkaç saniyelik küçük adımlar.\nAğrın varsa ya da hareket sırasında ağrı hissedersen dur, bir uzmana danış.\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi\n#bedenineyolculuk #sabahrituali #nefesegzersizi #duruş #masabaşı #esneme #mobilite #10saniye #sağlıklıyaşam #shorts",
   "shorts_kapak": {
     "yazi_y": 1060,
     "A": {
-      "kare": 2.4,
+      "kare": 8.5,
       "satirlar": [
         [
-          "OMUZLARIN",
+          "10 SANİYEDE",
           "b"
         ],
         [
-          "ÖNE Mİ",
-          "b"
-        ],
-        [
-          "DÜŞÜYOR?",
+          "NEFES AÇ",
           "s"
         ]
       ],
-      "etiket": "3 ADIM · SABAH RİTÜELİ"
+      "etiket": "SABAH RİTÜELİ · 3 ADIM"
     },
     "B": {
       "ust_kare": 8.5,
@@ -135,29 +131,33 @@
       "serit": "SABAH RİTÜELİ",
       "satirlar": [
         [
-          "GÖĞÜS AÇMA",
-          "b"
-        ]
-      ],
-      "etiket": "3 ADIM · EVDEN ÇIKMADAN ÖNCE"
-    },
-    "C": {
-      "kare": 0.05,
-      "satirlar": [
-        [
-          "DUR.",
+          "10 SANİYEDE",
           "b"
         ],
         [
-          "GÖĞSÜNÜ AÇ.",
+          "NEFES AÇ",
           "s"
         ]
       ],
       "etiket": "EVDEN ÇIKMADAN ÖNCE"
+    },
+    "C": {
+      "kare": 8.5,
+      "satirlar": [
+        [
+          "GÜNE",
+          "b"
+        ],
+        [
+          "FERAH BAŞLA",
+          "s"
+        ]
+      ],
+      "etiket": "10 SANİYELİK SABAH RİTÜELİ"
     }
   },
   "kapak_basa": {
-    "dosya": "../asli-gogus-acma-shorts-kapak-C.jpg",
+    "dosya": "../asli-nefes-acma-shorts-kapak-A.jpg",
     "sure": 0.5
   }
 }
