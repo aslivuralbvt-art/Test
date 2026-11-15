@@ -193,6 +193,16 @@ def make_sfx(path, tur):
         x[k:k + len(u)] += np.sin(2 * np.pi * (260 + 900 * u / 0.12) * u) * np.exp(-u * 30) * 0.9
         x += sum(tone(f, 0.9, 5, 0.6, start=0.8 + i * 0.07, total=1.8)
                  for i, f in enumerate([1046.5, 1318.5, 1568.0, 2093.0]))
+    elif tur == "kapanis":  # kapanış kartı için yumuşak tını (müziksiz videolarda sessizliği önler)
+        n = int(sr * 1.7)
+        tt = np.arange(n) / sr
+        pad = sum(np.sin(2 * np.pi * f * tt) for f in (261.63, 329.63, 392.0)) / 3
+        env = np.minimum(1, tt / 0.25) * np.exp(-np.maximum(0, tt - 0.4) * 2.2)
+        x = pad * env * 0.45
+        x += sum(tone(f, 1.2, 3.2, 0.55, start=0.05 + i * 0.16, total=1.7)
+                 for i, f in enumerate([523.25, 659.25, 783.99]))
+        fo = int(sr * 0.5)
+        x[-fo:] *= np.linspace(1, 0, fo)
     elif tur == "gunes":
         x = sum(tone(f, 1.0, 4, 0.5, start=i * 0.05, total=1.3) for i, f in enumerate([784, 988, 1175, 1568, 1976]))
     elif tur == "su":
@@ -477,8 +487,17 @@ def main():
             # ses girişleri tüm efekt görsellerinden sonra gelir
             for k, lab in enumerate(sfx_labels):
                 lab[0] = first_ov + len(items) + len(efx) + k
+        kapanis = spec.get("kapanis_sesi", bool(uzat) and muziksiz)
+        if uzat and kapanis:
+            wav = os.path.join(tmp, "sfx_kapanis.wav")
+            make_sfx(wav, "kapanis")
+            sfx_inputs += ["-i", wav]
+            sfx_labels.append([first_ov + len(items) + len(efx) + len(sfx_labels),
+                               int((dur - uzat) * 1000), -8])
         if sfx_labels:
-            ag = agraph[:-3] + "[a0]"
+            # ses dengelemeyi (loudnorm) yalnızca en sonda bir kez yap: art arda iki loudnorm
+            # gecikme biriktirir ve video bittiğinde son saniyelerin sesi kaybolur
+            ag = agraph[:-3].replace(",loudnorm=I=-14:TP=-1.5:LRA=9", "") + "[a0]"
             mix = "".join(f"[{i}:a]adelay={ms}|{ms},volume={db}dB[s{k}];" for k, (i, ms, db) in enumerate(sfx_labels))
             ins = "[a0]" + "".join(f"[s{k}]" for k in range(len(sfx_labels)))
             agraph = (f"{ag};{mix}{ins}amix=inputs={len(sfx_labels) + 1}:duration=first:normalize=0,"

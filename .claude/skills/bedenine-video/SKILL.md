@@ -54,6 +54,10 @@ Marka kuralları: `marka-profili.md`. Örnek tarif: `videolar/tarifler/asli-havu
      - Efektleri yüzün ve kartların dışına yerleştir. Animasyonlar `araclar/efektler.py`.
    - `uzat` (isteğe bağlı): Sona son kareyi dondurarak N saniye ekler. Kapanış kartı için
      kullan (ör. "Yarın: …" + CTA), kartın `bas` değerini orijinal video süresine eşitle.
+     Müziksiz videolarda kapanış kartına otomatik yumuşak bir tını eklenir (`kapanis_sesi`),
+     böylece video sessiz bitmez.
+   - Kontrol: `ffprobe -show_entries stream=duration` ile ses ve görüntü sürelerinin eşit
+     olduğunu doğrula (ses kesilmesi hatasını yakalar).
    - `cta`: Son 1.5–2 sn, ör. "Kaydet, yarın sabah dene". Poz kartının altında y=500'de çıkar.
    - `kapak`:
      - `kare`: Yüzün net ve gülümsediği saniye.
