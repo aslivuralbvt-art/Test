@@ -44,6 +44,15 @@ Marka kuralları: `marka-profili.md`. Örnek tarif: `videolar/tarifler/asli-havu
      - `altlar`: 1–2 kısa talimat.
      - `bas` / `bit`: Saniye. Kartlar arka arkaya gelir. Kartlar 0.25 sn'lik geçişle değişir;
        pozun gerçekten başladığı ana göre ayarla.
+   - `efektler` (isteğe bağlı): Söylenen kelimeyi görselleştiren animasyonlar. Kelime
+     zamanlarını transkriptten al. Örnek:
+     `{"tur": "tik", "bas": 5.2, "sure": 1.3, "x": 800, "y": 1230, "boyut": 340}`.
+     - Türler: `tik` (onay işareti), `odul` (kupa + konfeti), `hedef` (hedef tahtası + ok).
+     - Her efektin kendi telifsiz ses efekti var. `"ses": false` ile kapatılır, `ses_db` ile
+       seviyesi ayarlanır (varsayılan -12; tekrar eden efektlerde -16).
+     - Efektleri yüzün ve kartların dışına yerleştir. Animasyonlar `araclar/efektler.py`.
+   - `uzat` (isteğe bağlı): Sona son kareyi dondurarak N saniye ekler. Kapanış kartı için
+     kullan (ör. "Yarın: …" + CTA), kartın `bas` değerini orijinal video süresine eşitle.
    - `cta`: Son 1.5–2 sn, ör. "Kaydet, yarın sabah dene". Poz kartının altında y=500'de çıkar.
    - `kapak`:
      - `kare`: Yüzün net ve gülümsediği saniye.

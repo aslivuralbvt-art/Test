@@ -152,6 +152,43 @@ def make_music(path, dur, seed=0, bpm=96):
     os.remove(dry)
 
 
+# ---------------------------------------------------------------- ses efektleri
+def make_sfx(path, tur):
+    """Kısa, telifsiz efekt sesleri: tik (ding), odul (yükselen zil), hedef (tok)."""
+    sr = 48000
+    def tone(f, dur, decay, amp=1.0, start=0.0, total=None):
+        n = int(sr * (total or dur))
+        out = np.zeros(n)
+        s = int(sr * start)
+        tt = np.arange(int(sr * dur)) / sr
+        w = (np.sin(2 * np.pi * f * tt) + 0.35 * np.sin(4 * np.pi * f * tt) * np.exp(-tt * decay * 1.5)) \
+            * np.exp(-tt * decay) * (1 - np.exp(-tt * 600)) * amp
+        e = min(n, s + len(w))
+        out[s:e] += w[:e - s]
+        return out
+    if tur == "tik":
+        x = tone(1318.5, 0.6, 9, 1.0, total=0.7) + tone(1975.5, 0.5, 11, 0.6, start=0.06, total=0.7)
+    elif tur == "odul":
+        x = sum(tone(f, 0.9, 5, 0.8, start=i * 0.08, total=1.3)
+                for i, f in enumerate([1046.5, 1318.5, 1568.0, 2093.0]))
+    else:  # hedef
+        n = int(sr * 0.5)
+        tt = np.arange(n) / sr
+        sweep = np.sin(2 * np.pi * (300 + 900 * np.exp(-tt * 18)) * tt) * np.exp(-tt * 14) * 0.5
+        thud = np.sin(2 * np.pi * 140 * tt) * np.exp(-tt * 22)
+        x = np.zeros(n)
+        k = int(sr * 0.12)
+        x[:n] += sweep
+        x[k:] += thud[:n - k]
+    x = x / (np.max(np.abs(x)) + 1e-9) * 0.9
+    st = np.stack([x, x], axis=1)
+    with wave.open(path, "wb") as w:
+        w.setnchannels(2)
+        w.setsampwidth(2)
+        w.setframerate(sr)
+        w.writeframes((st * 32767).astype("<i2").tobytes())
+
+
 # ---------------------------------------------------------------- ekran yazıları
 def _tsize(d, t, f):
     b = d.textbbox((0, 0), t, font=f)
@@ -338,6 +375,9 @@ def main():
     os.makedirs(out_dir, exist_ok=True)
     prefix = os.path.join(out_dir, spec["ad"])
     dur, has_audio = probe(src)
+    uzat = float(spec.get("uzat", 0))  # sona donmuş kare ile kapanış kartı süresi (sn)
+    dur += uzat
+    VENH = (f"tpad=stop_mode=clone:stop_duration={uzat}," if uzat else "") + ENHANCE
 
     if a.kareler:
         sheet = prefix + "-zaman-cizelgesi.jpg"
@@ -360,13 +400,15 @@ def main():
             music_in = ["-i", music]
         agraph = audio_graph(has_audio, m.get("konusma_var", has_audio), m.get("seviye_db", -4), dur, 1,
                              muziksiz=muziksiz)
+        if uzat and has_audio:
+            agraph = agraph.replace("[0:a]", f"[0:a]apad=pad_dur={uzat},", 1)
         first_ov = 1 if muziksiz else 2
         enc = ["-c:v", "libx264", "-preset", "slow", "-crf", "17", "-profile:v", "high", "-r", "24",
                "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart"]
 
         plain = prefix + "-1080p.mp4"
         run(["ffmpeg", "-v", "error", "-y", "-i", src, *music_in, "-filter_complex",
-             f"[0:v]{ENHANCE},format=yuv420p[v];{agraph}", "-map", "[v]", "-map", "[a]", *enc, plain])
+             f"[0:v]{VENH},format=yuv420p[v];{agraph}", "-map", "[v]", "-map", "[a]", "-t", f"{dur:.3f}", *enc, plain])
 
         items = build_overlays(spec, tmp, dur)
         inputs, chain, last = [], [], "base"
@@ -377,9 +419,42 @@ def main():
                          f"fade=t=out:st={max(en - 0.25, st)}:d=0.25:alpha=1[o{i}]")
             chain.append(f"[{last}][o{i}]overlay=enable='between(t,{st},{en})'[x{i}]")
             last = f"x{i}"
-        fc = f"[0:v]{ENHANCE}[base];" + ";".join(chain) + f";[{last}]format=yuv420p[v];{agraph}"
-        if not items:
-            fc = f"[0:v]{ENHANCE},format=yuv420p[v];{agraph}"
+        # animasyonlu efektler (söyleneni görselleştirir) + ses efektleri
+        efx = spec.get("efektler", [])
+        sfx_inputs, sfx_labels = [], []
+        if efx:
+            sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+            import efektler
+            next_idx = first_ov + len(items)
+            for j, e in enumerate(efx):
+                boy = int(e.get("boyut", 360))
+                sure_e = float(e.get("sure", 1.6))
+                pat, _ = efektler.render_effect(e["tur"], os.path.join(tmp, f"efx{j}"), boyut=boy, sure=sure_e)
+                inputs += ["-framerate", "24", "-i", pat]
+                x = int(e.get("x", W // 2)) - boy // 2
+                y = int(e.get("y", 900)) - boy // 2
+                chain.append(f"[{next_idx}]format=rgba,setpts=PTS+{e['bas']}/TB[e{j}]")
+                chain.append(f"[{last}][e{j}]overlay={x}:{y}:eof_action=pass[ex{j}]")
+                last = f"ex{j}"
+                next_idx += 1
+                if e.get("ses", True):
+                    wav = os.path.join(tmp, f"sfx{j}.wav")
+                    make_sfx(wav, e["tur"])
+                    sfx_inputs += ["-i", wav]
+                    sfx_labels.append([None, int(float(e["bas"]) * 1000), e.get("ses_db", -12)])
+            # ses girişleri tüm efekt görsellerinden sonra gelir
+            for k, lab in enumerate(sfx_labels):
+                lab[0] = first_ov + len(items) + len(efx) + k
+        if sfx_labels:
+            ag = agraph[:-3] + "[a0]"
+            mix = "".join(f"[{i}:a]adelay={ms}|{ms},volume={db}dB[s{k}];" for k, (i, ms, db) in enumerate(sfx_labels))
+            ins = "[a0]" + "".join(f"[s{k}]" for k in range(len(sfx_labels)))
+            agraph = (f"{ag};{mix}{ins}amix=inputs={len(sfx_labels) + 1}:duration=first:normalize=0,"
+                      "loudnorm=I=-14:TP=-1.5:LRA=9[a]")
+        inputs += sfx_inputs
+        fc = f"[0:v]{VENH}[base];" + ";".join(chain) + f";[{last}]format=yuv420p[v];{agraph}"
+        if not items and not efx:
+            fc = f"[0:v]{VENH},format=yuv420p[v];{agraph}"
         yazili = prefix + "-1080p-yazili.mp4"
         run(["ffmpeg", "-v", "error", "-y", "-i", src, *music_in, *inputs, "-filter_complex", fc,
              "-map", "[v]", "-map", "[a]", "-t", f"{dur:.3f}", *enc, yazili])

@@ -1,0 +1,26 @@
+{
+  "ad": "asli-dopamin",
+  "kaynak": "../kaynak/asli-dopamin.mp4",
+  "cikti_klasoru": "..",
+  "yazi_y": 830,
+  "uzat": 1.5,
+  "muzik": { "tohum": 2, "bpm": 108, "seviye_db": -6, "konusma_var": true },
+  "konusma": "Dopamin, motivasyon ve ödül demek. Küçük bir hedef koy, bir de bitirince tik at. Her tik, beynine minik bir ödül.",
+  "hook": { "metin": "Dopamin nedir?", "alt": "Motivasyon ve ödül", "bas": 0.0, "bit": 2.85 },
+  "adimlar": [
+    { "no": 1, "baslik": "Küçük bir hedef koy", "bas": 2.85, "bit": 4.45 },
+    { "no": 2, "baslik": "Bitirince tik at", "bas": 4.45, "bit": 6.4 },
+    { "no": "", "baslik": "Her tik = minik bir ödül", "altlar": ["Beynin bunu sever"], "bas": 6.4, "bit": 10.0 },
+    { "no": "", "baslik": "Yarın: Serotonin", "altlar": ["Mutluluk Hormonları 3/4"], "bas": 10.0, "y": 820 }
+  ],
+  "cta": { "metin": "Takip et, kaçırma", "bas": 10.05, "y": 1060 },
+  "efektler": [
+    { "tur": "odul",  "bas": 2.0,  "sure": 1.0, "x": 800, "y": 1230, "boyut": 300, "ses_db": -16 },
+    { "tur": "hedef", "bas": 3.2,  "sure": 1.4, "x": 800, "y": 1230, "boyut": 340 },
+    { "tur": "tik",   "bas": 5.2,  "sure": 1.3, "x": 800, "y": 1230, "boyut": 340 },
+    { "tur": "tik",   "bas": 6.7,  "sure": 1.1, "x": 800, "y": 1230, "boyut": 300, "ses_db": -16 },
+    { "tur": "odul",  "bas": 8.1,  "sure": 1.9, "x": 800, "y": 1210, "boyut": 420 }
+  ],
+  "kapak_basa": { "dosya": "../asli-dopamin-shorts-kapak.jpg", "sure": 0.5 },
+  "aciklama": "Motivasyonun yok mu? Belki dopaminin bir ödüle ihtiyacı var ✓\nBugün tek küçük bir hedef koy, bitirince tik at. Her tik, beynine minik bir ödül 🏆\n\nBugünkü küçük hedefin ne? Yorumlara yaz 👇\nMutluluk Hormonları serisi 2/4 · Yarın: Serotonin\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi\n#bedenineyolculuk #dopamin #motivasyon #mutlulukhormonları #küçükadımlar #hedef #shorts"
+}
