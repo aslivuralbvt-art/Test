@@ -1,0 +1,16 @@
+{
+  "ad": "asli-pazar-kahvaltisi",
+  "kaynak": "../kaynak/asli-pazar-kahvaltisi.mp4",
+  "cikti_klasoru": "..",
+  "yazi_y": 760,
+  "muzik": { "tohum": 1, "bpm": 116, "seviye_db": -6, "konusma_var": true },
+  "konusma": "Pazar sabahında kendinize zaman ayırın ve herkesten önce uyanıp, bedeninizi yormayan, size mutluluk verecek o keyifli tabağa hazırlayın.",
+  "hook": { "metin": "Herkes uyanmadan önce", "alt": "Bunu kendin için yap", "bas": 0.0, "bit": 2.95 },
+  "adimlar": [
+    { "no": "", "baslik": "Kendine 10 dakika ayır", "altlar": ["Pazar sabahı senin"], "bas": 2.95, "bit": 6.5 },
+    { "no": "", "baslik": "Pazar tabağı", "altlar": ["Kızarmış ekmek · Poşe yumurta", "Avokado · Roka · Tereyağı"], "bas": 6.5, "y": 700 }
+  ],
+  "cta": { "metin": "Tarifi ister misin? Yorumla", "bas": 8.4, "y": 1010 },
+  "kapak_basa": { "dosya": "../asli-pazar-kahvaltisi-shorts-kapak.jpg", "sure": 0.5 },
+  "aciklama": "Herkes uyanmadan önce, sadece kendin için ☀️\nPazar sabahı 10 dakika ayır ve kendine keyifli bir tabak hazırla.\n\nBugünkü tabakta:\n🍞 Kızarmış ekmek\n🥚 Poşe yumurta + pul biber\n🥑 Avokado\n🌿 Roka\n🧈 Tereyağı\n\nTarifi ister misin? Yorumlara 🍳 bırak 👇\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi\n#bedenineyolculuk #pazarkahvaltısı #sağlıklıkahvaltı #poşeyumurta #avokado #sabahrutini #shorts"
+}
