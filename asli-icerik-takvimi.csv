@@ -1,15 +1,8 @@
-Gün,Tarih,Saat önerisi,Format,Sütun,Konu,Hook (ekran yazısı),CTA,Durum
-1,16.11.2026 Pzt,08:00,Shorts 20-25 sn,Eğitici,Sabah uyanış akışı (mevcut Video 1),Yataktan kalktın mı? 20 saniye bana ver,Yarın sabah dene ve kaydet,Video hazır - kurgu
-2,17.11.2026 Sal,20:00,Shorts 20-25 sn,Eğitici,Kedi-inek hazırlığı (mevcut Video 2),Bütün gün oturdun mu? Belin bunu istiyor,Masa başı arkadaşına gönder,Video hazır - kurgu
-3,18.11.2026 Çar,19:30,Shorts 20 sn,İlişki,Tanışma: Gerçek Aslı + AI hâli,Bu benim. Bu da AI hâlim,Takip et - her gün 1 küçük adım,Senaryo hazır
-4,19.11.2026 Per,12:30,Shorts 25-30 sn,Eğitici,Masa başında 3 boyun hareketi,Boynun şu an kaskatı değil mi?,Öğle arasında yap ve kaydet,Senaryo hazır
-5,20.11.2026 Cum,19:30,Shorts 30 sn,Eğitici,Vaktim yok diyenlere 5 dakika,Spora vaktin yok mu? 5 dakikan var mı?,Yorumlara 5dk yaz - yaptım de,Senaryo hazır
-6,21.11.2026 Cmt,10:00,Shorts 25 sn,İlişki,Aslı'nın sakin cumartesi sabahı,Mükemmel sabah rutinim yok. Şu var:,Senin sabah rutinin ne?,Üretilecek
-7,22.11.2026 Paz,20:00,Shorts 20 sn,İlişki,Haftanın özeti + soru,Bu hafta en çok hangisini yaptın?,Hangi bölge için rutin istersin? Yorumla,Üretilecek
-8,23.11.2026 Pzt,08:00,Shorts 30 sn,Eğitici,Mit/gerçek: Esneme sadece sabah mı yapılır?,Esneme sadece sabah mı yapılır?,Kaydet - yanlış bilene gönder,Üretilecek
-9,24.11.2026 Sal,19:00,Uzun video 8-10 dk + Shorts kesiti,Eğitici,Yeni başlayanlar için 10 dakikalık evde tüm vücut,10 dakikada tüm vücut - ekipman yok,Kanala abone ol - her hafta yeni rutin,Üretilecek
-10,25.11.2026 Çar,22:00,Shorts 25 sn,Eğitici,Uyku öncesi 3 rahatlatıcı hareket,Uyuyamıyor musun? Yatağa girmeden önce bunu dene,Bu gece dene ve kaydet,Üretilecek
-11,26.11.2026 Per,19:30,Shorts 30 sn,Güven,Yeni başlayanların 3 hatası,Spora başlayanların yaptığı 3 hata,Sen hangisini yapıyordun?,Üretilecek
-12,27.11.2026 Cum,19:30,Shorts 30 sn,Güven,Takipçi sorusuna cevap (gerçek yorumdan),Bana şunu sordunuz:,Sorunu yorumlara yaz - videoyla cevaplayayım,Gerçek yorum bekleniyor
-13,28.11.2026 Cmt,11:00,Shorts 30 sn,Güven,Kamera arkası: Gerçek ben vs AI ben,Gerçek ben mi AI ben mi? Kamera arkası,Takip et - serinin devamı geliyor,Üretilecek
-14,29.11.2026 Paz,20:00,Shorts 25 sn,Satış (talep testi),30 günlük 10 dakika programı fikri,30 gün - günde 10 dakika. İster misin?,İstiyorsan yorumlara EVET yaz,Üretilecek
+Tarih,Saat önerisi,Video,Seri,Dosya,Başlık,Durum
+15.11.2026 Pazar,Sabah,Pazar kahvaltısı,-,videolar/asli-pazar-kahvaltisi-1080p-yazili-kapakli.mp4,Herkes Uyanmadan Önce Pazar Sabahı Ritüelim ☀️🍳 #pazarkahvaltısı #sabahrutini,Hazır
+15.11.2026 Pazar,Akşam,Oksitosin,Mutluluk Hormonları · Giriş,videolar/YAYIN-oksitosin-v3.mp4,Bugün Birine Sarıl 🤍 Oksitosin Nedir? #oksitosin #mutlulukhormonları,Hazır
+16.11.2026 Pazartesi,Akşam,Dopamin,Mutluluk Hormonları · 1. Aşama,videolar/YAYIN-dopamin-v2.mp4,Motivasyonun Yok mu? Bunu Dene ✓🎁 #dopamin #motivasyon,Hazır
+17.11.2026 Salı,Sabah,Serotonin,Mutluluk Hormonları · 2. Aşama,-,-,Gemini'de üretilecek (asli-senaryolar-10sn.md · senaryo 2)
+18.11.2026 Çarşamba,Akşam,Endorfin,Mutluluk Hormonları · 3. Aşama,-,-,Gemini'de üretilecek (senaryo 3)
+Boş gün,-,Havuz yoga (aşağı bakan köpek),-,videolar/asli-havuz-yoga-1080p-yazili.mp4,-,Hazır (yedek)
+Boş gün,-,Nefes molası,-,videolar/asli-nefes-meditasyon-1080p-yazili-kapakli.mp4,-,Hazır (yedek)
