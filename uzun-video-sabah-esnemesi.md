@@ -1,5 +1,5 @@
 # Uzun video: Benimle Sabah Esnemesi (8 × 10 sn → ~6–7 dk)
-Kurallar: referans fotoğrafı her seferinde yükle · 16:9 üret · promptları olduğu gibi kopyala · 8 videoda aynı kıyafet rengi (sage green ya da hepsinde burgundy).
+Kurallar: referans fotoğrafı + `videolar/uzun-video/sahne-referans.jpg` (oda referansı) her seferinde yükle; promptun başına şunu ekle: "Use the second reference image as the exact room, lighting and camera framing." · · 16:9 üret · promptları olduğu gibi kopyala · 8 videoda aynı kıyafet rengi (sage green ya da hepsinde burgundy).
 
 ## Video 1/8 Giriş
 ```
