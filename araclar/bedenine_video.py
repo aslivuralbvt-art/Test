@@ -263,6 +263,9 @@ def make_sfx(path, tur):
                  for i, f in enumerate([523.25, 659.25, 783.99]))
         fo = int(sr * 0.5)
         x[-fo:] *= np.linspace(1, 0, fo)
+    elif tur == "sihir":  # yükselen pırıltı glissandosu
+        x = sum(tone(f, 0.6, 7, 0.45, start=i * 0.045, total=1.4)
+                for i, f in enumerate([1568, 1760, 1976, 2349, 2637, 3136, 3520, 4186]))
     elif tur == "gunes":
         x = sum(tone(f, 1.0, 4, 0.5, start=i * 0.05, total=1.3) for i, f in enumerate([784, 988, 1175, 1568, 1976]))
     elif tur == "su":

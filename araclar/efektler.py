@@ -11,6 +11,7 @@ Türler:
   su    : su damlası düşer, halka yayılır
   ay    : hilal ve parıldayan yıldızlar (uyku/akşam)
   yildiz: parlayan yıldız ve kıvılcımlar
+  sihir : spiral çizen parıltılar ve yıldızlar (sihirli değnek, peri tozu)
   hediye: renkli ambalajlı hediye kutusu zıplar, sallanır, kapağı açılır; ışık ve konfeti fışkırır
 Her efekt: giriş animasyonu + bekleme + çıkış (sure saniye toplam).
 
@@ -533,8 +534,47 @@ def frame_hediye(t, total, S):
     return img
 
 
+def frame_sihir(t, total, S):
+    """Sihirli değnek / peri tozu: merkez etrafında spiral çizen, parıldayan küçük yıldızlar."""
+    img = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    c = S / 2
+    rnd = random.Random(21)
+    cols = [GOLD_L, (255, 255, 255), (255, 200, 230), (200, 225, 255)]
+    n = 34
+    for i in range(n):
+        delay = i / n * 0.6
+        lt = t - delay
+        if lt <= 0:
+            continue
+        life = min(1.0, lt / 1.1)
+        ang = i * 0.55 + lt * 2.2
+        rad = S * (0.12 + 0.36 * (i / n)) * (0.7 + 0.3 * ease_out(life))
+        x = c + math.cos(ang) * rad
+        y = c + math.sin(ang) * rad * 0.8 - lt * S * 0.05
+        tw = 0.5 + 0.5 * math.sin(lt * 14 + i)
+        size = S * rnd.uniform(0.012, 0.03) * (0.6 + 0.6 * tw) * (1 - life * 0.5)
+        a = int(255 * (1 - life ** 2) * (0.6 + 0.4 * tw))
+        col = rnd.choice(cols)
+        if a <= 0 or size < 1:
+            continue
+        if i % 3 == 0:
+            _star(d, x, y, size * 1.8, col + (a,), inner=0.35)
+        else:
+            d.ellipse([x - size, y - size, x + size, y + size], fill=col + (a,))
+    glow = img.filter(ImageFilter.GaussianBlur(S * 0.012))
+    out = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    out.alpha_composite(glow)
+    out.alpha_composite(glow)
+    out.alpha_composite(img)
+    a = _alpha_env(t, total, fade_in=0.05, fade_out=0.35)
+    if a < 1:
+        out.putalpha(out.split()[3].point(lambda v: int(v * a)))
+    return out
+
+
 FRAMES = {"tik": frame_tik, "odul": frame_odul, "hedef": frame_hedef,
-          "kalp": frame_kalp, "gunes": frame_gunes, "su": frame_su, "ay": frame_ay, "yildiz": frame_yildiz, "hediye": frame_hediye}
+          "kalp": frame_kalp, "gunes": frame_gunes, "su": frame_su, "ay": frame_ay, "yildiz": frame_yildiz, "hediye": frame_hediye, "sihir": frame_sihir}
 
 
 def render_effect(tur, klasor, boyut=360, sure=1.6, fps=24):
