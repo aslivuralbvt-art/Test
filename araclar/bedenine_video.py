@@ -152,6 +152,66 @@ def make_music(path, dur, seed=0, bpm=96):
     os.remove(dry)
 
 
+def make_handpan(path, dur, seed=0, bpm=84):
+    """Handpan tarzı müzik (D Kurd dizisi): yumuşak metalik vuruşlar, uzun rezonans. Telifsiz, kodla üretilir."""
+    sr = 48000
+    n = int(sr * dur)
+    out = np.zeros((n, 2))
+    rng = np.random.default_rng(seed)
+    scale = [50, 57, 58, 60, 62, 64, 65, 67, 69]  # D3 A3 Bb3 C4 D4 E4 F4 G4 A4
+
+    def midi(m):
+        return 440 * 2 ** ((m - 69) / 12)
+
+    def hit(t0, m, vel, pan):
+        s = int(t0 * sr)
+        L = min(int(3.2 * sr), n - s)
+        if L <= 0:
+            return
+        tt = np.arange(L) / sr
+        f = midi(m)
+        att = 1 - np.exp(-tt * 250)
+        w = (np.sin(2 * np.pi * f * tt) * np.exp(-tt * 1.3)
+             + 0.45 * np.sin(2 * np.pi * 2 * f * tt + 0.3) * np.exp(-tt * 2.2)
+             + 0.22 * np.sin(2 * np.pi * 3.01 * f * tt) * np.exp(-tt * 3.5)
+             + 0.10 * np.sin(2 * np.pi * f * 1.003 * tt) * np.exp(-tt * 1.1))  # hafif dalgalanma
+        w *= att * vel
+        w[: int(0.012 * sr)] += rng.standard_normal(int(0.012 * sr))[: L] * 0.02 * vel  # el vuruşu dokusu
+        out[s:s + L, 0] += w * (1 - pan)
+        out[s:s + L, 1] += w * pan
+
+    beat = 60 / bpm
+    patterns = [
+        [0, 4, 6, 5, 0, 7, 6, 4], [0, 5, 4, 6, 0, 8, 7, 5], [0, 6, 5, 4, 0, 4, 7, 6], [0, 3, 5, 4, 0, 6, 5, 7]]
+    pat = patterns[seed % len(patterns)]
+    t = 0.15
+    i = 0
+    while t < dur - 1.5:
+        idx = pat[i % len(pat)]
+        m = scale[idx]
+        vel = 0.9 if idx == 0 else 0.55 + 0.25 * rng.random()
+        pan = 0.5 if idx == 0 else 0.3 + 0.4 * rng.random()
+        hit(t, m, vel, pan)
+        if i % 4 == 3 and rng.random() < 0.6:  # ara süs vuruşu
+            hit(t + beat / 2, scale[rng.integers(4, 9)], 0.3, 0.3 + 0.4 * rng.random())
+        t += beat
+        i += 1
+    fi, fo = int(0.3 * sr), int(1.8 * sr)
+    out[:fi] *= np.linspace(0, 1, fi)[:, None]
+    out[-fo:] *= np.linspace(1, 0, fo)[:, None]
+    out /= np.max(np.abs(out)) * 1.12
+    dry = path + ".dry.wav"
+    with wave.open(dry, "wb") as w:
+        w.setnchannels(2)
+        w.setsampwidth(2)
+        w.setframerate(sr)
+        w.writeframes((out * 32767).astype("<i2").tobytes())
+    run(["ffmpeg", "-v", "error", "-y", "-i", dry, "-af",
+         "aecho=0.8:0.7:90|180|320:0.35|0.25|0.18,lowpass=f=10000,highpass=f=60,"
+         "loudnorm=I=-18:TP=-2:LRA=7", "-ar", "48000", path])
+    os.remove(dry)
+
+
 # ---------------------------------------------------------------- ses efektleri
 def make_sfx(path, tur):
     """Kısa, telifsiz efekt sesleri: tik (ding), odul (yükselen zil), hedef (tok)."""
@@ -246,6 +306,14 @@ def card_png(path, lines, y, badge=None, center=False):
         bf = font("Inter-Black.otf", 58)
         bww, bhh, _ = _tsize(d, badge, bf)
         bw = max(bww, bhh) + 44 + 24
+    # yazı karta sığmıyorsa yazı tipini küçült (kenardan taşmayı önler)
+    maxw = W - 60 - bw - 2 * padx
+    fitted = []
+    for t, f, c in lines:
+        while _tsize(d, t, f)[0] > maxw and f.size > 24:
+            f = ImageFont.truetype(f.path, f.size - 2)
+        fitted.append((t, f, c))
+    lines = fitted
     sizes = [_tsize(d, t, f) for t, f, c in lines]
     cw = min(max(s[0] for s in sizes) + bw + 2 * padx, W - 60)
     ch = sum(s[1] for s in sizes) + gap * (len(lines) - 1) + 2 * pady
@@ -298,7 +366,9 @@ def build_overlays(spec, tmp, dur):
     h = spec.get("hook")
     if h:
         p = os.path.join(tmp, "hook.png")
-        lines = [(h["metin"], title, WHITE)] + ([(h["alt"], sub, CREAM)] if h.get("alt") else [])
+        tf = font("InterDisplay-Black.otf", int(h.get("boyut", 78)))
+        sf = font("Inter-SemiBold.otf", max(30, int(h.get("boyut", 78) * 0.52)))
+        lines = [(h["metin"], tf, WHITE)] + ([(h["alt"], sf, CREAM)] if h.get("alt") else [])
         card_png(p, lines, h.get("y", y), center=True)
         items.append((p, h.get("bas", 0.0), h["bit"]))
     for i, s in enumerate(spec.get("adimlar", [])):
@@ -417,13 +487,16 @@ def main():
     os.makedirs(out_dir, exist_ok=True)
     prefix = os.path.join(out_dir, spec["ad"])
     dur, has_audio = probe(src)
+    kirp = float(spec.get("kirp_bas", 0))  # baştaki boşluğu (sessizlik/hareketsizlik) kes
+    dur -= kirp
+    SS = ["-ss", f"{kirp:.3f}"] if kirp else []
     uzat = float(spec.get("uzat", 0))  # sona donmuş kare ile kapanış kartı süresi (sn)
     dur += uzat
     VENH = (f"tpad=stop_mode=clone:stop_duration={uzat}," if uzat else "") + ENHANCE
 
     if a.kareler:
         sheet = prefix + "-zaman-cizelgesi.jpg"
-        run(["ffmpeg", "-v", "error", "-y", "-i", src, "-vf",
+        run(["ffmpeg", "-v", "error", "-y", *SS, "-i", src, "-vf",
              "fps=2,scale=180:-1,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:"
              "text='%{pts\\:flt}':x=5:y=5:fontsize=24:fontcolor=yellow:box=1:boxcolor=black,"
              f"tile=10x{int(np.ceil(dur * 2 / 10))}", "-frames:v", "1", sheet])
@@ -437,7 +510,10 @@ def main():
         music_in = []
         if not muziksiz:
             music = os.path.join(tmp, "muzik.wav")
-            make_music(music, dur + 1.0, seed=m.get("tohum", 0), bpm=m.get("bpm", 96))
+            if m.get("stil") == "handpan":
+                make_handpan(music, dur + 1.0, seed=m.get("tohum", 0), bpm=m.get("bpm", 84))
+            else:
+                make_music(music, dur + 1.0, seed=m.get("tohum", 0), bpm=m.get("bpm", 96))
             shutil.copy(music, prefix + "-muzik.wav")
             music_in = ["-i", music]
         agraph = audio_graph(has_audio, m.get("konusma_var", has_audio), m.get("seviye_db", -4), dur, 1,
@@ -449,7 +525,7 @@ def main():
                "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart"]
 
         plain = prefix + "-1080p.mp4"
-        run(["ffmpeg", "-v", "error", "-y", "-i", src, *music_in, "-filter_complex",
+        run(["ffmpeg", "-v", "error", "-y", *SS, "-i", src, *music_in, "-filter_complex",
              f"[0:v]{VENH},format=yuv420p[v];{agraph}", "-map", "[v]", "-map", "[a]", "-t", f"{dur:.3f}", *enc, plain])
 
         items = build_overlays(spec, tmp, dur)
@@ -507,7 +583,7 @@ def main():
         if not items and not efx:
             fc = f"[0:v]{VENH},format=yuv420p[v];{agraph}"
         yazili = prefix + "-1080p-yazili.mp4"
-        run(["ffmpeg", "-v", "error", "-y", "-i", src, *music_in, *inputs, "-filter_complex", fc,
+        run(["ffmpeg", "-v", "error", "-y", *SS, "-i", src, *music_in, *inputs, "-filter_complex", fc,
              "-map", "[v]", "-map", "[a]", "-t", f"{dur:.3f}", *enc, yazili])
 
         kb = spec.get("kapak_basa")

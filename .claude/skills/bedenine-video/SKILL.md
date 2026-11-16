@@ -9,6 +9,20 @@ Tüm adımları `araclar/bedenine_video.py` yapar. Senin işin videoyu izleyip d
 (JSON) yazmak, aracı çalıştırmak ve sonucu kontrol etmek.
 Marka kuralları: `marka-profili.md`. Örnek tarif: `videolar/tarifler/asli-havuz-yoga.json`.
 
+## YouTube verilerinden öğrenilenler (16 Kasım 2026)
+Kanalın "izlemeye devam edenler" oranı: hareket ve müzikle başlayan videolar %22–45,
+sabit kapakla ya da konuşma ve büyük yazıyla başlayan videolar %8–16. Bu yüzden varsayılanlar:
+- **Başa kapak EKLEME** (`kapak_basa` kullanma). Kapağı `araclar/shorts_kapak.py` ile ayrı
+  üret; kullanıcı YouTube'da kapak olarak seçer.
+- **İlk kare temiz olsun:** hook kartı `bas` ≥ 0.3 ile başlasın, `boyut` 54–62 (küçük).
+- **Baştaki sessizliği kes:** konuşma 0.5 sn'den geç başlıyorsa `kirp_bas` ile kırp
+  (konuşma ~0.2 sn'de başlayacak şekilde).
+- **Müzik:** varsayılan `"stil": "handpan"` (kanalın en iyi videosu handpan müzikli),
+  `seviye_db` -6. Kullanıcı müzik istemezse `"yok": true`.
+- **Kapak aracı:**
+  `python3 araclar/shorts_kapak.py VIDEO SANIYE CIKTI --etiket ... --satir1 ... --satir2 ... --y ... --ikon ...`.
+  Başlığı yüzün altına koy, gözlerin açık olduğu kareyi seç.
+
 ## Adımlar
 
 1. **Kaynağı kopyala.** Gönderilen videoyu `videolar/kaynak/<ad>.mp4` olarak kopyala.

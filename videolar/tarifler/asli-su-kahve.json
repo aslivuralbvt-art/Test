@@ -1,0 +1,75 @@
+{
+  "ad": "asli-su-kahve",
+  "kaynak": "../kaynak/asli-su-kahve.mp4",
+  "cikti_klasoru": "..",
+  "yazi_y": 760,
+  "muzik": {
+    "stil": "handpan",
+    "tohum": 1,
+    "bpm": 88,
+    "seviye_db": -6,
+    "konusma_var": true
+  },
+  "konusma": "Güne kahveyle mi başlıyorsun? Gece boyunca hiç su içmedin. Önce bir bardak su, sonra kahve. Anlaştık mı?",
+  "hook": {
+    "metin": "Güne kahveyle mi başlıyorsun?",
+    "boyut": 62,
+    "bas": 0.35,
+    "bit": 2.6
+  },
+  "adimlar": [
+    {
+      "no": "",
+      "baslik": "Gece boyunca su içmedin",
+      "bas": 2.6,
+      "bit": 4.65
+    },
+    {
+      "no": 1,
+      "baslik": "Önce bir bardak su",
+      "bas": 4.7,
+      "bit": 8.0,
+      "y": 1110
+    },
+    {
+      "no": 2,
+      "baslik": "Sonra kahve",
+      "bas": 6.3,
+      "bit": 8.0,
+      "y": 1238
+    }
+  ],
+  "cta": {
+    "metin": "Anlaştık mı? Kaydet",
+    "bas": 8.0,
+    "y": 1180
+  },
+  "efektler": [
+    {
+      "tur": "su",
+      "bas": 3.4,
+      "sure": 1.3,
+      "x": 930,
+      "y": 540,
+      "boyut": 230
+    },
+    {
+      "tur": "su",
+      "bas": 5.3,
+      "sure": 1.3,
+      "x": 930,
+      "y": 540,
+      "boyut": 230,
+      "ses_db": -15
+    },
+    {
+      "tur": "tik",
+      "bas": 7.35,
+      "sure": 1.3,
+      "x": 930,
+      "y": 540,
+      "boyut": 230
+    }
+  ],
+  "aciklama": "Kahveden önce bunu yap 💧\nGece boyunca hiç su içmedin. Önce bir bardak su, sonra kahve ☕\n\nSen sabah ilk ne içiyorsun? ☕ mi 💧 mu? Yorumlara yaz 👇\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi\n#sabahrutini #su #kahve #sağlıklıalışkanlık #küçükadımlar #iyihisset #sağlıklıyaşam #bedenineyolculuk #shorts"
+}
