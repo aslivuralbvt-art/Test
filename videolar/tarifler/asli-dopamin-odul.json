@@ -3,18 +3,72 @@
   "kaynak": "../kaynak/asli-dopamin-odul.mp4",
   "cikti_klasoru": "..",
   "yazi_y": 1150,
-  "muzik": { "stil": "handpan", "tohum": 3, "bpm": 70, "seviye_db": -6, "konusma_var": true },
+  "muzik": {
+    "stil": "handpan",
+    "tohum": 3,
+    "bpm": 70,
+    "seviye_db": -6,
+    "konusma_var": true
+  },
   "konusma": "Bugün kendini nasıl ödüllendirdin? Dopamin, beynindeki sihirli değnek. Seni mutlu eder. Hadi kendine zaman ayır.",
-  "hook": { "metin": "Bugün kendini nasıl ödüllendirdin?", "boyut": 58, "bas": 0.3, "bit": 3.3 },
+  "hook": {
+    "metin": "Bugün kendini nasıl ödüllendirdin?",
+    "boyut": 58,
+    "bas": 0.3,
+    "bit": 3.3
+  },
   "adimlar": [
-    { "no": "", "baslik": "Dopamin", "altlar": ["Beynindeki sihirli değnek"], "bas": 3.3, "bit": 5.95 },
-    { "no": "", "baslik": "Seni mutlu eder", "bas": 5.95, "bit": 7.1 },
-    { "no": "", "baslik": "Hadi, kendine zaman ayır", "altlar": ["Dopamin perisi seni bekliyor"], "bas": 7.1 }
+    {
+      "no": "",
+      "baslik": "Dopamin",
+      "altlar": [
+        "Beynindeki sihirli değnek"
+      ],
+      "bas": 3.3,
+      "bit": 5.95
+    },
+    {
+      "no": "",
+      "baslik": "Seni mutlu eder",
+      "bas": 5.95,
+      "bit": 7.1
+    },
+    {
+      "no": "",
+      "baslik": "Hadi, kendine zaman ayır",
+      "altlar": [
+        "Dopamin perisi seni bekliyor"
+      ],
+      "bas": 7.1
+    }
   ],
   "efektler": [
-    { "tur": "hediye", "bas": 2.3, "sure": 1.9, "x": 880, "y": 560, "boyut": 340 },
-    { "tur": "sihir", "bas": 4.6, "sure": 2.0, "x": 540, "y": 560, "boyut": 760, "ses_db": -13 },
-    { "tur": "yildiz", "bas": 7.4, "sure": 1.4, "x": 880, "y": 560, "boyut": 260, "ses_db": -15 }
+    {
+      "tur": "hediye",
+      "bas": 2.3,
+      "sure": 1.9,
+      "x": 880,
+      "y": 560,
+      "boyut": 340
+    },
+    {
+      "tur": "sihir",
+      "bas": 4.6,
+      "sure": 2.0,
+      "x": 540,
+      "y": 560,
+      "boyut": 760,
+      "ses_db": -13
+    },
+    {
+      "tur": "yildiz",
+      "bas": 7.4,
+      "sure": 1.4,
+      "x": 880,
+      "y": 560,
+      "boyut": 260,
+      "ses_db": -15
+    }
   ],
-  "aciklama": "Bugün kendini nasıl ödüllendirdin? ✨\n\nDopamin, beynindeki sihirli değnek.\nKüçük bir mola, sıcak bir çay, sevdiğin bir şarkı… Seni mutlu eden küçük şeyler.\n\nHadi, bugün kendine zaman ayır 🌙\n\n👇 Bugün kendine hangi küçük ödülü vereceksin? Yorumlara yaz!\n\n✨ Mutluluk Hormonları · Dopamin Bonus\n\nBen Aslı. Bedenine Yolculuk'ta her gün birkaç saniyelik küçük adımlar.\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi.\n\n#dopamin #kendinezamanayır #mutlulukhormonları #kendineiyibak #özşefkat #rahatla #iyihisset #bedenineyolculuk #shorts"
+  "aciklama": "Bugün kendini nasıl ödüllendirdin? ✨\n\nDopamin, beynindeki sihirli değnek.\nKüçük bir mola, sıcak bir çay, sevdiğin bir şarkı… Seni mutlu eden küçük şeyler.\n\nHadi, bugün kendine zaman ayır 🌙\n\n👇 Bugün kendine hangi küçük ödülü vereceksin? Yorumlara yaz!\n\n✨ Mutluluk Hormonları · 1. Aşama: Dopamin\n\nBen Aslı. Bedenine Yolculuk'ta her gün birkaç saniyelik küçük adımlar.\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi.\n\n#dopamin #kendinezamanayır #mutlulukhormonları #kendineiyibak #özşefkat #rahatla #iyihisset #bedenineyolculuk #shorts"
 }
