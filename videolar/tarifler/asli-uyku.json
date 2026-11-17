@@ -1,0 +1,111 @@
+{
+  "ad": "asli-uyku",
+  "kaynak": "../kaynak/asli-uyku.mp4",
+  "cikti_klasoru": "..",
+  "yazi_y": 1100,
+  "muzik": {
+    "stil": "handpan",
+    "tohum": 5,
+    "bpm": 60,
+    "seviye_db": -8,
+    "konusma_var": true
+  },
+  "konusma": "Deliksiz uyumak mı istiyorsun? Yatmadan bir saat önce ışıkları azalt. Ekranları kapat. Bir fincan papatya çayı iç. Birkaç derin nefes al. İyi geceler.",
+  "hook": {
+    "metin": "Deliksiz uyku için 4 adım",
+    "alt": "Yatmadan 1 saat önce",
+    "boyut": 64,
+    "bas": 0.3,
+    "bit": 6.4
+  },
+  "adimlar": [
+    {
+      "no": 1,
+      "baslik": "Işıkları azalt",
+      "altlar": [
+        "Loş, sarı ışık"
+      ],
+      "bas": 6.5,
+      "bit": 13.9,
+      "y": 1040
+    },
+    {
+      "no": 2,
+      "baslik": "Ekranları kapat",
+      "bas": 8.3,
+      "bit": 13.9,
+      "y": 1200
+    },
+    {
+      "no": 3,
+      "baslik": "Papatya ya da melisa çayı",
+      "bas": 14.3,
+      "bit": 18.0,
+      "y": 1040
+    },
+    {
+      "no": 4,
+      "baslik": "Birkaç derin nefes",
+      "bas": 16.2,
+      "bit": 18.0,
+      "y": 1168
+    },
+    {
+      "no": "",
+      "baslik": "İyi geceler",
+      "altlar": [
+        "Kaydet, bu gece dene"
+      ],
+      "bas": 18.0,
+      "y": 1100
+    }
+  ],
+  "efektler": [
+    {
+      "tur": "ay",
+      "bas": 2.9,
+      "sure": 2.0,
+      "x": 900,
+      "y": 430,
+      "boyut": 280,
+      "ses_db": -16
+    },
+    {
+      "tur": "tik",
+      "bas": 8.7,
+      "sure": 1.3,
+      "x": 900,
+      "y": 430,
+      "boyut": 240,
+      "ses_db": -17
+    },
+    {
+      "tur": "kalp",
+      "bas": 15.0,
+      "sure": 1.4,
+      "x": 900,
+      "y": 430,
+      "boyut": 240,
+      "ses_db": -17
+    },
+    {
+      "tur": "sihir",
+      "bas": 16.7,
+      "sure": 1.8,
+      "x": 540,
+      "y": 300,
+      "boyut": 620,
+      "ses_db": -18
+    },
+    {
+      "tur": "ay",
+      "bas": 18.2,
+      "sure": 1.8,
+      "x": 900,
+      "y": 430,
+      "boyut": 280,
+      "ses_db": -16
+    }
+  ],
+  "aciklama": "Deliksiz bir uyku için yatmadan 1 saat önce 🌙\n\n1️⃣ Işıkları azalt: loş, sarı ışık melatonin (uyku hormonu) salgılanmasını destekler\n2️⃣ Ekranları kapat\n3️⃣ Bir fincan papatya ya da melisa çayı iç\n4️⃣ Birkaç derin nefes al\n\nİyi geceler 🤍\n\n👇 Sen uyumadan önce ne yapıyorsun? Yorumlara yaz!\n🔖 Bu gece denemek için kaydet.\n\nUyku sorunların sürekliyse bir uzmana danış.\n\nBen Aslı. Bedenine Yolculuk'ta her gün birkaç saniyelik küçük adımlar.\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi.\n\n#uyku #deliksizuyku #uykurutini #melatonin #papatyaçayı #rahatla #kendineiyibak #sağlıklıyaşam #bedenineyolculuk #shorts"
+}
