@@ -21,7 +21,9 @@ sabit kapakla ya da konuşma ve büyük yazıyla başlayan videolar %8–16. Bu 
   `seviye_db` -6. Kullanıcı müzik istemezse `"yok": true`.
 - **Kapak aracı:**
   `python3 araclar/shorts_kapak.py VIDEO SANIYE CIKTI --etiket ... --satir1 ... --satir2 ... --y ... --ikon ...`.
-  Başlığı yüzün altına koy, gözlerin açık olduğu kareyi seç.
+  Başlığı yüzün altına koy. Kare seçimi: gözler tam açık ve kameraya bakıyor, doğal ve rahat bir
+  gülümseme (konuşurken yakalanmış yarım ağız ifadesi değil). 0.1–0.2 sn aralıklarla yüz ızgarası çıkar,
+  2–3 adayı büyük boyutta karşılaştır, en doğal gülümsemeyi seç.
 
 ## Adımlar
 
