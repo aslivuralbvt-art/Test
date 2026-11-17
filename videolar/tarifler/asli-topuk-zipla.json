@@ -1,0 +1,26 @@
+{
+  "ad": "asli-topuk-zipla",
+  "kaynak": "../kaynak/topuk-tam-20sn.mp4",
+  "cikti_klasoru": "..",
+  "dongu": { "bas": 16.4, "bit": 19.95, "tekrar": 5, "gecis": 0.15 },
+  "yazi_y": 1150,
+  "muzik": { "stil": "handpan", "tohum": 4, "bpm": 92, "seviye_db": -6, "konusma_var": true },
+  "konusma": "Güne şiş ve ödemle mi uyanıyorsun? Yataktan kalkar kalkmaz bir dakikanı ayır, topuk zıplatmayı dene. Ayaklar omuz genişliğinde, topuklarını hafifçe kaldır ve ritmik şekilde yere bırak.",
+  "hook": { "metin": "Güne şiş mi uyanıyorsun?", "boyut": 62, "bas": 0.3, "bit": 5.2 },
+  "adimlar": [
+    { "no": "", "baslik": "Sabah 1 dakika", "altlar": ["Topuk zıplatma"], "bas": 5.2, "bit": 9.2 },
+    { "no": 1, "baslik": "Ayaklar omuz genişliğinde", "bas": 11.9, "bit": 16.4, "y": 1050 },
+    { "no": 2, "baslik": "Topukları 1-2 cm kaldır", "bas": 13.8, "bit": 16.4, "y": 1178 },
+    { "no": 3, "baslik": "Ritmik şekilde yere bırak", "bas": 15.2, "bit": 16.4, "y": 1306 },
+    { "no": "", "baslik": "Topuk zıplatma", "altlar": ["Parmak uçları yerde kalsın"], "bas": 16.5, "bit": 31.5, "y": 1250 },
+    { "no": "", "baslik": "3 tur = 1 dakika", "altlar": ["Aralarda derin nefes · Yarın sabah dene"], "bas": 31.5, "y": 1100 }
+  ],
+  "cta": { "metin": "Kaydet, unutma", "bas": 31.7, "y": 1320 },
+  "geri_sayim": { "bas": 16.5, "sure": 15, "x": 860, "y": 560, "boyut": 300 },
+  "efektler": [
+    { "tur": "su", "bas": 3.4, "sure": 1.3, "x": 900, "y": 420, "boyut": 240 },
+    { "tur": "gunes", "bas": 6.7, "sure": 1.6, "x": 900, "y": 420, "boyut": 250, "ses_db": -15 },
+    { "tur": "tik", "bas": 31.5, "sure": 1.6, "x": 860, "y": 560, "boyut": 280 }
+  ],
+  "aciklama": "Güne şiş ve ödemle mi uyanıyorsun? 💧\n\nYataktan kalkar kalkmaz 1 dakikanı ayır: topuk zıplatma ☀️\n\n1️⃣ Ayaklarını omuz genişliğinde aç, kolların serbest\n2️⃣ Parmak uçların yerde kalsın, topuklarını 1-2 cm kaldır\n3️⃣ Topuklarını ritmik şekilde yere bırak, bedeninde hafif bir sarsıntı hisset\n\n⏱️ 15 saniye × 3 tur, aralarda derin nefes = 1 dakika\n\nBu hareket dolaşımı ve lenf akışını desteklemeye yardımcı olabilir.\nŞişlik sürekliyse, ağrın ya da bir sağlık sorunun varsa doktoruna danış.\n\n👇 Sabahları şişlik hissediyor musun? Yorumlara yaz!\n🔖 Yarın sabah unutmamak için kaydet.\n\nBen Aslı. Bedenine Yolculuk'ta her gün birkaç saniyelik küçük adımlar.\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi.\n\n#sabahrutini #ödem #lenfdrenaj #topukzıplatma #sabahegzersizi #evdehareket #sağlıklıyaşam #kendineiyibak #bedenineyolculuk #shorts"
+}

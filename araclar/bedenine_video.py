@@ -212,6 +212,51 @@ def make_handpan(path, dur, seed=0, bpm=84):
     os.remove(dry)
 
 
+def build_loop(src, bas, bit, tekrar, gecis, out):
+    """[0,bas] + (bas,bit) bölümünü `tekrar` kez çapraz geçişle art arda ekler. Döngü kısmında ses sessizdir."""
+    seg = bit - bas
+    parts = [f"[0:v]trim=0:{bas},setpts=PTS-STARTPTS,fps=24,format=yuv420p[a]",
+             f"[0:v]trim={bas}:{bit},setpts=PTS-STARTPTS,fps=24,format=yuv420p,split={tekrar}" +
+             "".join(f"[b{i}]" for i in range(tekrar))]
+    last, length = "a", bas
+    for i in range(tekrar):
+        off = length - gecis
+        parts.append(f"[{last}][b{i}]xfade=transition=fade:duration={gecis}:offset={off:.3f}[x{i}]")
+        last = f"x{i}"
+        length = length + seg - gecis
+    parts.append(f"[0:a]atrim=0:{bas},asetpts=PTS-STARTPTS,afade=t=out:st={max(bas - 0.2, 0):.3f}:d=0.2,"
+                 f"apad=whole_dur={length:.3f}[au]")
+    run(["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex", ";".join(parts),
+         "-map", f"[{last}]", "-map", "[au]", "-c:v", "libx264", "-crf", "14", "-preset", "fast",
+         "-c:a", "aac", "-b:a", "192k", "-t", f"{length:.3f}", out])
+    return out
+
+
+def countdown_pngs(tmp, n, boyut, x, y):
+    """n'den 1'e geri sayım kartları (adaçayı daire, beyaz rakam, ilerleme halkası)."""
+    paths = []
+    for k in range(n, 0, -1):
+        im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        r = boyut // 2
+        cx, cy = int(x), int(y)
+        sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        ImageDraw.Draw(sh).ellipse([cx - r + 6, cy - r + 10, cx + r + 6, cy + r + 10], fill=(0, 0, 0, 110))
+        im.alpha_composite(sh.filter(ImageFilter.GaussianBlur(14)))
+        d = ImageDraw.Draw(im)
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(28, 36, 28, 200))
+        w = max(8, boyut // 16)
+        d.arc([cx - r + w, cy - r + w, cx + r - w, cy + r - w], 0, 360, fill=(255, 255, 255, 60), width=w)
+        d.arc([cx - r + w, cy - r + w, cx + r - w, cy + r - w], -90, -90 + 360 * k / n, fill=SAGE, width=w)
+        f = font("InterDisplay-Black.otf", int(boyut * 0.46))
+        d.text((cx, cy - boyut * 0.04), str(k), font=f, fill=WHITE, anchor="mm")
+        fs = font("Inter-Bold.otf", int(boyut * 0.11))
+        d.text((cx, cy + boyut * 0.27), "saniye", font=fs, fill=CREAM, anchor="mm")
+        pth = os.path.join(tmp, f"sayac{k:02d}.png")
+        im.save(pth)
+        paths.append(pth)
+    return paths
+
+
 # ---------------------------------------------------------------- ses efektleri
 def make_sfx(path, tur):
     """Kısa, telifsiz efekt sesleri: tik (ding), odul (yükselen zil), hedef (tok)."""
@@ -266,6 +311,14 @@ def make_sfx(path, tur):
     elif tur == "sihir":  # yükselen pırıltı glissandosu
         x = sum(tone(f, 0.6, 7, 0.45, start=i * 0.045, total=1.4)
                 for i, f in enumerate([1568, 1760, 1976, 2349, 2637, 3136, 3520, 4186]))
+    elif tur.startswith("sayac"):  # "sayacN": N saniye boyunca her saniye yumuşak tık + sonda zil
+        n_s = int(tur[5:] or 15)
+        total = n_s + 1.4
+        x = np.zeros(int(sr * total))
+        for k in range(n_s):
+            x += tone(1400 if k < n_s - 3 else 1760, 0.12, 40, 0.5, start=k, total=total)
+        x += sum(tone(f, 1.0, 4, 0.7, start=n_s + i * 0.07, total=total)
+                 for i, f in enumerate([1046.5, 1318.5, 1568.0]))
     elif tur == "gunes":
         x = sum(tone(f, 1.0, 4, 0.5, start=i * 0.05, total=1.3) for i, f in enumerate([784, 988, 1175, 1568, 1976]))
     elif tur == "su":
@@ -489,6 +542,11 @@ def main():
     out_dir = out_dir if os.path.isabs(out_dir) else os.path.normpath(os.path.join(base, out_dir))
     os.makedirs(out_dir, exist_ok=True)
     prefix = os.path.join(out_dir, spec["ad"])
+    dg = spec.get("dongu")  # bir bölümü (ör. hareketi) yumuşak geçişlerle tekrarla
+    if dg:
+        pre_tmp = tempfile.mkdtemp(prefix="bedenine_dongu_")
+        src = build_loop(src, float(dg["bas"]), float(dg["bit"]), int(dg.get("tekrar", 3)),
+                         float(dg.get("gecis", 0.15)), os.path.join(pre_tmp, "dongu.mp4"))
     dur, has_audio = probe(src)
     kirp = float(spec.get("kirp_bas", 0))  # baştaki boşluğu (sessizlik/hareketsizlik) kes
     dur -= kirp
@@ -532,12 +590,21 @@ def main():
              f"[0:v]{VENH},format=yuv420p[v];{agraph}", "-map", "[v]", "-map", "[a]", "-t", f"{dur:.3f}", *enc, plain])
 
         items = build_overlays(spec, tmp, dur)
+        gs = spec.get("geri_sayim")
+        if gs:
+            n_s = int(gs.get("sure", 15))
+            pngs = countdown_pngs(tmp, n_s, int(gs.get("boyut", 300)), gs.get("x", W // 2), gs.get("y", 600))
+            for k, pth in enumerate(pngs):
+                st = float(gs["bas"]) + k
+                items.append((pth, round(st, 3), round(st + 1.0, 3), 0.06))
         inputs, chain, last = [], [], "base"
-        for i, (png, st, en) in enumerate(items):
+        for i, item in enumerate(items):
+            png, st, en = item[:3]
+            fd = item[3] if len(item) > 3 else 0.25
             inputs += ["-loop", "1", "-t", f"{dur + 0.2:.2f}", "-framerate", "24", "-i", png]
             idx = i + first_ov
-            chain.append(f"[{idx}]format=rgba,fade=t=in:st={st}:d=0.25:alpha=1,"
-                         f"fade=t=out:st={max(en - 0.25, st)}:d=0.25:alpha=1[o{i}]")
+            chain.append(f"[{idx}]format=rgba,fade=t=in:st={st}:d={fd}:alpha=1,"
+                         f"fade=t=out:st={max(en - fd, st)}:d={fd}:alpha=1[o{i}]")
             chain.append(f"[{last}][o{i}]overlay=enable='between(t,{st},{en})'[x{i}]")
             last = f"x{i}"
         # animasyonlu efektler (söyleneni görselleştirir) + ses efektleri
@@ -566,6 +633,12 @@ def main():
             # ses girişleri tüm efekt görsellerinden sonra gelir
             for k, lab in enumerate(sfx_labels):
                 lab[0] = first_ov + len(items) + len(efx) + k
+        if gs and gs.get("ses", True):
+            wav = os.path.join(tmp, "sfx_sayac.wav")
+            make_sfx(wav, f"sayac{int(gs.get('sure', 15))}")
+            sfx_inputs += ["-i", wav]
+            sfx_labels.append([first_ov + len(items) + len(efx) + len(sfx_labels),
+                               int(float(gs["bas"]) * 1000), gs.get("ses_db", -14)])
         kapanis = spec.get("kapanis_sesi", bool(uzat) and muziksiz)
         if uzat and kapanis:
             wav = os.path.join(tmp, "sfx_kapanis.wav")

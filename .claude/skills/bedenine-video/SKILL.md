@@ -72,6 +72,11 @@ sabit kapakla ya da konuşma ve büyük yazıyla başlayan videolar %8–16. Bu 
      böylece video sessiz bitmez.
    - Kontrol: `ffprobe -show_entries stream=duration` ile ses ve görüntü sürelerinin eşit
      olduğunu doğrula (ses kesilmesi hatasını yakalar).
+   - `dongu` (isteğe bağlı): `{"bas": 16.4, "bit": 19.95, "tekrar": 5, "gecis": 0.15}`. Bir hareket
+     bölümünü çapraz geçişle tekrarlayarak uzatır (döngü kısmında orijinal ses yok, müzik sürer).
+     Gemini "uzat" ile gelen 20 sn'lik videolarda hareket genelde son 3–4 sn'dir.
+   - `geri_sayim` (isteğe bağlı): `{"bas": 16.5, "sure": 15, "x": 860, "y": 560, "boyut": 300}`.
+     Büyük sayaç (halka ilerlemeli), her saniye tık sesi, sonda zil. Sayaç kartları `items`'a eklenir.
    - `cta`: Son 1.5–2 sn, ör. "Kaydet, yarın sabah dene". Poz kartının altında y=500'de çıkar.
    - `kapak`:
      - `kare`: Yüzün net ve gülümsediği saniye.
