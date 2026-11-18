@@ -2,6 +2,13 @@
 
 Her analizden sonra en üste kısa bir özet eklenir (tarih, ana bulgu, karar).
 
+## 18 Kasım 2026 · "Güne Şiş mi Uyanıyorsun?" (topuk zıplatma), ilk ~2 saat
+- 1.001 görüntüleme (~2 saatte) · +2 abone · Shorts akışı 982, YouTube arama 16, kanal sayfası 6
+- Önceki videolar ~1.000–1.300'e 48 saatte ulaşıp durulmuştu; bu video ~2 saatte ulaştı ve grafik hâlâ doğrusal yükseliyordu.
+- Yeni formül: temiz hareketli açılış, hook 0.3 sn, başta kapak yok, handpan, 15 sn geri sayım, 33 sn.
+- Bekleyen: izleyici tutma ve "izlemeye devam" oranı (2 gün içinde). Uyku videosu bu akşam 21:30'da yayınlanacak.
+- Not: Hızın sebebi konu (sabah şişliği/ödem, aramada da çıkıyor), kapak ya da formül olabilir; tutma verisiyle ayrıştırılacak.
+
 ## 16 Kasım 2026 · ekran görüntülerinden (ilk analiz)
 **Son 28 gün (14 Kas'a kadar):** 5,1 B görüntüleme · 5,0 saat izlenme · +10 abone · aylık kitle 323 (%100 yeni)
 **Gerçek zamanlı 48 saat:** 7.543 görüntüleme
