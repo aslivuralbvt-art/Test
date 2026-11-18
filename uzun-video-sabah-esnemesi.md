@@ -98,7 +98,7 @@ Giriş (~0:15) → 6 hareket (her biri ~0:50, konuşma bir kez, sonra sessiz har
 Gemini'de her yeni videoyu bir önceki videoyu UZATARAK üret; sahne, ışık ve kamera birebir aynı kalır.
 Gönderirken uzatılmış dosyanın tamamını gönder; yeni kısım ayrılır (3/8: 20 sn dosyanın 10–20. saniyesi).
 
-Durum: 1/8 ✅ · 2/8 ✅ · 3/8 ✅ · 4–8 bekliyor
+Durum: 1/8 ✅ · 2/8 ✅ · 3/8 ✅ · 4/8 ✅ (4-ham-30sn: 10–20 yana esneme, 23.4–30 ek hareket → 4-ek.mp4) · 5–8 bekliyor. 5/8 için 4-ham-30sn.mp4 videosunu uzat.
 
 **4/8 Yana esneme** (3'ü uzat):
 `She stays seated cross-legged and says in Turkish, calmly: "Kolunu kaldır, yana doğru uzan ve nefes al." Then, silently, she raises her right arm overhead and slowly leans to the left into a gentle side stretch, holds, comes back to center, then repeats to the other side. Same room, same outfit, same static camera. No music, no text.`
