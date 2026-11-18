@@ -114,3 +114,19 @@ Durum: 1/8 ✅ · 2/8 ✅ · 3/8 ✅ · 4/8 ✅ (4-ham-30sn: 10–20 yana esneme
 
 **8/8 Kapanış** (7'yi uzat):
 `Standing on the mat, she brings her hands together at her heart, smiles warmly at the camera and says in Turkish: "Harika! Artık güne hazırsın. Yarın sabah yine buradayım. Abone ol, birlikte devam edelim." She ends with a small wave. Same room, same outfit, same static camera. No music, no text.`
+
+---
+
+## Güncel promptlar 5–8 (4. videonun odası: beyaz duvar, solda pencere, sağda kalorifer)
+Uzatma zinciri: 4-ham-30sn → 5 → 6 → 7 → 8. Uzat yoksa uzun promptu 16:9 ve referans fotoğrafla kullan.
+
+Ortak sahne (uzun promptlar için):
+`SETTING: bright minimalist living room with white walls, a large window with a green garden view on the left, a white radiator on the right wall, a few potted plants, light wooden floor, a grey yoga mat in the center. Soft natural morning light.`
+
+**5/8 Kedi-inek (uzat):** `She moves from sitting onto all fours on the mat, hands under shoulders, knees under hips, her body in side profile to the camera. She says in Turkish, calmly: "Nefes alırken göğsünü aç, verirken sırtını yuvarla." Then, silently, she slowly arches her back looking slightly up, then rounds her back tucking her chin, repeating smoothly with her breath. Same room, same outfit, same static camera, full body visible. No music, no text.`
+
+**6/8 Çocuk pozu (uzat):** `From all fours she sits her hips back onto her heels and says in Turkish, softly: "Kalçanı topuklarına bırak, kollarını öne uzat. Dinlen." Then, silently, she folds forward into child's pose, arms stretched forward on the mat, forehead resting down, breathing slowly; her back gently rises and falls. Same room, same outfit, same static camera, full body visible. No music, no text.`
+
+**7/8 Ayakta uzanma (uzat):** `She slowly rises and stands on the mat facing the camera, and says in Turkish, calmly: "Kollarını yukarı uzat, sonra yavaşça öne eğil." Then, silently, she reaches both arms up overhead with a deep breath, then slowly folds forward with soft bent knees, hands toward the floor, and slowly rolls back up to standing. Same room, same outfit, same static camera, full body visible. No music, no text.`
+
+**8/8 Kapanış (uzat):** `Standing on the mat, she brings her hands together at her heart, smiles warmly at the camera and says in Turkish: "Harika! Artık güne hazırsın. Yarın sabah yine buradayım. Abone ol, birlikte devam edelim." She ends with a small wave. Same room, same outfit, same static camera, very slow push-in. No music, no text.`
