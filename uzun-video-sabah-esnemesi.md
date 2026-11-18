@@ -139,3 +139,9 @@ Yeni uzatma promptu (4-ham-30sn'i uzat):
 ### Montaj
 `python3 araclar/uzun_video.py videolar/uzun-video/tarif.json` (arka planda çalıştır; 45 sn hareketlerle ~30+ dk sürebilir).
 Test (4 bölüm, 20 sn hareket) başarılı: 1920x1080, başlık kartı, numaralı hareket kartı, geri sayım, "Sıradaki", dinlenme ekranı, handpan, bölüm listesi.
+
+### 5/8 güncelleme
+40 sn'lik dosyada 30.25–31.8 sn arası inek pozu var (kedi/yuvarlama yok, sonra oturuyor). Bu bölüm ileri-geri döngüyle
+`5-hareket.mp4` yapıldı; `5.mp4` = bu görüntü + 30.0–35.6 sn konuşma sesi. Tarife eklendi.
+6/8 bu 40 sn'lik dosyadan uzatılacak; video oturarak bittiği için 6'nın promptu oturuştan başlar:
+`From sitting cross-legged, she comes onto her knees on the mat, body in side profile to the camera, and sits her hips back onto her heels. She says in Turkish, softly: "Kalçanı topuklarına bırak, kollarını öne uzat. Dinlen." Then, silently, she folds forward into child's pose, arms stretched forward on the mat, forehead resting down, breathing slowly; her back gently rises and falls. She stays in child's pose until the end. Same room, same outfit, same static camera, full body visible in side view. No music, no text.`
