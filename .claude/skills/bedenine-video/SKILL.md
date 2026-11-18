@@ -25,6 +25,17 @@ sabit kapakla ya da konuşma ve büyük yazıyla başlayan videolar %8–16. Bu 
   gülümseme (konuşurken yakalanmış yarım ağız ifadesi değil). 0.1–0.2 sn aralıklarla yüz ızgarası çıkar,
   2–3 adayı büyük boyutta karşılaştır, en doğal gülümsemeyi seç.
 
+## Konuşma kontrolü (Gemini telaffuz hataları)
+- Her konuşmalı klibi `faster-whisper` **medium** modeliyle yazıya çevir; small model hataları kaçırabiliyor.
+- Uzun, çok heceli kelimelere özellikle dikkat et ("esnemesine", "ödüllendirdin" gibi): Gemini hece
+  tekrarlayabiliyor ("esnesnemesine") ya da kelime atlayabiliyor.
+- **Hece tekrarı varsa kurtarılabilir:** Kelimenin içinde 0.12–0.20 sn'lik pencereleri dene (sesi numpy'de 30 ms
+  çapraz geçişle kes), her denemeyi medium modelle yazıya çevir, doğru kelimeyi veren pencereyi seç (çevresindeki
+  pencereler de doğruysa sonuç sağlamdır). Aynı aralığı görüntüden `trim` + `concat` ile kes.
+  `apad` kullanırken mutlaka `whole_dur` ver; sonsuz apad + concat ffmpeg'de yanıltıcı
+  "No space left on device" hatası verir.
+- **Kelime atlanmışsa** kurtarılamaz: yeniden üretim öner (cümleyi kısalt, "pronounce every word" ekle).
+
 ## Adımlar
 
 1. **Kaynağı kopyala.** Gönderilen videoyu `videolar/kaynak/<ad>.mp4` olarak kopyala.
