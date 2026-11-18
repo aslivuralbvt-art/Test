@@ -96,5 +96,10 @@
         }
       ]
     }
-  ]
+  ],
+  "kapanis": {
+    "dosya": "8.mp4",
+    "konusma_bit": 8.5,
+    "kart_bas": 8.6
+  }
 }
