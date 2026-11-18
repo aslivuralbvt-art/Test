@@ -555,3 +555,7 @@ No subtitles, no on-screen text, no background music, no logo.
 **Kapak:** "EGZERSİZDEN SONRA NEDEN İYİ HİSSEDİYORSUN?" + "3. AŞAMA · ENDORFİN"
 
 **Başlık:** `Egzersizden Sonra Neden İyi Hissediyorsun? 🧘‍♀️ #endorfin #mutlulukhormonları`
+
+## 💌 Serotonin: "Bugün senin gününü kim güzelleştirdi?" (18 Kasım 2026)
+Kıyafet: askılı beyaz basic body + siyah tayt. A = sessiz sahne (stres → mesaj → yumuşama), B = A'yı uzat, kameraya konuşma.
+Mesaj metni telefonda okunmaz; düzenlemede bildirim kartı olarak eklenir: "İyi ki varsın, seni çok seviyorum".
