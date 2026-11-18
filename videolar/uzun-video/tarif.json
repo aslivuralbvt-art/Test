@@ -69,6 +69,32 @@
           "bit": 3.6
         }
       ]
+    },
+    {
+      "ad": "Çocuk pozu",
+      "talimat": "Kalçan topuklarında, kolların önde · Derin nefes al, dinlen",
+      "dosya": "6.mp4",
+      "konusma_bit": 9.1,
+      "hareket": [
+        {
+          "dosya": "6.mp4",
+          "bas": 7.4,
+          "bit": 10.95
+        }
+      ]
+    },
+    {
+      "ad": "Ayakta uzanma ve öne eğilme",
+      "talimat": "Kollar yukarı, nefes al · Dizler hafif bükük, yavaşça öne eğil",
+      "dosya": "7.mp4",
+      "konusma_bit": 6.1,
+      "hareket": [
+        {
+          "dosya": "7.mp4",
+          "bas": 5.8,
+          "bit": 10.95
+        }
+      ]
     }
   ]
 }
