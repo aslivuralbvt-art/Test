@@ -1,7 +1,7 @@
 # Sabah 1 dakika: bağımsız videolar (seri değil)
 
 Her video tek başına; numara ya da "yarın" sözü yok. İstenen sabah, istenen sırayla yayınlanır.
-Kıyafet rotasyonu: boyun = adaçayı yeşili · bel = bordo · eller = mavi · enerji = toprak. Aynı video içinde (A ve B) kıyafet değişmez.
+Kıyafet rotasyonu: boyun = bordo · bel = adaçayı yeşili · eller = mavi · enerji = toprak. Aynı video içinde (A ve B) kıyafet değişmez.
 Formül (topuk zıplatma gibi): A = hareketli açılış + beden sorunu hook'u · B = A'yı uzat, talimat + hareket · düzenlemede 15 sn geri sayım.
 
 ## 🛏️ Sabah belin tutuk mu kalkıyorsun?
@@ -9,7 +9,7 @@ Formül (topuk zıplatma gibi): A = hareketli açılış + beden sorunu hook'u �
 ```
 Vertical 9:16 video, 10 seconds, photorealistic, natural morning style.
 CHARACTER: Aslı, a woman in her late 30s, soft oval face, grey-green eyes, platinum ash-blonde hair swept to one side in a loose low bun with loose strands, thin round dark metal-frame glasses, berry-red lipstick, small gold hoop earrings, warm friendly smile.
-OUTFIT: matching burgundy (deep wine red) athletic set, sports bra top and high-waisted leggings.
+OUTFIT: matching sage green athletic set, sports bra top and high-waisted leggings.
 SETTING: a bright, calm bedroom in the early morning, white linen sheets, light wooden floor, sheer curtains with soft golden morning sunlight.
 ACTION: The video starts in motion: she is lying on her back in bed on top of the white sheets, stretching both arms overhead with a big morning stretch. Then she turns her head to the camera with a warm smile.
 SPEECH: She speaks in Turkish, clearly and warmly, pronouncing every word:
@@ -47,7 +47,7 @@ Düzenleme: sihir · 15 sn aç-kapa · Uyuşma sık oluyorsa doktora danış
 ```
 Vertical 9:16 video, 10 seconds, photorealistic, natural morning style.
 CHARACTER: Aslı, a woman in her late 30s, soft oval face, grey-green eyes, platinum ash-blonde hair swept to one side in a loose low bun with loose strands, thin round dark metal-frame glasses, berry-red lipstick, small gold hoop earrings, warm friendly smile.
-OUTFIT: matching sage green athletic set, sports bra top and high-waisted leggings.
+OUTFIT: matching burgundy athletic set (deep wine red, dark and matte, not bright red, not pink), sports bra top and high-waisted leggings.
 SETTING: a bright, calm bedroom in the early morning, white linen sheets, light wooden floor, sheer curtains with soft golden morning sunlight.
 ACTION: The video starts in motion: she sits up in bed from the pillow and rubs the back of her neck with one hand, with a slightly stiff expression. Then she looks at the camera and smiles.
 SPEECH: She speaks in Turkish, clearly and warmly, pronouncing every word:
