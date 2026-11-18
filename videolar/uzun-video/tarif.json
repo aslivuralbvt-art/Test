@@ -1,0 +1,20 @@
+{
+  "baslik": "Benimle Sabah Esnemesi",
+  "alt_baslik": "Yeni başlayanlar için nazik rutin · Bedenine Yolculuk",
+  "cikti": "../uzun-video-sabah-esnemesi.mp4",
+  "hareket_suresi": 45,
+  "dinlenme": 8,
+  "muzik_tohum": 6,
+  "muzik_bpm": 72,
+  "muzik_db": -4,
+  "giris": { "dosya": "1.mp4", "konusma_bit": 6.9, "baslik_bas": 7.0 },
+  "hareketler": [
+    { "ad": "Boyun esnemesi", "talimat": "Başını yavaşça sağa, sonra sola eğ · Omuzlar aşağıda",
+      "dosya": "2.mp4", "konusma_bit": 5.7, "hareket": [ { "dosya": "2.mp4", "bas": 3.4, "bit": 9.9 } ] },
+    { "ad": "Omuz çevirme", "talimat": "Ellerin omuzlarında · Dirseklerinle büyük daireler çiz",
+      "dosya": "3.mp4", "konusma_bit": 4.7, "hareket": [ { "dosya": "3.mp4", "bas": 5.3, "bit": 8.8 } ] },
+    { "ad": "Oturarak yana esneme", "talimat": "Kolunu kaldır, yana uzan · Her iki taraf",
+      "dosya": "4.mp4", "konusma_bit": 6.1,
+      "hareket": [ { "dosya": "4.mp4", "bas": 3.4, "bit": 9.9 }, { "dosya": "4-ek.mp4", "bas": 0.1, "bit": 6.5 } ] }
+  ]
+}

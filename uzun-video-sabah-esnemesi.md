@@ -130,3 +130,12 @@ Ortak sahne (uzun promptlar için):
 **7/8 Ayakta uzanma (uzat):** `She slowly rises and stands on the mat facing the camera, and says in Turkish, calmly: "Kollarını yukarı uzat, sonra yavaşça öne eğil." Then, silently, she reaches both arms up overhead with a deep breath, then slowly folds forward with soft bent knees, hands toward the floor, and slowly rolls back up to standing. Same room, same outfit, same static camera, full body visible. No music, no text.`
 
 **8/8 Kapanış (uzat):** `Standing on the mat, she brings her hands together at her heart, smiles warmly at the camera and says in Turkish: "Harika! Artık güne hazırsın. Yarın sabah yine buradayım. Abone ol, birlikte devam edelim." She ends with a small wave. Same room, same outfit, same static camera, very slow push-in. No music, no text.`
+
+### 5/8 notu
+İlk deneme (5-ham-40sn-deneme1.mp4) kullanılamadı: 30–32 sn dört ayakta duruyor ama kedi-inek yapmıyor, sonra oturup konuşuyor.
+Yeni uzatma promptu (4-ham-30sn'i uzat):
+`She moves onto all fours on the mat, body in side profile to the camera, and STAYS on all fours for the entire clip. She does NOT sit back down. While she says in Turkish, calmly: "Nefes alırken göğsünü aç, verirken sırtını yuvarla." she is already moving: she slowly drops her belly and lifts her chest and gaze (cow pose), then slowly rounds her back up toward the ceiling and tucks her chin (cat pose), and keeps repeating this smooth wave with her breath until the end. Same room, same outfit, same static camera, full body visible in side view. No music, no text.`
+
+### Montaj
+`python3 araclar/uzun_video.py videolar/uzun-video/tarif.json` (arka planda çalıştır; 45 sn hareketlerle ~30+ dk sürebilir).
+Test (4 bölüm, 20 sn hareket) başarılı: 1920x1080, başlık kartı, numaralı hareket kartı, geri sayım, "Sıradaki", dinlenme ekranı, handpan, bölüm listesi.
