@@ -80,4 +80,5 @@ Aslı (yüz, saç, gözlük) hep aynı; kıyafet videodan videoya değişir ki a
 - Bordo: `matching burgundy (deep wine red) athletic set`
 - Mavi: `matching dusty blue athletic set`
 - Toprak: `matching terracotta athletic set`
+- Siyah: `matching black athletic set`
 Kural: Aynı videonun parçaları (A ve uzatma B) aynı kıyafette olmalı.
