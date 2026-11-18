@@ -1,0 +1,25 @@
+{
+  "ad": "asli-boyun",
+  "kaynak": "../kaynak/boyun-siyah-B.mp4",
+  "cikti_klasoru": "..",
+  "dongu": { "bas": 15.45, "bit": 19.95, "tekrar": 4, "gecis": 0.15 },
+  "yazi_y": 1150,
+  "muzik": { "stil": "handpan", "tohum": 5, "bpm": 80, "seviye_db": -6, "konusma_var": true },
+  "konusma": "Kalkınca boynun tutuk mu? Yastıktan kalkar kalkmaz bunu dene. Çeneni düz geriye çek, sonra başını yavaşça yana eğ.",
+  "hook": { "metin": "Kalkınca boynun tutuk mu?", "boyut": 62, "bas": 0.3, "bit": 5.4 },
+  "adimlar": [
+    { "no": "", "baslik": "Sabah 1 dakika", "altlar": ["Boyun rahatlatma"], "bas": 5.4, "bit": 9.4 },
+    { "no": 1, "baslik": "Dik otur, omuzlar gevşek", "bas": 9.6, "bit": 15.45, "y": 1050 },
+    { "no": 2, "baslik": "Çeneni düz geriye çek", "bas": 11.2, "bit": 15.45, "y": 1178 },
+    { "no": 3, "baslik": "Başını yavaşça yana eğ", "bas": 13.5, "bit": 15.45, "y": 1306 },
+    { "no": "", "baslik": "Sağa · ortaya · sola", "altlar": ["Yavaş, acele yok"], "bas": 15.5, "bit": 30.5, "y": 1250 },
+    { "no": "", "baslik": "3 tur = 1 dakika", "altlar": ["Omuzlar aşağıda · Acı varsa dur"], "bas": 30.5, "y": 1100 }
+  ],
+  "cta": { "metin": "Kaydet, sabah dene", "bas": 30.7, "y": 1320 },
+  "geri_sayim": { "bas": 15.5, "sure": 15, "x": 860, "y": 560, "boyut": 300 },
+  "efektler": [
+    { "tur": "tik", "bas": 8.0, "sure": 1.4, "x": 900, "y": 420, "boyut": 240, "ses_db": -15 },
+    { "tur": "tik", "bas": 30.5, "sure": 1.6, "x": 860, "y": 560, "boyut": 280 }
+  ],
+  "aciklama": "Sabah kalkınca boynun tutuk mu? 🙆‍♀️\n\nYastıktan kalkar kalkmaz 1 dakikanı ayır, boynunu nazikçe uyandır:\n\n1️⃣ Yatağın kenarında dik otur, omuzlarını gevşet\n2️⃣ Çeneni düz geriye çek (çift çene yapar gibi), 2 saniye tut, bırak\n3️⃣ Başını yavaşça sağ omzuna eğ, ortaya dön, sonra sol omzuna eğ\n\n⏱️ 15 saniye × 3 tur, aralarda derin nefes = 1 dakika\n\nOmuzların kulaklarına doğru kalkmasın; hareket yavaş ve acısız olmalı.\nBu hareket sabah boyun gerginliğini hafifletmeye yardımcı olabilir.\nAğrın sürekliyse, uyuşma ya da baş dönmesi varsa doktoruna danış.\n\n👇 Sabahları boynun en çok hangi tarafa tutuk? Yorumlara yaz!\n🔖 Sabah unutmamak için kaydet.\n\nBen Aslı. Bedenine Yolculuk'ta her gün birkaç saniyelik küçük adımlar.\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi.\n\n#boyunağrısı #boyuntutulması #sabahrutini #esneme #sabahegzersizi #masabaşı #evdehareket #kendineiyibak #bedenineyolculuk #shorts"
+}
