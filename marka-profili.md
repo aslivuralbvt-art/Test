@@ -73,3 +73,11 @@ Her yeni video aynı tarzda düzenlenir: `araclar/bedenine_video.py` + `.claude/
 - Ses: -14 LUFS (YouTube standardı)
 - Ekran yazıları: Üstte hook kartı → numaralı poz kartları (adaçayı rozet) → yeşil CTA etiketi
 - Kapak: Dikey 1080×1920 + yatay 1280×720, "BEDENİNE YOLCULUK" etiketi, büyük beyaz başlık
+
+## Kıyafet rotasyonu (18 Kasım 2026)
+Aslı (yüz, saç, gözlük) hep aynı; kıyafet videodan videoya değişir ki akışta tekrar hissi olmasın.
+- Adaçayı yeşili: `matching sage green athletic set`
+- Bordo: `matching burgundy (deep wine red) athletic set`
+- Mavi: `matching dusty blue athletic set`
+- Toprak: `matching terracotta athletic set`
+Kural: Aynı videonun parçaları (A ve uzatma B) aynı kıyafette olmalı.

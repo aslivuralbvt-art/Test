@@ -1,6 +1,7 @@
 # Sabah 1 dakika: bağımsız videolar (seri değil)
 
 Her video tek başına; numara ya da "yarın" sözü yok. İstenen sabah, istenen sırayla yayınlanır.
+Kıyafet rotasyonu: boyun = adaçayı yeşili · bel = bordo · eller = mavi · enerji = toprak. Aynı video içinde (A ve B) kıyafet değişmez.
 Formül (topuk zıplatma gibi): A = hareketli açılış + beden sorunu hook'u · B = A'yı uzat, talimat + hareket · düzenlemede 15 sn geri sayım.
 
 ## 🛏️ Sabah belin tutuk mu kalkıyorsun?
@@ -8,7 +9,7 @@ Formül (topuk zıplatma gibi): A = hareketli açılış + beden sorunu hook'u �
 ```
 Vertical 9:16 video, 10 seconds, photorealistic, natural morning style.
 CHARACTER: Aslı, a woman in her late 30s, soft oval face, grey-green eyes, platinum ash-blonde hair swept to one side in a loose low bun with loose strands, thin round dark metal-frame glasses, berry-red lipstick, small gold hoop earrings, warm friendly smile.
-OUTFIT: matching sage green athletic set, sports bra top and high-waisted leggings.
+OUTFIT: matching burgundy (deep wine red) athletic set, sports bra top and high-waisted leggings.
 SETTING: a bright, calm bedroom in the early morning, white linen sheets, light wooden floor, sheer curtains with soft golden morning sunlight.
 ACTION: The video starts in motion: she is lying on her back in bed on top of the white sheets, stretching both arms overhead with a big morning stretch. Then she turns her head to the camera with a warm smile.
 SPEECH: She speaks in Turkish, clearly and warmly, pronouncing every word:
@@ -27,7 +28,7 @@ Düzenleme: tik · 15 sn sallanma · Ağrın sürekliyse doktora danış
 ```
 Vertical 9:16 video, 10 seconds, photorealistic, natural morning style.
 CHARACTER: Aslı, a woman in her late 30s, soft oval face, grey-green eyes, platinum ash-blonde hair swept to one side in a loose low bun with loose strands, thin round dark metal-frame glasses, berry-red lipstick, small gold hoop earrings, warm friendly smile.
-OUTFIT: matching sage green athletic set, sports bra top and high-waisted leggings.
+OUTFIT: matching dusty blue athletic set, sports bra top and high-waisted leggings.
 SETTING: a bright, calm bedroom in the early morning, white linen sheets, light wooden floor, sheer curtains with soft golden morning sunlight.
 ACTION: The video starts in motion: she sits up on the edge of the bed and gently shakes out both hands in front of her, as if waking them up. Then she looks at the camera with a warm smile.
 SPEECH: She speaks in Turkish, clearly and warmly, pronouncing every word:
@@ -65,7 +66,7 @@ Düzenleme: tik · 15 sn eğme · Ağrın sürekliyse doktora danış
 ```
 Vertical 9:16 video, 10 seconds, photorealistic, natural morning style.
 CHARACTER: Aslı, a woman in her late 30s, soft oval face, grey-green eyes, platinum ash-blonde hair swept to one side in a loose low bun with loose strands, thin round dark metal-frame glasses, berry-red lipstick, small gold hoop earrings, warm friendly smile.
-OUTFIT: matching sage green athletic set, sports bra top and high-waisted leggings.
+OUTFIT: matching terracotta athletic set, sports bra top and high-waisted leggings, barefoot.
 SETTING: a bright, calm bedroom in the early morning, white linen sheets, light wooden floor, sheer curtains with soft golden morning sunlight.
 ACTION: The video starts in motion: she gets out of bed with a big yawn and a full-body stretch, arms reaching high, then stands next to the bed and looks at the camera with a bright smile.
 SPEECH: She speaks in Turkish, clearly and energetically, pronouncing every word:
