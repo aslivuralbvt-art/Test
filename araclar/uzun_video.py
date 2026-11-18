@@ -91,10 +91,15 @@ def sayac(klasor, n, x=1640, y=800, r=150, etiket="saniye"):
 def overlay_chain(inputs_start, katmanlar):
     """katmanlar: [(png, bas, bit)] → filtre zinciri (girişler inputs_start'tan itibaren)."""
     zincir, son = [], "v0"
-    for i, (_, b, e) in enumerate(katmanlar):
+    for i, kat in enumerate(katmanlar):
+        _, b, e = kat[:3]
+        fd = kat[3] if len(kat) > 3 else 0.2   # sayaç rakamlarında 0: her saniye sönme olmasın
         idx = inputs_start + i
-        zincir.append(f"[{idx}]format=rgba,fade=t=in:st={b:.2f}:d=0.2:alpha=1,"
-                      f"fade=t=out:st={max(e - 0.2, b):.2f}:d=0.2:alpha=1[k{i}]")
+        if fd > 0:
+            zincir.append(f"[{idx}]format=rgba,fade=t=in:st={b:.2f}:d={fd}:alpha=1,"
+                          f"fade=t=out:st={max(e - fd, b):.2f}:d={fd}:alpha=1[k{i}]")
+        else:
+            zincir.append(f"[{idx}]format=rgba[k{i}]")
         zincir.append(f"[{son}][k{i}]overlay=enable='between(t,{b:.2f},{e:.2f})'[v{i + 1}]")
         son = f"v{i + 1}"
     return zincir, son
@@ -104,7 +109,8 @@ def segment(cikti, video_fc, sure_s, katmanlar, ses_girdisi=None, ses_fc=None, g
     """video_fc: [v0] üreten filtre; katmanlar: overlay pngleri."""
     inp = list(girisler)
     n_in = sum(1 for x in inp if x == "-i")
-    for png, b, e in katmanlar:
+    for kat in katmanlar:
+        png = kat[0]
         inp += ["-loop", "1", "-t", f"{sure_s + 0.1:.2f}", "-framerate", str(FPS), "-i", png]
     zincir, son = overlay_chain(n_in, katmanlar)
     fc = video_fc + (";" + ";".join(zincir) if zincir else "") + f";[{son}]format=yuv420p[vout]"
@@ -192,7 +198,7 @@ def main():
             n = int(hedef)
             kats = [(kp, 0, hedef)]
             for j, sp in enumerate(sayac(sk, n)):
-                kats.append((sp, j, j + 1.0))
+                kats.append((sp, j, j + 1.0, 0))
             if i + 1 < len(hareketler):
                 sp_ = os.path.join(tmp, f"sira{i}.png")
                 kart(sp_, f"Sıradaki: {hareketler[i + 1]['ad']}", None, y=940, x=70, buyuk=40)
@@ -210,7 +216,7 @@ def main():
                 run(["ffmpeg", "-v", "error", "-y", "-sseof", "-0.1", "-i", dp, "-frames:v", "1", son_kare])
                 rk = os.path.join(tmp, f"rs{i}")
                 os.makedirs(rk)
-                kats = [(rp, 0, dinlen)] + [(sp, j, j + 1.0) for j, sp in enumerate(sayac(rk, int(dinlen), r=110))]
+                kats = [(rp, 0, dinlen)] + [(sp, j, j + 1.0, 0) for j, sp in enumerate(sayac(rk, int(dinlen), r=110))]
                 p = os.path.join(tmp, f"seg_{i}_r.mp4")
                 segment(p, f"[0:v]scale={W}:{H},boxblur=18:2,eq=brightness=-0.08[v0]", dinlen, kats,
                         girisler=["-loop", "1", "-t", f"{dinlen + 0.1}", "-framerate", str(FPS), "-i", son_kare])
