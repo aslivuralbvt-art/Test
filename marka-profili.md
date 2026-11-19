@@ -81,4 +81,5 @@ Aslı (yüz, saç, gözlük) hep aynı; kıyafet videodan videoya değişir ki a
 - Mavi: `matching dusty blue athletic set`
 - Toprak: `matching terracotta athletic set`
 - Siyah: `matching black athletic set`
+- Lacivert + sarı yağmurluk: `matching deep blue athletic set` + `light butter yellow rain jacket`
 Kural: Aynı videonun parçaları (A ve uzatma B) aynı kıyafette olmalı.

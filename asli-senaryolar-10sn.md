@@ -559,3 +559,9 @@ No subtitles, no on-screen text, no background music, no logo.
 ## 💌 Serotonin: "Bugün senin gününü kim güzelleştirdi?" (18 Kasım 2026)
 Kıyafet: askılı beyaz basic body + siyah tayt. A = sessiz sahne (stres → mesaj → yumuşama), B = A'yı uzat, kameraya konuşma.
 Mesaj metni telefonda okunmaz; düzenlemede bildirim kartı olarak eklenir: "İyi ki varsın, seni çok seviyorum".
+
+## 🧴 Güneş kremi: "Ama bir şeyi unuttun!" (19 Kasım 2026)
+Kıyafet: deep blue tayt takım + butter yellow yağmurluk, kulaküstü kulaklık. Kamera = ayna (yansıma yok).
+A = hazırlanma (fermuar, telefon, anahtar) → durup komodinden güneş kremini alır: "Ama bir şeyi unuttun!"
+B = A'yı uzat: kremi sürerken "Yaz kış fark etmez, en önemli adım güneş kremi. Cildini UV ışınlarından korur, leke ve yaşlanmayı geciktirir."
+Düzenleme: A'nın hazır anında flu ekran + tikli liste (kulaklık, telefon, su veya kahven, anahtarlar) ~3,5 sn · "Ama 1 şeyi unuttun" kartı + güneş · kapanış "Dışarı çıkmasan da sür, cildini koru" · açıklamada "Cildine uygun ürün için dermatoloğuna danış".
