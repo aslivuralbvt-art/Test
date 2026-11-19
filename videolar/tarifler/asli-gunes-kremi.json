@@ -1,0 +1,31 @@
+{
+  "ad": "asli-gunes-kremi",
+  "kaynak": "../kaynak/gunes-kremi-kurgu.mp4",
+  "cikti_klasoru": "..",
+  "uzat": 2.2,
+  "yazi_y": 1250,
+  "muzik": { "stil": "handpan", "tohum": 8, "bpm": 88, "seviye_db": -6, "konusma_var": true },
+  "konusma": "Ama bir şeyi unuttun! Yaz kış fark etmez, en önemli adım güneş kremi. Cildini UV ışınlarından korur, leke ve yaşlanmayı geciktirir.",
+  "hook": { "metin": "Sabah yürüyüşüne hazır mısın?", "boyut": 58, "bas": 0.3, "bit": 4.7 },
+  "adimlar": [
+    { "no": "", "baslik": "Hazırlık listesi", "bas": 4.9, "bit": 8.4, "y": 600 },
+    { "no": "✓", "baslik": "Kulaklık", "bas": 5.2, "bit": 8.4, "y": 760 },
+    { "no": "✓", "baslik": "Telefon", "bas": 5.85, "bit": 8.4, "y": 888 },
+    { "no": "✓", "baslik": "Su veya kahven", "bas": 6.5, "bit": 8.4, "y": 1016 },
+    { "no": "✓", "baslik": "Anahtarlar", "bas": 7.15, "bit": 8.4, "y": 1144 },
+    { "no": "", "baslik": "Ama 1 şeyi unuttun!", "bas": 11.3, "bit": 14.7 },
+    { "no": "", "baslik": "Yaz kış fark etmez", "altlar": ["En önemli adım: güneş kremi"], "bas": 14.8, "bit": 17.9 },
+    { "no": "", "baslik": "Cildini UV ışınlarından korur", "altlar": ["Leke ve yaşlanmayı geciktirir"], "bas": 17.9, "bit": 21.4 },
+    { "no": "", "baslik": "Dışarı çıkmasan da sür", "altlar": ["Cildini koru"], "bas": 21.4 }
+  ],
+  "cta": { "metin": "Kaydet, unutma", "bas": 22.0, "y": 1420 },
+  "efektler": [
+    { "tur": "tik", "bas": 5.2, "sure": 0.5, "x": -400, "y": -400, "boyut": 40, "ses_db": -16 },
+    { "tur": "tik", "bas": 5.85, "sure": 0.5, "x": -400, "y": -400, "boyut": 40, "ses_db": -16 },
+    { "tur": "tik", "bas": 6.5, "sure": 0.5, "x": -400, "y": -400, "boyut": 40, "ses_db": -16 },
+    { "tur": "tik", "bas": 7.15, "sure": 0.5, "x": -400, "y": -400, "boyut": 40, "ses_db": -16 },
+    { "tur": "gunes", "bas": 11.4, "sure": 1.8, "x": 860, "y": 640, "boyut": 240, "ses_db": -14 },
+    { "tur": "tik", "bas": 21.4, "sure": 1.6, "x": 860, "y": 640, "boyut": 260 }
+  ],
+  "aciklama": "Yürüyüş listen hazır: kulaklık ✔️ telefon ✔️ su ya da kahve ✔️ anahtarlar ✔️\nAma bir şeyi unuttun... 🧴☀️\n\nYaz kış fark etmez, sabah rutinindeki en önemli adım güneş kremi.\nGüneş kremi cildini UV ışınlarından korumaya yardımcı olur; lekelenmeyi ve erken yaşlanma belirtilerini geciktirebilir.\nBulutlu havada ve kışın da UV ışınları cildine ulaşır.\n\n💡 Yüzüne, boynuna ve ellerine sür; dışarıda uzun kalacaksan 2-3 saatte bir yenile.\nCildine uygun ürün için dermatoloğuna danış.\n\n👇 Sen her sabah güneş kremi sürüyor musun? Yorumlara yaz!\n🔖 Unutmamak için kaydet.\n\nBen Aslı. Bedenine Yolculuk'ta her gün birkaç saniyelik küçük adımlar.\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi.\n\n#güneşkremi #ciltbakımı #spf #sabahrutini #yürüyüş #lekekarşıtı #kendineiyibak #bedenineyolculuk #shorts"
+}
