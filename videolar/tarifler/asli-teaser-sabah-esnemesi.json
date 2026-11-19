@@ -1,0 +1,19 @@
+{
+  "ad": "asli-teaser-sabah-esnemesi",
+  "kaynak": "../kaynak/teaser-kurgu.mp4",
+  "cikti_klasoru": "..",
+  "uzat": 3.5,
+  "yazi_y": 1650,
+  "muzik": { "stil": "handpan", "tohum": 6, "bpm": 72, "seviye_db": -5, "konusma_var": true },
+  "konusma": "Günaydın. Benimle sabah esnemesine hazır mısın? Başlayalım.",
+  "hook": { "metin": "Benimle 6 dakika sabah esnemesi", "boyut": 58, "bas": 0.2, "bit": 10.9, "y": 250 },
+  "adimlar": [
+    { "no": "", "baslik": "6 hareket · Ekipman yok", "altlar": ["Yeni başlayanlar için"], "bas": 3.0, "bit": 10.9, "y": 1650 },
+    { "no": "", "baslik": "Rutinin tamamı yarın sabah", "altlar": ["Cumartesi 08:30 · Bedenine Yolculuk"], "bas": 11.0, "y": 1640 }
+  ],
+  "cta": { "metin": "Abone ol, kaçırma", "bas": 11.6, "y": 1800 },
+  "efektler": [
+    { "tur": "gunes", "bas": 11.1, "sure": 1.8, "x": 880, "y": 250, "boyut": 230, "ses_db": -15 }
+  ],
+  "aciklama": "Yarın sabah 08:30'da kanalda: benimle 6 dakikalık sabah esnemesi ☀️\n\nBoyun, omuz, yana esneme, kedi-inek, çocuk pozu ve ayakta uzanma. Ekipman yok, sadece bir mat ve birkaç dakikan.\nEkrandaki sayaçla birlikte yap, yeni başlayanlar için uygun.\n\n🔔 Kaçırmamak için abone ol, bildirimleri aç.\n👇 Sabahları en çok neren tutuk uyanıyor? Yorumlara yaz!\n\nBen Aslı. Bedenine Yolculuk'ta her gün birkaç saniyelik küçük adımlar, bazen de birlikte birkaç dakika.\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi.\n\n#sabahesnemesi #esneme #yoga #sabahrutini #yenibaşlayanlar #evdeegzersiz #benimlebirlikte #bedenineyolculuk #shorts"
+}
