@@ -565,3 +565,8 @@ Kıyafet: deep blue tayt takım + butter yellow yağmurluk, kulaküstü kulaklı
 A = hazırlanma (fermuar, telefon, anahtar) → durup komodinden güneş kremini alır: "Ama bir şeyi unuttun!"
 B = A'yı uzat: kremi sürerken "Yaz kış fark etmez, en önemli adım güneş kremi. Cildini UV ışınlarından korur, leke ve yaşlanmayı geciktirir."
 Düzenleme: A'nın hazır anında flu ekran + tikli liste (kulaklık, telefon, su veya kahven, anahtarlar) ~3,5 sn · "Ama 1 şeyi unuttun" kartı + güneş · kapanış "Dışarı çıkmasan da sür, cildini koru" · açıklamada "Cildine uygun ürün için dermatoloğuna danış".
+
+## 🔄 10 saniyede reset (21 Kasım 2026)
+Kıyafet: buz mavisi kot pantolon + beyaz dar tişört + omuz/kol çantası. Kamera = ayna.
+Konuşma (kısaltılmış): "10 saniyede kendine reset at: su iç, derin bir nefes al, seni mutlu edecek bir şey düşün. Sen değerlisin, unutma, sadece gülümse!"
+Düzenleme: su / nefes / mutluluk kartları (tikli), "Sen değerlisin" kapanış kartı, kalp efekti.
