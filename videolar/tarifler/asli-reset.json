@@ -1,0 +1,25 @@
+{
+  "ad": "asli-reset",
+  "kaynak": "../kaynak/reset.mp4",
+  "cikti_klasoru": "..",
+  "uzat": 2.6,
+  "yazi_y": 1250,
+  "muzik": { "stil": "handpan", "tohum": 9, "bpm": 96, "seviye_db": -6, "konusma_var": true },
+  "konusma": "Su iç, derin bir nefes al, seni mutlu edecek bir şey düşün. Sen değerlisin, unutma, sadece gülümse!",
+  "hook": { "metin": "10 saniyede kendine reset at", "boyut": 60, "bas": 0.2, "bit": 3.4 },
+  "geri_sayim": { "bas": 0.0, "sure": 10, "x": 870, "y": 330, "boyut": 230 },
+  "adimlar": [
+    { "no": "✓", "baslik": "Su iç", "bas": 3.4, "bit": 7.3, "y": 1050 },
+    { "no": "✓", "baslik": "Derin bir nefes al", "bas": 4.5, "bit": 7.3, "y": 1178 },
+    { "no": "✓", "baslik": "Seni mutlu edecek 1 şey düşün", "bas": 5.5, "bit": 7.3, "y": 1306 },
+    { "no": "", "baslik": "Sen değerlisin", "altlar": ["Unutma, sadece gülümse"], "bas": 7.3 }
+  ],
+  "cta": { "metin": "Kaydet, her sabah dene", "bas": 10.1, "y": 1420 },
+  "efektler": [
+    { "tur": "tik", "bas": 3.4, "sure": 0.5, "x": -400, "y": -400, "boyut": 40, "ses_db": -16 },
+    { "tur": "tik", "bas": 4.5, "sure": 0.5, "x": -400, "y": -400, "boyut": 40, "ses_db": -16 },
+    { "tur": "tik", "bas": 5.5, "sure": 0.5, "x": -400, "y": -400, "boyut": 40, "ses_db": -16 },
+    { "tur": "kalp", "bas": 7.4, "sure": 1.8, "x": 860, "y": 680, "boyut": 240 }
+  ],
+  "aciklama": "10 saniyede kendine reset at 🔄\n\n💧 Su iç: güne bir bardak suyla başla\n🌬️ Derin bir nefes al: 4 saniye al, 4 saniye ver\n😊 Seni mutlu edecek 1 şey düşün: bugün kendine ayıracağın küçük bir an\n\nSen değerlisin. Unutma, sadece gülümse 🤍\n\n👇 Bugün seni ne mutlu edecek? Yorumlara yaz!\n🔖 Her sabah hatırlamak için kaydet.\n\nBen Aslı. Bedenine Yolculuk'ta her gün birkaç saniyelik küçük adımlar.\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi.\n\n#sabahrutini #motivasyon #kendineiyibak #nefesegzersizi #suiç #pozitifenerji #sendeğerlisin #bedenineyolculuk #shorts"
+}
