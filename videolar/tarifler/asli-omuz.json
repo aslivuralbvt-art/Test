@@ -1,0 +1,22 @@
+{
+  "ad": "asli-omuz",
+  "kaynak": "../kaynak/omuz.mp4",
+  "cikti_klasoru": "..",
+  "uzat": 2.6,
+  "yazi_y": 1250,
+  "muzik": { "stil": "handpan", "tohum": 10, "bpm": 76, "seviye_db": -6, "konusma_var": true },
+  "konusma": "Omuzların kulağına mı yapıştı? Nefes al, omuzlarını kaldır ve nefes verirken bırak. İşte bu kadar!",
+  "hook": { "metin": "10 saniyede omuzlarını indir", "boyut": 60, "bas": 0.2, "bit": 4.5 },
+  "geri_sayim": { "bas": 0.0, "sure": 10, "x": 870, "y": 330, "boyut": 230 },
+  "adimlar": [
+    { "no": "↑", "baslik": "Nefes al, omuzlarını kaldır", "bas": 4.6, "bit": 9.0, "y": 1178 },
+    { "no": "↓", "baslik": "Nefes ver, bırak", "bas": 6.6, "bit": 9.0, "y": 1306 },
+    { "no": "", "baslik": "Gün içinde 3 kez tekrarla", "altlar": ["Masa başında, telefonda, yolda"], "bas": 9.0 }
+  ],
+  "cta": { "metin": "Kaydet, masanda dene", "bas": 10.1, "y": 1420 },
+  "efektler": [
+    { "tur": "tik", "bas": 4.6, "sure": 0.5, "x": -400, "y": -400, "boyut": 40, "ses_db": -16 },
+    { "tur": "tik", "bas": 8.0, "sure": 1.6, "x": 860, "y": 660, "boyut": 250 }
+  ],
+  "aciklama": "Omuzların kulağına mı yapıştı? 🙆‍♀️\n\n10 saniyede omuzlarını indir:\n⬆️ Nefes al, omuzlarını kulaklarına doğru kaldır\n⬇️ Nefes ver, omuzlarını bırak, aşağı düşsün\n\nGün içinde 3 kez tekrarla: masa başında, telefonda konuşurken, yolda.\nBu basit hareket boyun ve omuz gerginliğini fark etmene ve gevşemene yardımcı olabilir.\nAğrın sürekliyse doktoruna ya da fizyoterapistine danış.\n\n👇 Sen gün içinde en çok ne zaman gerildiğini fark ediyorsun? Yorumlara yaz!\n🔖 Masanda denemek için kaydet.\n\nBen Aslı. Bedenine Yolculuk'ta her gün birkaç saniyelik küçük adımlar.\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi.\n\n#omuzgerginliği #masabaşı #boyunağrısı #stres #nefesegzersizi #ofisegzersizi #kendineiyibak #bedenineyolculuk #shorts"
+}
