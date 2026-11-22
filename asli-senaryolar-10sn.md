@@ -570,3 +570,8 @@ Düzenleme: A'nın hazır anında flu ekran + tikli liste (kulaklık, telefon, s
 Kıyafet: buz mavisi kot pantolon + beyaz dar tişört + omuz/kol çantası. Kamera = ayna.
 Konuşma (kısaltılmış): "10 saniyede kendine reset at: su iç, derin bir nefes al, seni mutlu edecek bir şey düşün. Sen değerlisin, unutma, sadece gülümse!"
 Düzenleme: su / nefes / mutluluk kartları (tikli), "Sen değerlisin" kapanış kartı, kalp efekti.
+
+## 🙆‍♀️ 10 saniyede omuzlarını indir (22 Kasım 2026)
+Kıyafet: bebek mavisi tayt takım. Masa başı. Tek 10 sn klip, ≤15 sn final (kısa format testi).
+Konuşma: "Omuzların kulağına mı yapıştı? Nefes al, omuzlarını kaldır... ve nefes verirken bırak. İşte bu kadar!"
+Düzenleme: reset formatı · 10 sn sayaç · "Nefes al ↑ / Nefes ver ↓" kartları · tik · kapanış "Gün içinde 3 kez tekrarla".
