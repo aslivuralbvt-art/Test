@@ -25,6 +25,13 @@ sabit kapakla ya da konuşma ve büyük yazıyla başlayan videolar %8–16. Bu 
   gülümseme (konuşurken yakalanmış yarım ağız ifadesi değil). 0.1–0.2 sn aralıklarla yüz ızgarası çıkar,
   2–3 adayı büyük boyutta karşılaştır, en doğal gülümsemeyi seç.
 
+## Konu ve ilk kare (24 Kasım 2026)
+- **İlk kare: kameraya dönük, gülümseyen yüz.** Profilden ya da eğik başlayan omuz videosu vasat kaldı;
+  kameraya gülümseyerek açılan reset hızlı başladı. Promptlarda ACTION ilk cümlesi yüzü kameraya çevirsin.
+- **Konu herkese hitap etsin:** uyku, enerji, stres, mutluluk, sabah rutini. Bölgesel ağrı (boyun, omuz)
+  konuları zayıf kaldı (eğilim, kesin değil).
+- **Süre:** ≤15 sn kısa format (10 sn sayaçlı) test ediliyor.
+
 ## Konuşma kontrolü (Gemini telaffuz hataları)
 - Her konuşmalı klibi `faster-whisper` **medium** modeliyle yazıya çevir; small model hataları kaçırabiliyor.
 - Uzun, çok heceli kelimelere özellikle dikkat et ("esnemesine", "ödüllendirdin" gibi): Gemini hece

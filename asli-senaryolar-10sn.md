@@ -575,3 +575,8 @@ Düzenleme: su / nefes / mutluluk kartları (tikli), "Sen değerlisin" kapanış
 Kıyafet: bebek mavisi tayt takım. Masa başı. Tek 10 sn klip, ≤15 sn final (kısa format testi).
 Konuşma: "Omuzların kulağına mı yapıştı? Nefes al, omuzlarını kaldır... ve nefes verirken bırak. İşte bu kadar!"
 Düzenleme: reset formatı · 10 sn sayaç · "Nefes al ↑ / Nefes ver ↓" kartları · tik · kapanış "Gün içinde 3 kez tekrarla".
+
+## 📱 Telefona bakmadan önce 10 saniye (24 Kasım 2026)
+Kıyafet: lavanta saten pijama takımı. Yatak, sabah. İlk kare: kameraya dönük yüz (yeni kural).
+Konuşma: "Uyanınca ilk iş telefona mı uzanıyorsun? Dur. Önce 10 saniye kendine: gerin, derin bir nefes al ve güne gülümse."
+Düzenleme: 10 sn sayaç · ✓ Gerin / ✓ Derin nefes / ✓ Gülümse · kapanış "Telefon bekleyebilir. Sen önce gel" · kalp.
