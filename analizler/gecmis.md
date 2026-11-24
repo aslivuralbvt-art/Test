@@ -2,6 +2,11 @@
 
 Her analizden sonra en üste kısa bir özet eklenir (tarih, ana bulgu, karar).
 
+## 24 Kasım 2026 · Omuz indirme videosu "vasat" (kullanıcı gözlemi, sayı yok)
+- Reset ile aynı format (12,7 sn, 10 sn sayaç, handpan) ama sonuç zayıf. Farklar: ilk 2 sn yüz profilde ve eğik (reset: ilk karede gülümseyen yüz), konu dar (masa başı omuz) vs. evrensel (kendine iyi gel).
+- Eğilim: bölgesel ağrı/gerginlik konuları (boyun 390, omuz vasat) zayıf; evrensel/duygusal ya da görünür sonuç vaat eden konular (topuk-şişlik 1,2 B, reset hızlı başlangıç) güçlü.
+- Hipotez (doğrulanacak): ilk karede kameraya bakan yüz + herkese hitap eden konu. İzlemeye devam oranlarıyla kontrol edilecek.
+
 ## 22 Kasım 2026 · Studio ekran görüntüleri (11:00)
 | Video | Yayın | Görüntüleme | Beğeni | Not |
 |---|---|---|---|---|
