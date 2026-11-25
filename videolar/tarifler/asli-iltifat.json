@@ -1,0 +1,21 @@
+{
+  "ad": "asli-iltifat",
+  "kaynak": "../kaynak/iltifat.mp4",
+  "cikti_klasoru": "..",
+  "uzat": 2.8,
+  "yazi_y": 1250,
+  "muzik": { "stil": "handpan", "tohum": 12, "bpm": 60, "seviye_db": -8, "konusma_var": true },
+  "konusma": "Bugün kendine bir iltifat ettin mi? Aynaya bak ve söyle: Elimden geleni yaptım. Kendimle gurur duyuyorum.",
+  "hook": { "metin": "Kendine 10 saniyede iltifat et", "boyut": 56, "bas": 0.3, "bit": 3.2 },
+  "adimlar": [
+    { "no": "", "baslik": "Aynaya bak ve söyle", "bas": 3.3, "bit": 5.6 },
+    { "no": "", "baslik": "Elimden geleni yaptım", "bas": 5.8, "bit": 10.0, "y": 1178 },
+    { "no": "", "baslik": "Kendimle gurur duyuyorum", "bas": 7.9, "bit": 10.0, "y": 1306 },
+    { "no": "", "baslik": "Sen de söyle", "altlar": ["Bugün kendinle neden gurur duyuyorsun?"], "bas": 10.0 }
+  ],
+  "cta": { "metin": "Yorumlara yaz", "bas": 10.6, "y": 1420 },
+  "efektler": [
+    { "tur": "kalp", "bas": 8.0, "sure": 2.0, "x": 860, "y": 640, "boyut": 230, "ses_db": -20 }
+  ],
+  "aciklama": "Bugün kendine bir iltifat ettin mi? 🤍\n\nAynaya bak ve söyle:\n\"Elimden geleni yaptım. Kendimle gurur duyuyorum.\"\n\nBaşkalarına söylediğimiz güzel sözleri kendimize söylemeyi unutuyoruz. Günün sonunda 10 saniye, sadece senin için.\n\n👇 Bugün kendinle neden gurur duyuyorsun? Yorumlara yaz, birlikte kutlayalım.\n🤍 Bu sözü duymaya ihtiyacı olan birine gönder.\n\nBen Aslı. Bedenine Yolculuk'ta her gün birkaç saniyelik küçük adımlar.\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi.\n\n#kendinesevgi #özşefkat #olumlama #akşamrutini #farkındalık #kendineiyibak #motivasyon #bedenineyolculuk #shorts"
+}

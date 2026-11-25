@@ -32,6 +32,12 @@ sabit kapakla ya da konuşma ve büyük yazıyla başlayan videolar %8–16. Bu 
   konuları zayıf kaldı (eğilim, kesin değil).
 - **Süre:** ≤15 sn kısa format (10 sn sayaçlı) test ediliyor.
 
+## Akşam videoları (25 Kasım 2026)
+- Sayaç ve tik YOK (görev hissi veriyor). Kartlar sade, `no: ""`. Müzik yavaş handpan (bpm ~60, seviye -8), efekt sesi -20.
+- Kapak: `python3 araclar/aksam_kapak.py VIDEO SANIYE CIKTI --etiket "AKŞAM · 10 SANİYE" --satirlar "..." "..." --vurgu N --ay`
+  (sıcak koyu ton, italik serif, altın detay). Başlık bir merak sorusu olsun ("Bunu kendine en son ne zaman söyledin?").
+- Prompt: konuşma ilk saniyede başlasın, cümleler arasına "..." duraklama koy (yutma ve hızlı geçişi önler).
+
 ## Konuşma kontrolü (Gemini telaffuz hataları)
 - Her konuşmalı klibi `faster-whisper` **medium** modeliyle yazıya çevir; small model hataları kaçırabiliyor.
 - Uzun, çok heceli kelimelere özellikle dikkat et ("esnemesine", "ödüllendirdin" gibi): Gemini hece
