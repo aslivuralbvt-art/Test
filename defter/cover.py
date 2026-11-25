@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""'Nisa'nın Okuma Defteri' kapağı (A4 dikey).
+"""'Nisan'ın Okuma Defteri' kapağı (A4 dikey).
 
 kapak.html            : çizimli kapak (fotoğrafsız)
-kapak-fotografli.html : ortada fotoğraf çerçevesi olan kapak (foto/nisa.jpg, git'e eklenmez)
+kapak-fotografli.html : ortada fotoğraf çerçevesi olan kapak (foto/nisan.jpg, git'e eklenmez)
 """
 import math
 from pathlib import Path
@@ -104,7 +104,7 @@ def center_photo():
     return f"""
 <div class="stage">
  <div class="polaroid">
-  <img src="foto/nisa.jpg" alt="">
+  <img src="foto/nisan.jpg" alt="">
   <div class="cap">Ben ve ginepigim</div>
   <span class="tape t1"></span><span class="tape t2"></span>
  </div>
@@ -206,7 +206,7 @@ def html(center):
 <style>{FONT_CSS}{PACIFICO}{CSS}</style></head><body>{SPRITE}{FLUFFY}
 <div class="page"><div class="card">
  {SPRINKLES}
- <div class="title"><div class="name">Nisa'nın</div><div class="sub">Okuma Defteri</div>{motto}</div>
+ <div class="title"><div class="name">Nisan'ın</div><div class="sub">Okuma Defteri</div>{motto}</div>
  {center}
  {tracker()}
  {info()}
