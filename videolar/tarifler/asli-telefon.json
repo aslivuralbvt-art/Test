@@ -1,0 +1,26 @@
+{
+  "ad": "asli-telefon",
+  "kaynak": "../kaynak/telefon.mp4",
+  "cikti_klasoru": "..",
+  "uzat": 2.6,
+  "yazi_y": 1250,
+  "muzik": { "stil": "handpan", "tohum": 11, "bpm": 84, "seviye_db": -6, "konusma_var": true },
+  "konusma": "Uyanınca ilk iş telefona mı uzanıyorsun? Dur. Önce 10 saniye kendine: gerin, derin bir nefes al ve güne gülümse.",
+  "hook": { "metin": "Telefona bakmadan önce 10 saniye", "boyut": 58, "bas": 0.2, "bit": 4.3 },
+  "geri_sayim": { "bas": 0.0, "sure": 10, "x": 870, "y": 330, "boyut": 230 },
+  "adimlar": [
+    { "no": "", "baslik": "Dur.", "altlar": ["Önce 10 saniye kendine"], "bas": 4.3, "bit": 6.4 },
+    { "no": "✓", "baslik": "Gerin", "bas": 6.4, "bit": 10.0, "y": 1050 },
+    { "no": "✓", "baslik": "Derin bir nefes al", "bas": 7.5, "bit": 10.0, "y": 1178 },
+    { "no": "✓", "baslik": "Güne gülümse", "bas": 9.1, "bit": 10.0, "y": 1306 },
+    { "no": "", "baslik": "Telefon bekleyebilir", "altlar": ["Sen önce gel"], "bas": 10.0 }
+  ],
+  "cta": { "metin": "Kaydet, sabah dene", "bas": 10.4, "y": 1420 },
+  "efektler": [
+    { "tur": "tik", "bas": 6.4, "sure": 0.5, "x": -400, "y": -400, "boyut": 40, "ses_db": -16 },
+    { "tur": "tik", "bas": 7.5, "sure": 0.5, "x": -400, "y": -400, "boyut": 40, "ses_db": -16 },
+    { "tur": "tik", "bas": 9.1, "sure": 0.5, "x": -400, "y": -400, "boyut": 40, "ses_db": -16 },
+    { "tur": "kalp", "bas": 10.0, "sure": 1.8, "x": 860, "y": 660, "boyut": 240 }
+  ],
+  "aciklama": "Uyanınca ilk iş telefona mı uzanıyorsun? 📱\n\nDur. Önce 10 saniye kendine:\n🙆‍♀️ Gerin\n🌬️ Derin bir nefes al\n😊 Güne gülümse\n\nGüne bildirimlerle değil, kendinle başla. Telefon bekleyebilir, sen önce gel 🤍\n\n👇 Sen uyanınca ilk ne yapıyorsun? Dürüst ol, yorumlara yaz!\n🔖 Sabah hatırlamak için kaydet.\n\nBen Aslı. Bedenine Yolculuk'ta her gün birkaç saniyelik küçük adımlar.\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi.\n\n#sabahrutini #telefonbağımlılığı #dijitaldetoks #farkındalık #nefes #kendineiyibak #pozitifenerji #bedenineyolculuk #shorts"
+}
