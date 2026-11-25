@@ -584,4 +584,4 @@ Düzenleme: 10 sn sayaç · ✓ Gerin / ✓ Derin nefes / ✓ Gülümse · kapan
 ## 🤍 Kendine 10 saniyede iltifat et (25 Kasım 2026, akşam)
 Ambiyans: "Dur. Nefes al" videosu gibi; loş, sıcak, mumlar, toprak tonları. Kıyafet: camel/oat örgü ev takımı. Kamera = ayna, ilk kare yüz.
 Konuşma: "Bugün kendine bir iltifat ettin mi? Aynaya bak ve söyle: Elimden geleni yaptım. Kendimle gurur duyuyorum."
-Düzenleme: 10 sn sayaç · "Aynaya bak" / "Elimden geleni yaptım" / "Kendimle gurur duyuyorum" · kalp · kapanış "Sen de söyle, yorumlara yaz" · yavaş handpan · yayın 20:30–21:30.
+Düzenleme: SAYAÇ YOK (görev hissi vermesin) · "Aynaya bak" / "Elimden geleni yaptım" / "Kendimle gurur duyuyorum" · kalp · kapanış "Sen de söyle, yorumlara yaz" · yavaş handpan · yayın 20:30–21:30.
