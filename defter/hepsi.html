@@ -1,6 +1,4 @@
-<!doctype html>
-<html lang="tr"><head><meta charset="utf-8"><title>Kitap Defteri Sayfaları</title>
-<style>/* devanagari */
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Kitap Defteri Sayfaları</title><style>/* devanagari */
 @font-face {
   font-family: 'Baloo 2';
   font-style: normal;
@@ -103,99 +101,62 @@
 @page { size: A4 landscape; margin: 0; }
 * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 html, body { margin: 0; padding: 0; background: #fff; }
-body { font-family: 'Patrick Hand', 'Baloo 2', sans-serif; color: #5a3e2b; }
+body { font-family: 'Baloo 2', sans-serif; color: #5a3e2b; }
 .sheet { width: 297mm; height: 210mm; display: flex; position: relative; overflow: hidden;
-         page-break-after: always; break-after: page; }
-.sheet:last-child { page-break-after: auto; break-after: auto; }
-.cut { position: absolute; left: 148.5mm; top: 0; bottom: 0; border-left: 0.6mm dashed #bbb; }
+         break-after: page; }
+.sheet:last-child { break-after: auto; }
+.cut { position: absolute; left: 148.5mm; top: 0; bottom: 0; border-left: 0.5mm dashed #c8c8c8; }
 .cut svg { position: absolute; left: -3.2mm; top: 2mm; width: 6mm; height: 6mm; background: #fff; transform: rotate(90deg); }
-.panel { width: 148.5mm; height: 210mm; padding: 6mm 6.5mm; }
-.card { position: relative; height: 100%; border: 0.7mm solid #5a3e2b; border-radius: 6mm;
-        background-color: var(--bg);
-        background-image: radial-gradient(var(--dot) 0.9mm, transparent 1mm);
-        background-size: 7mm 7mm; background-position: 1.5mm 1.5mm;
-        padding: 4mm 5mm 9mm; display: flex; flex-direction: column; gap: 3.6mm; }
-.ic { display: block; }
-.deco { position: absolute; }
+.panel { width: 148.5mm; height: 210mm; padding: 9mm 9mm 5mm 10mm; position: relative;
+         display: flex; flex-direction: column; }
+svg { display: block; overflow: visible; }
 
-/* başlık */
-.banner { display: flex; align-items: center; gap: 3mm; background: var(--accent);
-          border: 0.55mm solid #5a3e2b; border-radius: 5mm; padding: 1.5mm 4mm; position: relative;
-          height: 21mm; margin-top: 2mm; }
-.banner h1 { font-family: 'Baloo 2'; font-weight: 800; font-size: 25pt; line-height: 1; margin: 0; letter-spacing: .3px; }
-.banner .sub { font-size: 12pt; display: flex; align-items: center; gap: 1.5mm; margin-top: .6mm; }
-.banner .bk { width: 13mm; height: 11mm; flex: none; --bf: #fff; }
-.banner .pw { width: 3.6mm; height: 3.6mm; opacity: .55; }
-.hero { position: absolute; }
-.hero-ham { width: 30mm; height: 28mm; right: 1mm; top: -8.5mm; }
-.hero-gp  { width: 37mm; height: 24mm; right: -1mm; top: -6.5mm; }
-.foot-gp  { position: absolute; width: 24mm; height: 15.5mm; right: 4mm; bottom: -1.2mm; }
-.foot-ham { position: absolute; width: 17mm; height: 16mm; right: 5mm; bottom: -1.2mm; }
+/* satırlar */
+.ln { display: flex; align-items: flex-end; gap: 1.2mm; height: 6.55mm; }
+.ln b { font-weight: 600; font-size: 11.5pt; line-height: 1; white-space: nowrap; color: var(--c); padding-bottom: .5mm; }
+.ln i { flex: 1; min-width: 6mm; border-bottom: 0.45mm dotted var(--c); opacity: .85; }
+.ln.dates { gap: 1mm; }
+.ln.dates i { flex: 1; margin-right: 2mm; }
 
-/* kutular */
-.box { position: relative; background: #fff; border: 0.45mm solid #5a3e2b; border-radius: 3.5mm;
-       padding: 4mm 3.5mm 2mm; }
-.tag { position: absolute; top: -3.4mm; left: 3.5mm; background: var(--accent);
-       border: 0.45mm solid #5a3e2b; border-radius: 3mm; padding: 0 2.6mm; height: 6.2mm;
-       font-family: 'Baloo 2'; font-weight: 800; font-size: 10pt; line-height: 6mm; white-space: nowrap; }
-.tag.t2 { background: var(--accent2); }
+/* sol sayfa */
+.qs { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.grp { position: relative; }
+.grp.top .q { padding-right: 23mm; }
+.ln.dates b { font-size: 10.5pt; }
+.grp.mid .q { padding-right: 30mm; }
+.art { position: absolute; }
+.art svg { position: absolute; }
+.art-reader { right: -2mm; top: -6mm; width: 24mm; height: 24mm; }
+.a-ham { width: 24mm; height: 22mm; left: 0; top: 0; }
+.a-book { width: 15mm; height: 10mm; left: 4.5mm; top: 14mm; transform: rotate(-4deg); }
+.art-garden { right: -2mm; top: 0; width: 30mm; height: 27mm; }
+.a-gp { width: 26mm; height: 16.5mm; left: 2mm; top: 5mm; }
+.a-book2 { width: 13mm; height: 9mm; left: 7.5mm; top: 16mm; transform: rotate(6deg); }
 
-.field { display: flex; align-items: flex-end; gap: 1.5mm; height: 7.4mm; flex: 1; min-width: 0; }
-.field label { font-size: 13pt; white-space: nowrap; line-height: 1; padding-bottom: .4mm; }
-.field .blank { flex: 1; border-bottom: 0.4mm dotted #5a3e2b; height: 1px; }
-.field.date .blank { background: none; }
-.info { display: flex; flex-direction: column; gap: 1.6mm; padding-top: 3mm; }
-.row2 { display: flex; gap: 5mm; }
-.row2.gap > * { flex: 1; }
-.row3 { display: flex; align-items: flex-end; gap: 2mm; }
-.row3 .pg, .row3 .pg2 { flex: 0.9; }
-.row3 .min { flex: 1.2; margin-left: 3mm; }
-.row3 .dash, .row3 .unit { font-size: 13pt; padding-bottom: .3mm; }
+.faces { display: flex; justify-content: center; gap: 2mm; height: 13mm; margin-top: 2mm; }
+.faces .fc { width: 13mm; height: 12mm; }
+.faces.ghost { opacity: .22; }
 
-.lines { background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 6.6mm, var(--line) 6.6mm, var(--line) 7mm);
-         background-origin: content-box; background-clip: content-box; }
-.lines.small { height: 26mm; }
-.lines.grow { flex: 1; min-height: 20mm; }
-.lines.think { height: 26mm; }
+/* sağ sayfa */
+.hd { display: flex; align-items: center; justify-content: space-between; height: 25mm; }
+.hd h2 { margin: 0; font-weight: 800; font-size: 24pt; line-height: 1; text-align: center; flex: 1; color: #c0392b; }
+.hd-l, .hd-r { position: relative; width: 30mm; height: 25mm; flex: none; }
+.hd-l svg, .hd-r svg { position: absolute; }
+.h-ham { width: 25mm; height: 23mm; left: 2mm; top: 1mm; }
+.h-pen { width: 3.5mm; height: 16mm; left: 21mm; top: 6mm; transform: rotate(25deg); }
+.h-gp  { width: 30mm; height: 19mm; left: 0; top: 4mm; }
+.h-gp.flipx { transform: scaleX(-1); }
+.h-pen2 { width: 3.5mm; height: 16mm; left: 1mm; top: 6mm; transform: rotate(-25deg); }
+.h-book { width: 13mm; height: 9mm; left: 1mm; top: 15mm; transform: rotate(-8deg); }
+.h-book2 { width: 14mm; height: 9.5mm; left: 7.5mm; top: 14.5mm; transform: rotate(-4deg); }
+.hd h2 { background: linear-gradient(transparent 62%, #ffe08a 62%, #ffe08a 88%, transparent 88%);
+         display: inline; }
+.hd .ttl { flex: 1; text-align: center; }
 
-.rating { display: flex; align-items: center; gap: 2.5mm; padding: 0 2mm; height: 8mm; }
-.rating .lbl { font-family: 'Baloo 2'; font-weight: 800; font-size: 13pt; }
-.rating .hearts { display: flex; gap: 2mm; }
-.rating .rate { width: 8mm; height: 7.4mm; --hf: #fff; }
-.rating .st { width: 8mm; height: 8mm; --sf: #fff; }
-.rating.stars { padding-left: 15mm; }
-.rating .hint { font-size: 11pt; opacity: .7; }
-
-.quote { height: 19mm; }
-.quote.short { height: 17mm; }
-.quote .q { position: absolute; font-family: 'Baloo 2'; font-weight: 800; font-size: 30pt; color: var(--line); line-height: 1; }
-.quote .ql { left: 2mm; top: 2.5mm; }
-.quote .qr { right: 2.5mm; bottom: -4mm; }
-
-/* günlük sayfa */
-.dayrow { display: flex; align-items: flex-end; gap: 3mm; padding: 0 1mm; }
-.dayrow .field { flex: 1; }
-.days { display: flex; gap: 1mm; }
-.days span { width: 8.4mm; height: 8.4mm; border: 0.4mm solid #5a3e2b; border-radius: 50%; background: #fff;
-             font-size: 10pt; display: flex; align-items: center; justify-content: center; }
-.feel { gap: 3.5mm; }
-.feel > .box:first-child { flex: 0 0 36mm; }
-.mini { padding: 4mm 2mm 1.5mm; }
-.wxs { display: flex; justify-content: space-around; align-items: center; height: 14mm; }
-.wx { width: 8mm; height: 8mm; }
-.moods { display: flex; justify-content: space-between; }
-.mood { display: flex; flex-direction: column; align-items: center; width: 13mm; }
-.mood svg { width: 10.5mm; height: 9.8mm; }
-.mood span { font-size: 9pt; line-height: 1; margin-top: .4mm; }
-
-.words { padding-top: 4mm; padding-bottom: 1mm; }
-.wordhead { display: flex; justify-content: space-around; font-size: 10pt; opacity: .6; margin: -.5mm 0 -1.5mm; }
-.word { display: flex; align-items: flex-end; gap: 2mm; height: 7mm; }
-.word .blank { flex: 1; border-bottom: 0.4mm dotted #5a3e2b; }
-.word .arrow { font-size: 13pt; line-height: 1; }
-.word .blank:last-child { flex: 1.6; }
-</style></head>
-<body>
+.subrow { display: flex; flex-direction: column; gap: .8mm; margin: 1mm 0 2mm; }
+.ruled { flex: 1; margin-top: 1mm; background-position: 0 0;
+         background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 7.5mm, #eebcbc 7.5mm, #eebcbc 8mm); }
+</style></head><body>
 <svg width="0" height="0" style="position:absolute">
  <defs>
   <clipPath id="gpClip"><path d="M30 40 C 32 20 60 12 90 14 C 125 16 145 38 143 60 C 141 80 120 86 90 86 L 45 86 C 22 86 10 74 10 60 C 10 50 20 42 30 40 Z"/></clipPath>
@@ -331,180 +292,90 @@ body { font-family: 'Patrick Hand', 'Baloo 2', sans-serif; color: #5a3e2b; }
     <path d="M10.5 9.5 L28 22 M10.5 20.5 L28 8"/>
    </g>
   </symbol>
+
+  <clipPath id="ghClip"><ellipse cx="32" cy="32" rx="27" ry="22"/></clipPath>
+  <!-- Ginepig kafası (önden) -->
+  <symbol id="ghead" viewBox="0 0 64 56">
+   <g stroke="#5a3e2b" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+    <ellipse cx="9" cy="20" rx="8" ry="5.5" transform="rotate(-25 9 20)" fill="#f2b8b0"/>
+    <ellipse cx="55" cy="20" rx="8" ry="5.5" transform="rotate(25 55 20)" fill="#f2b8b0"/>
+    <ellipse cx="32" cy="32" rx="27" ry="22" fill="#fffaf2" stroke="none"/>
+    <g clip-path="url(#ghClip)" stroke="none">
+     <ellipse cx="10" cy="24" rx="20" ry="24" fill="var(--g1,#d89a62)"/>
+     <ellipse cx="56" cy="22" rx="18" ry="16" fill="var(--g2,#e9b27c)"/>
+    </g>
+    <ellipse cx="32" cy="32" rx="27" ry="22" fill="none"/>
+    <ellipse cx="16" cy="40" rx="4.5" ry="3" fill="#f59a9a" stroke="none" opacity=".6"/>
+    <ellipse cx="48" cy="40" rx="4.5" ry="3" fill="#f59a9a" stroke="none" opacity=".6"/>
+    <path d="M29.5 37 H34.5 L32 39.5 Z" fill="#e57f7f" stroke-width="1.2"/>
+    <path d="M32 39.5 V41.5 M32 41.5 Q29.5 44 27.5 42 M32 41.5 Q34.5 44 36.5 42" fill="none" stroke-width="1.6"/>
+   </g>
+  </symbol>
+
+  <symbol id="pencil" viewBox="0 0 14 64">
+   <g stroke="#5a3e2b" stroke-width="1.8" stroke-linejoin="round">
+    <path d="M2 10 H12 V50 H2 Z" fill="#ffd66b"/>
+    <path d="M5 10 V50 M9 10 V50" stroke-width="1" opacity=".5"/>
+    <path d="M2 4 Q2 1 7 1 Q12 1 12 4 V10 H2 Z" fill="#f7a8b8"/>
+    <path d="M2 50 L7 62 L12 50 Z" fill="#f6dcb8"/>
+    <path d="M5.4 58.2 L7 62 L8.6 58.2 Z" fill="#5a3e2b"/>
+   </g>
+  </symbol>
+
+  <symbol id="leaf" viewBox="0 0 30 20">
+   <path d="M2 18 C 6 4 20 0 28 2 C 26 12 16 20 2 18 Z" fill="#9fd19c" stroke="#5a3e2b" stroke-width="1.8" stroke-linejoin="round"/>
+   <path d="M4 16 C 12 10 18 7 24 5" fill="none" stroke="#5a3e2b" stroke-width="1.2"/>
+  </symbol>
+  <symbol id="flower" viewBox="0 0 30 30">
+   <g stroke="#5a3e2b" stroke-width="1.6" fill="var(--ff,#f7b6c8)">
+    <circle cx="15" cy="7" r="6"/><circle cx="23" cy="13" r="6"/><circle cx="20" cy="23" r="6"/>
+    <circle cx="10" cy="23" r="6"/><circle cx="7" cy="13" r="6"/>
+    <circle cx="15" cy="15" r="4.5" fill="#ffd66b"/>
+   </g>
+  </symbol>
  </defs>
 </svg>
 <div class="sheet">
-<section class="panel" style="--bg:#fff4e6;--dot:#ffe1c2;--accent:#ffc98b;--accent2:#ffd3d3;--line:#e6c6a6;--h1:#f0a868;--g1:#d89a62;--g2:#e9b27c;">
- <div class="card">
-  <header class="banner">
-   <svg class="ic bk" style=""><use href="#book"/></svg>
-   <div>
-    <h1>Kitap Özeti</h1>
-    <div class="sub"><svg class="ic pw" style=""><use href="#paw"/></svg> okudum, düşündüm, yazdım! <svg class="ic pw" style=""><use href="#paw"/></svg></div>
-   </div>
-   <svg class="ic hero hero-ham" style=""><use href="#hamster"/></svg>
-  </header>
-
-  <div class="box info">
-   <span class="tag">Kitap Kimliği</span>
-   <div class="field "><label>Kitabın Adı:</label><span class="blank"></span></div>
-   <div class="field "><label>Yazarı:</label><span class="blank"></span></div>
-   <div class="row2"><div class="field "><label>Türü:</label><span class="blank"></span></div><div class="field "><label>Sayfa Sayısı:</label><span class="blank"></span></div></div>
-   <div class="row2"><div class="field date"><label>Başladım:</label><span class="blank"></span></div><div class="field date"><label>Bitirdim:</label><span class="blank"></span></div></div>
+<section class="panel left">
+ <div class="qs">
+  <div class="grp top">
+   <div class="q " style="--c:#7b4fa0"><div class="ln"><b>Kitabın Adı:</b><i></i></div></div>
+   <div class="q " style="--c:#7b4fa0"><div class="ln dates"><b style="color:#b0478a">Sayfa Sayısı:</b><i style="border-color:#b0478a"></i><b style="color:#2f6db5">Başlangıç Tarihi:</b><i style="border-color:#2f6db5"></i><b style="color:#2e8b57">Bitiş Tarihi:</b><i style="border-color:#2e8b57"></i></div></div>
+   <div class="q " style="--c:#7b4fa0"><div class="ln"><b>Kitabın Yazarı:</b><i></i></div></div>
+   <div class="art art-reader"><svg class="a-ham" style=""><use href="#hamster"/></svg><svg class="a-book" style="--bf:#fff7d6"><use href="#book"/></svg></div>
   </div>
-
-  <div class="rating">
-   <span class="lbl">Puanım:</span><span class="hearts"><svg class="ic rate" style=""><use href="#heart"/></svg><svg class="ic rate" style=""><use href="#heart"/></svg><svg class="ic rate" style=""><use href="#heart"/></svg><svg class="ic rate" style=""><use href="#heart"/></svg><svg class="ic rate" style=""><use href="#heart"/></svg></span>
-   <span class="hint">(boya!)</span>
+  <div class="q " style="--c:#c0392b"><div class="ln"><b>Kitabın Konusu:</b><i></i></div><div class="ln"><i></i></div><div class="ln"><i></i></div><div class="ln"><i></i></div></div>
+  <div class="grp mid">
+   <div class="q short" style="--c:#7b4fa0"><div class="ln"><b>Kitabın Kahramanları:</b><i></i></div><div class="ln"><i></i></div><div class="ln"><i></i></div></div>
+   <div class="q short" style="--c:#2f6db5"><div class="ln"><b>Kitabın Anafikri:</b><i></i></div><div class="ln"><i></i></div></div>
+   <div class="art art-garden"><svg class="" style="left:0;bottom:2mm;width:9mm;height:6mm;transform:rotate(-20deg)"><use href="#leaf"/></svg><svg class="" style="right:0;bottom:3mm;width:9mm;height:6mm;transform:scaleX(-1) rotate(-20deg)"><use href="#leaf"/></svg><svg class="" style="left:2mm;top:2mm;width:6mm;height:6mm"><use href="#flower"/></svg><svg class="" style="right:1mm;top:0;width:6.5mm;height:6.5mm;--ff:#c9b6f2"><use href="#flower"/></svg><svg class="a-gp" style=""><use href="#guinea"/></svg><svg class="a-book2" style="--bf:#fff7d6"><use href="#book"/></svg><svg class="" style="left:-1mm;bottom:-1mm;width:5mm;height:8mm;transform:rotate(-35deg)"><use href="#carrot"/></svg><svg class="" style="right:2mm;bottom:-1mm;width:5mm;height:6mm"><use href="#strawberry"/></svg></div>
   </div>
-
-  <div class="row2 gap">
-   <div class="box lines small"><span class="tag">Ana Karakterler</span></div>
-   <div class="box lines small"><span class="tag t2">Yer &amp; Zaman</span></div>
-  </div>
-
-  <div class="box lines grow"><span class="tag">Kitabın Konusu</span></div>
-
-  <div class="box quote"><span class="tag t2">En Sevdiğim Cümle</span>
-   <span class="q ql">“</span><span class="q qr">”</span>
-  </div>
-
-  <div class="box lines think"><span class="tag">Bu Kitaptan Ne Öğrendim?</span></div>
-
-  <svg class="ic foot-gp" style=""><use href="#guinea"/></svg>
-  <svg class="ic deco" style="left:6mm;bottom:3mm;width:8mm;height:12mm;transform:rotate(-25deg)"><use href="#carrot"/></svg><svg class="ic deco" style="left:16mm;bottom:3mm;width:4mm;height:6mm;transform:rotate(20deg)"><use href="#seed"/></svg>
+  <div class="q " style="--c:#d35400"><div class="ln"><b>En Çok Etkilendiğim Bölüm:</b><i></i></div><div class="ln"><i></i></div><div class="ln"><i></i></div></div>
+  <div class="q " style="--c:#7b4fa0"><div class="ln"><b>En Sevdiğim Karakter:</b><i></i></div></div>
+  <div class="q " style="--c:#b0478a"><div class="ln"><b>Kitabı Tavsiye Eder Misin?</b><i></i></div></div>
+  <div class="q " style="--c:#2e8b57"><div class="ln"><b>Kitabın Yazarı Sen Olsaydın Sonunu Nasıl Bitirirdin?</b><i></i></div><div class="ln"><i></i></div></div>
+  <div class="q " style="--c:#1f8a8a"><div class="ln"><b>Kitabın Yazarı Sen Olsaydın Adını Ne Koyardın?</b><i></i></div></div>
+  <div class="q " style="--c:#2f6db5"><div class="ln"><b>Genel Olarak Kitapla Alakalı Düşüncem:</b><i></i></div><div class="ln"><i></i></div></div>
+  <div class="q " style="--c:#7b4fa0"><div class="ln"><b>Sevdim. Çünkü:</b><i></i></div></div>
+  <div class="q " style="--c:#7b4fa0"><div class="ln"><b>Sevmedim. Çünkü:</b><i></i></div></div>
  </div>
+ <div class="faces"><span style="--h1:#f0a868"><svg viewBox="0 0 60 56" class="fc"><use href="#hhead"/><path d="M20 32 Q23 28 26 32 M34 32 Q37 28 40 32" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M25 40 Q30 46 35 40" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--g1:#d89a62;--g2:#e9b27c"><svg viewBox="0 0 64 56" class="fc"><use href="#ghead"/><circle cx="22" cy="29" r="3" fill="#5a3e2b"/><circle cx="42" cy="29" r="3" fill="#5a3e2b"/><circle cx="23" cy="28" r="1" fill="#fff"/><circle cx="43" cy="28" r="1" fill="#fff"/></svg></span><span style="--h1:#e9c08f"><svg viewBox="0 0 60 56" class="fc"><use href="#hhead"/><path d="M20 32 Q23 28 26 32 M34 32 Q37 28 40 32" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M25 40 Q30 46 35 40" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--g1:#8a7a6e;--g2:#b39a86"><svg viewBox="0 0 64 56" class="fc"><use href="#ghead"/><path d="M18 30 Q22 26 26 30 M38 30 Q42 26 46 30" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--h1:#f3b98a"><svg viewBox="0 0 60 56" class="fc"><use href="#hhead"/><path d="M20 32 Q23 28 26 32 M34 32 Q37 28 40 32" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M25 40 Q30 46 35 40" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--g1:#3f3a36;--g2:#d89a62"><svg viewBox="0 0 64 56" class="fc"><use href="#ghead"/><circle cx="22" cy="29" r="3" fill="#5a3e2b"/><circle cx="42" cy="29" r="3" fill="#5a3e2b"/><circle cx="23" cy="28" r="1" fill="#fff"/><circle cx="43" cy="28" r="1" fill="#fff"/></svg></span><span style="--h1:#dcc6a8"><svg viewBox="0 0 60 56" class="fc"><use href="#hhead"/><path d="M20 32 Q23 28 26 32 M34 32 Q37 28 40 32" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M25 40 Q30 46 35 40" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--g1:#c97b4a;--g2:#f0d2a8"><svg viewBox="0 0 64 56" class="fc"><use href="#ghead"/><circle cx="22" cy="29" r="3" fill="#5a3e2b"/><circle cx="42" cy="29" r="3" fill="#5a3e2b"/><circle cx="23" cy="28" r="1" fill="#fff"/><circle cx="43" cy="28" r="1" fill="#fff"/></svg></span></div>
 </section>
-<section class="panel" style="--bg:#eef7ef;--dot:#d7ecd9;--accent:#b5dfc0;--accent2:#ffe1ad;--line:#bad6c0;--h1:#e9c08f;--g1:#8a7a6e;--g2:#b39a86;">
- <div class="card">
-  <header class="banner">
-   <svg class="ic bk" style=""><use href="#book"/></svg>
-   <div>
-    <h1>Kitap Özeti</h1>
-    <div class="sub"><svg class="ic pw" style=""><use href="#paw"/></svg> okudum, düşündüm, yazdım! <svg class="ic pw" style=""><use href="#paw"/></svg></div>
-   </div>
-   <svg class="ic hero hero-gp" style=""><use href="#guinea"/></svg>
-  </header>
-
-  <div class="box info">
-   <span class="tag">Kitap Kimliği</span>
-   <div class="field "><label>Kitabın Adı:</label><span class="blank"></span></div>
-   <div class="field "><label>Yazarı:</label><span class="blank"></span></div>
-   <div class="row2"><div class="field "><label>Türü:</label><span class="blank"></span></div><div class="field "><label>Sayfa Sayısı:</label><span class="blank"></span></div></div>
-   <div class="row2"><div class="field date"><label>Başladım:</label><span class="blank"></span></div><div class="field date"><label>Bitirdim:</label><span class="blank"></span></div></div>
-  </div>
-
-  <div class="rating">
-   <span class="lbl">Puanım:</span><span class="hearts"><svg class="ic rate" style=""><use href="#heart"/></svg><svg class="ic rate" style=""><use href="#heart"/></svg><svg class="ic rate" style=""><use href="#heart"/></svg><svg class="ic rate" style=""><use href="#heart"/></svg><svg class="ic rate" style=""><use href="#heart"/></svg></span>
-   <span class="hint">(boya!)</span>
-  </div>
-
-  <div class="row2 gap">
-   <div class="box lines small"><span class="tag">Ana Karakterler</span></div>
-   <div class="box lines small"><span class="tag t2">Yer &amp; Zaman</span></div>
-  </div>
-
-  <div class="box lines grow"><span class="tag">Kitabın Konusu</span></div>
-
-  <div class="box quote"><span class="tag t2">En Sevdiğim Cümle</span>
-   <span class="q ql">“</span><span class="q qr">”</span>
-  </div>
-
-  <div class="box lines think"><span class="tag">Bu Kitaptan Ne Öğrendim?</span></div>
-
-  <svg class="ic foot-ham" style=""><use href="#hamster"/></svg>
-  <svg class="ic deco" style="left:6mm;bottom:3mm;width:8mm;height:10mm;transform:rotate(-15deg)"><use href="#strawberry"/></svg><svg class="ic deco" style="left:16mm;bottom:3.5mm;width:4mm;height:6mm;transform:rotate(-20deg)"><use href="#seed"/></svg>
- </div>
+<section class="panel right">
+ <header class="hd"><div class="hd-l"><svg class="h-ham" style=""><use href="#hamster"/></svg><svg class="h-pen" style=""><use href="#pencil"/></svg></div><h2>Kitabın Özeti</h2><div class="hd-r"><svg class="h-gp" style=""><use href="#guinea"/></svg><svg class="h-book" style="--bf:#fff7d6"><use href="#book"/></svg></div></header>
+ 
+ <div class="ruled"></div>
+ <div class="faces ghost"><span style="--h1:#f0a868"><svg viewBox="0 0 60 56" class="fc"><use href="#hhead"/><path d="M20 32 Q23 28 26 32 M34 32 Q37 28 40 32" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M25 40 Q30 46 35 40" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--g1:#d89a62;--g2:#e9b27c"><svg viewBox="0 0 64 56" class="fc"><use href="#ghead"/><circle cx="22" cy="29" r="3" fill="#5a3e2b"/><circle cx="42" cy="29" r="3" fill="#5a3e2b"/><circle cx="23" cy="28" r="1" fill="#fff"/><circle cx="43" cy="28" r="1" fill="#fff"/></svg></span><span style="--h1:#e9c08f"><svg viewBox="0 0 60 56" class="fc"><use href="#hhead"/><path d="M20 32 Q23 28 26 32 M34 32 Q37 28 40 32" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M25 40 Q30 46 35 40" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--g1:#8a7a6e;--g2:#b39a86"><svg viewBox="0 0 64 56" class="fc"><use href="#ghead"/><path d="M18 30 Q22 26 26 30 M38 30 Q42 26 46 30" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--h1:#f3b98a"><svg viewBox="0 0 60 56" class="fc"><use href="#hhead"/><path d="M20 32 Q23 28 26 32 M34 32 Q37 28 40 32" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M25 40 Q30 46 35 40" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--g1:#3f3a36;--g2:#d89a62"><svg viewBox="0 0 64 56" class="fc"><use href="#ghead"/><circle cx="22" cy="29" r="3" fill="#5a3e2b"/><circle cx="42" cy="29" r="3" fill="#5a3e2b"/><circle cx="23" cy="28" r="1" fill="#fff"/><circle cx="43" cy="28" r="1" fill="#fff"/></svg></span><span style="--h1:#dcc6a8"><svg viewBox="0 0 60 56" class="fc"><use href="#hhead"/><path d="M20 32 Q23 28 26 32 M34 32 Q37 28 40 32" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M25 40 Q30 46 35 40" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--g1:#c97b4a;--g2:#f0d2a8"><svg viewBox="0 0 64 56" class="fc"><use href="#ghead"/><circle cx="22" cy="29" r="3" fill="#5a3e2b"/><circle cx="42" cy="29" r="3" fill="#5a3e2b"/><circle cx="23" cy="28" r="1" fill="#fff"/><circle cx="43" cy="28" r="1" fill="#fff"/></svg></span></div>
 </section><div class="cut"><svg><use href="#scissors"/></svg></div></div><div class="sheet">
-<section class="panel" style="--bg:#eef7ef;--dot:#d7ecd9;--accent:#b5dfc0;--accent2:#ffe1ad;--line:#bad6c0;--h1:#e9c08f;--g1:#8a7a6e;--g2:#b39a86;">
- <div class="card">
-  <header class="banner">
-   <svg class="ic bk" style=""><use href="#sun"/></svg>
-   <div>
-    <h1>Bugünün Özeti</h1>
-    <div class="sub"><svg class="ic pw" style=""><use href="#paw"/></svg> bugün neler okudum? <svg class="ic pw" style=""><use href="#paw"/></svg></div>
-   </div>
-   <svg class="ic hero hero-gp" style=""><use href="#guinea"/></svg>
-  </header>
-
-  <div class="dayrow">
-   <div class="field date"><label>Tarih:</label><span class="blank"></span></div>
-   <div class="days"><span>Pzt</span><span>Sal</span><span>Çar</span><span>Per</span><span>Cum</span><span>Cmt</span><span>Paz</span></div>
-  </div>
-
-  <div class="row2 gap feel">
-   <div class="box mini"><span class="tag t2">Hava</span><div class="wxs"><svg class="ic wx" style=""><use href="#sun"/></svg><svg class="ic wx" style=""><use href="#cloud"/></svg><svg class="ic wx" style=""><use href="#rain"/></svg><svg class="ic wx" style=""><use href="#snow"/></svg></div></div>
-   <div class="box mini moodbox"><span class="tag">Ruh Hâlim</span><div class="moods"><div class="mood"><svg viewBox="0 0 60 56"><use href="#hhead"/><circle cx="23" cy="31" r="2.6" fill="#5a3e2b"/><circle cx="37" cy="31" r="2.6" fill="#5a3e2b"/><path d="M24 40 Q30 47 36 40" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg><span>mutlu</span></div><div class="mood"><svg viewBox="0 0 60 56"><use href="#hhead"/><path d="M20 32 L23 28 L26 32 M34 32 L37 28 L40 32" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 39 Q30 49 36 39 Z" fill="#e57f7f" stroke="#5a3e2b" stroke-width="1.8" stroke-linejoin="round"/></svg><span>heyecanlı</span></div><div class="mood"><svg viewBox="0 0 60 56"><use href="#hhead"/><path d="M20 31 Q23 34 26 31 M34 31 Q37 34 40 31" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M26 42 Q30 44 34 42" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg><span>sakin</span></div><div class="mood"><svg viewBox="0 0 60 56"><use href="#hhead"/><circle cx="23" cy="31" r="2.6" fill="#5a3e2b"/><circle cx="37" cy="31" r="2.6" fill="#5a3e2b"/><path d="M24 45 Q30 39 36 45" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M38 35 Q39.5 38 38 39.5 Q36.5 38 38 35Z" fill="#7cb7e6"/></svg><span>üzgün</span></div><div class="mood"><svg viewBox="0 0 60 56"><use href="#hhead"/><path d="M20 32 H26 M34 32 H40" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><ellipse cx="30" cy="43" rx="3" ry="3.4" fill="none" stroke="#5a3e2b" stroke-width="1.8"/><text x="45" y="12" font-family="Baloo 2" font-weight="800" font-size="11" fill="#5a3e2b">z</text></svg><span>uykulu</span></div></div></div>
-  </div>
-
-  <div class="box info">
-   <span class="tag">Bugün Okuduğum</span>
-   <div class="field "><label>Kitap:</label><span class="blank"></span></div>
-   <div class="row3"><div class="field pg"><label>Sayfa:</label><span class="blank"></span></div><span class="dash">–</span><div class="field pg2"><label></label><span class="blank"></span></div><div class="field min"><label>Süre:</label><span class="blank"></span></div><span class="unit">dk</span></div>
-  </div>
-
-  <div class="box lines grow"><span class="tag t2">Bugün Okuduklarımın Özeti</span></div>
-
-  <div class="box words"><span class="tag">Yeni Kelimeler</span>
-   <div class="wordhead"><span>kelime</span><span>anlamı</span></div>
-   <div class="word"><span class="blank"></span><span class="arrow">→</span><span class="blank"></span></div><div class="word"><span class="blank"></span><span class="arrow">→</span><span class="blank"></span></div><div class="word"><span class="blank"></span><span class="arrow">→</span><span class="blank"></span></div>
-  </div>
-
-  <div class="box quote short"><span class="tag t2">Günün Cümlesi</span>
-   <span class="q ql">“</span><span class="q qr">”</span>
-  </div>
-
-  <div class="rating stars">
-   <span class="lbl">Bugün kendime:</span><span class="hearts"><svg class="ic st" style=""><use href="#star"/></svg><svg class="ic st" style=""><use href="#star"/></svg><svg class="ic st" style=""><use href="#star"/></svg><svg class="ic st" style=""><use href="#star"/></svg><svg class="ic st" style=""><use href="#star"/></svg></span>
-  </div>
-
-  <svg class="ic foot-ham" style=""><use href="#hamster"/></svg>
-  <svg class="ic deco" style="left:6mm;bottom:3mm;width:8mm;height:12mm;transform:rotate(-25deg)"><use href="#carrot"/></svg>
- </div>
+<section class="panel right">
+ <header class="hd"><div class="hd-l"><svg class="h-ham" style=""><use href="#hamster"/></svg><svg class="h-pen" style=""><use href="#pencil"/></svg></div><h2>Bugünün Özeti</h2><div class="hd-r"><svg class="h-gp" style=""><use href="#guinea"/></svg><svg class="h-book" style="--bf:#fff7d6"><use href="#book"/></svg></div></header>
+ <div class="subrow"><div class="ln" style="--c:#7b4fa0"><b>Tarih:</b><i></i></div><div class="ln" style="--c:#2f6db5"><b>Okuduğum Kitap:</b><i></i></div><div class="ln" style="--c:#2e8b57"><b>Okuduğum Sayfalar:</b><i></i><b style="color:#5a3e2b">–</b><i></i></div></div>
+ <div class="ruled"></div>
+ <div class="faces ghost"><span style="--h1:#f0a868"><svg viewBox="0 0 60 56" class="fc"><use href="#hhead"/><path d="M20 32 Q23 28 26 32 M34 32 Q37 28 40 32" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M25 40 Q30 46 35 40" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--g1:#d89a62;--g2:#e9b27c"><svg viewBox="0 0 64 56" class="fc"><use href="#ghead"/><circle cx="22" cy="29" r="3" fill="#5a3e2b"/><circle cx="42" cy="29" r="3" fill="#5a3e2b"/><circle cx="23" cy="28" r="1" fill="#fff"/><circle cx="43" cy="28" r="1" fill="#fff"/></svg></span><span style="--h1:#e9c08f"><svg viewBox="0 0 60 56" class="fc"><use href="#hhead"/><path d="M20 32 Q23 28 26 32 M34 32 Q37 28 40 32" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M25 40 Q30 46 35 40" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--g1:#8a7a6e;--g2:#b39a86"><svg viewBox="0 0 64 56" class="fc"><use href="#ghead"/><path d="M18 30 Q22 26 26 30 M38 30 Q42 26 46 30" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--h1:#f3b98a"><svg viewBox="0 0 60 56" class="fc"><use href="#hhead"/><path d="M20 32 Q23 28 26 32 M34 32 Q37 28 40 32" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M25 40 Q30 46 35 40" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--g1:#3f3a36;--g2:#d89a62"><svg viewBox="0 0 64 56" class="fc"><use href="#ghead"/><circle cx="22" cy="29" r="3" fill="#5a3e2b"/><circle cx="42" cy="29" r="3" fill="#5a3e2b"/><circle cx="23" cy="28" r="1" fill="#fff"/><circle cx="43" cy="28" r="1" fill="#fff"/></svg></span><span style="--h1:#dcc6a8"><svg viewBox="0 0 60 56" class="fc"><use href="#hhead"/><path d="M20 32 Q23 28 26 32 M34 32 Q37 28 40 32" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M25 40 Q30 46 35 40" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--g1:#c97b4a;--g2:#f0d2a8"><svg viewBox="0 0 64 56" class="fc"><use href="#ghead"/><circle cx="22" cy="29" r="3" fill="#5a3e2b"/><circle cx="42" cy="29" r="3" fill="#5a3e2b"/><circle cx="23" cy="28" r="1" fill="#fff"/><circle cx="43" cy="28" r="1" fill="#fff"/></svg></span></div>
 </section>
-<section class="panel" style="--bg:#fff4e6;--dot:#ffe1c2;--accent:#ffc98b;--accent2:#ffd3d3;--line:#e6c6a6;--h1:#f0a868;--g1:#d89a62;--g2:#e9b27c;">
- <div class="card">
-  <header class="banner">
-   <svg class="ic bk" style=""><use href="#sun"/></svg>
-   <div>
-    <h1>Bugünün Özeti</h1>
-    <div class="sub"><svg class="ic pw" style=""><use href="#paw"/></svg> bugün neler okudum? <svg class="ic pw" style=""><use href="#paw"/></svg></div>
-   </div>
-   <svg class="ic hero hero-ham" style=""><use href="#hamster"/></svg>
-  </header>
-
-  <div class="dayrow">
-   <div class="field date"><label>Tarih:</label><span class="blank"></span></div>
-   <div class="days"><span>Pzt</span><span>Sal</span><span>Çar</span><span>Per</span><span>Cum</span><span>Cmt</span><span>Paz</span></div>
-  </div>
-
-  <div class="row2 gap feel">
-   <div class="box mini"><span class="tag t2">Hava</span><div class="wxs"><svg class="ic wx" style=""><use href="#sun"/></svg><svg class="ic wx" style=""><use href="#cloud"/></svg><svg class="ic wx" style=""><use href="#rain"/></svg><svg class="ic wx" style=""><use href="#snow"/></svg></div></div>
-   <div class="box mini moodbox"><span class="tag">Ruh Hâlim</span><div class="moods"><div class="mood"><svg viewBox="0 0 60 56"><use href="#hhead"/><circle cx="23" cy="31" r="2.6" fill="#5a3e2b"/><circle cx="37" cy="31" r="2.6" fill="#5a3e2b"/><path d="M24 40 Q30 47 36 40" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg><span>mutlu</span></div><div class="mood"><svg viewBox="0 0 60 56"><use href="#hhead"/><path d="M20 32 L23 28 L26 32 M34 32 L37 28 L40 32" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 39 Q30 49 36 39 Z" fill="#e57f7f" stroke="#5a3e2b" stroke-width="1.8" stroke-linejoin="round"/></svg><span>heyecanlı</span></div><div class="mood"><svg viewBox="0 0 60 56"><use href="#hhead"/><path d="M20 31 Q23 34 26 31 M34 31 Q37 34 40 31" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M26 42 Q30 44 34 42" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg><span>sakin</span></div><div class="mood"><svg viewBox="0 0 60 56"><use href="#hhead"/><circle cx="23" cy="31" r="2.6" fill="#5a3e2b"/><circle cx="37" cy="31" r="2.6" fill="#5a3e2b"/><path d="M24 45 Q30 39 36 45" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M38 35 Q39.5 38 38 39.5 Q36.5 38 38 35Z" fill="#7cb7e6"/></svg><span>üzgün</span></div><div class="mood"><svg viewBox="0 0 60 56"><use href="#hhead"/><path d="M20 32 H26 M34 32 H40" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><ellipse cx="30" cy="43" rx="3" ry="3.4" fill="none" stroke="#5a3e2b" stroke-width="1.8"/><text x="45" y="12" font-family="Baloo 2" font-weight="800" font-size="11" fill="#5a3e2b">z</text></svg><span>uykulu</span></div></div></div>
-  </div>
-
-  <div class="box info">
-   <span class="tag">Bugün Okuduğum</span>
-   <div class="field "><label>Kitap:</label><span class="blank"></span></div>
-   <div class="row3"><div class="field pg"><label>Sayfa:</label><span class="blank"></span></div><span class="dash">–</span><div class="field pg2"><label></label><span class="blank"></span></div><div class="field min"><label>Süre:</label><span class="blank"></span></div><span class="unit">dk</span></div>
-  </div>
-
-  <div class="box lines grow"><span class="tag t2">Bugün Okuduklarımın Özeti</span></div>
-
-  <div class="box words"><span class="tag">Yeni Kelimeler</span>
-   <div class="wordhead"><span>kelime</span><span>anlamı</span></div>
-   <div class="word"><span class="blank"></span><span class="arrow">→</span><span class="blank"></span></div><div class="word"><span class="blank"></span><span class="arrow">→</span><span class="blank"></span></div><div class="word"><span class="blank"></span><span class="arrow">→</span><span class="blank"></span></div>
-  </div>
-
-  <div class="box quote short"><span class="tag t2">Günün Cümlesi</span>
-   <span class="q ql">“</span><span class="q qr">”</span>
-  </div>
-
-  <div class="rating stars">
-   <span class="lbl">Bugün kendime:</span><span class="hearts"><svg class="ic st" style=""><use href="#star"/></svg><svg class="ic st" style=""><use href="#star"/></svg><svg class="ic st" style=""><use href="#star"/></svg><svg class="ic st" style=""><use href="#star"/></svg><svg class="ic st" style=""><use href="#star"/></svg></span>
-  </div>
-
-  <svg class="ic foot-gp" style=""><use href="#guinea"/></svg>
-  <svg class="ic deco" style="left:6mm;bottom:3mm;width:8mm;height:10mm;transform:rotate(-15deg)"><use href="#strawberry"/></svg>
- </div>
+<section class="panel right">
+ <header class="hd"><div class="hd-l"><svg class="h-gp flipx" style=""><use href="#guinea"/></svg><svg class="h-pen2" style=""><use href="#pencil"/></svg></div><h2>Bugünün Özeti</h2><div class="hd-r"><svg class="h-ham" style=""><use href="#hamster"/></svg><svg class="h-book2" style="--bf:#fff7d6"><use href="#book"/></svg></div></header>
+ <div class="subrow"><div class="ln" style="--c:#7b4fa0"><b>Tarih:</b><i></i></div><div class="ln" style="--c:#2f6db5"><b>Okuduğum Kitap:</b><i></i></div><div class="ln" style="--c:#2e8b57"><b>Okuduğum Sayfalar:</b><i></i><b style="color:#5a3e2b">–</b><i></i></div></div>
+ <div class="ruled"></div>
+ <div class="faces ghost"><span style="--h1:#f0a868"><svg viewBox="0 0 60 56" class="fc"><use href="#hhead"/><path d="M20 32 Q23 28 26 32 M34 32 Q37 28 40 32" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M25 40 Q30 46 35 40" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--g1:#d89a62;--g2:#e9b27c"><svg viewBox="0 0 64 56" class="fc"><use href="#ghead"/><circle cx="22" cy="29" r="3" fill="#5a3e2b"/><circle cx="42" cy="29" r="3" fill="#5a3e2b"/><circle cx="23" cy="28" r="1" fill="#fff"/><circle cx="43" cy="28" r="1" fill="#fff"/></svg></span><span style="--h1:#e9c08f"><svg viewBox="0 0 60 56" class="fc"><use href="#hhead"/><path d="M20 32 Q23 28 26 32 M34 32 Q37 28 40 32" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M25 40 Q30 46 35 40" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--g1:#8a7a6e;--g2:#b39a86"><svg viewBox="0 0 64 56" class="fc"><use href="#ghead"/><path d="M18 30 Q22 26 26 30 M38 30 Q42 26 46 30" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--h1:#f3b98a"><svg viewBox="0 0 60 56" class="fc"><use href="#hhead"/><path d="M20 32 Q23 28 26 32 M34 32 Q37 28 40 32" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M25 40 Q30 46 35 40" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--g1:#3f3a36;--g2:#d89a62"><svg viewBox="0 0 64 56" class="fc"><use href="#ghead"/><circle cx="22" cy="29" r="3" fill="#5a3e2b"/><circle cx="42" cy="29" r="3" fill="#5a3e2b"/><circle cx="23" cy="28" r="1" fill="#fff"/><circle cx="43" cy="28" r="1" fill="#fff"/></svg></span><span style="--h1:#dcc6a8"><svg viewBox="0 0 60 56" class="fc"><use href="#hhead"/><path d="M20 32 Q23 28 26 32 M34 32 Q37 28 40 32" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/><path d="M25 40 Q30 46 35 40" fill="none" stroke="#5a3e2b" stroke-width="2" stroke-linecap="round"/></svg></span><span style="--g1:#c97b4a;--g2:#f0d2a8"><svg viewBox="0 0 64 56" class="fc"><use href="#ghead"/><circle cx="22" cy="29" r="3" fill="#5a3e2b"/><circle cx="42" cy="29" r="3" fill="#5a3e2b"/><circle cx="23" cy="28" r="1" fill="#fff"/><circle cx="43" cy="28" r="1" fill="#fff"/></svg></span></div>
 </section><div class="cut"><svg><use href="#scissors"/></svg></div></div></body></html>
