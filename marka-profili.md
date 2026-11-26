@@ -83,4 +83,5 @@ Aslı (yüz, saç, gözlük) hep aynı; kıyafet videodan videoya değişir ki a
 - Siyah: `matching black athletic set`
 - Lacivert + sarı yağmurluk: `matching deep blue athletic set` + `light butter yellow rain jacket`
 - Bebek mavisi: `matching baby blue athletic set`
+- Krem + bal: `cream ribbed long-sleeve round-neck top` + `honey mustard colored ribbed wide-leg lounge pants`
 Kural: Aynı videonun parçaları (A ve uzatma B) aynı kıyafette olmalı.
