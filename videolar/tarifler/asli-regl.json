@@ -1,0 +1,22 @@
+{
+  "ad": "asli-regl",
+  "kaynak": "../kaynak/regl-kurgu.mp4",
+  "cikti_klasoru": "..",
+  "uzat": 3.0,
+  "yazi_y": 1250,
+  "muzik": { "stil": "handpan", "tohum": 13, "bpm": 62, "seviye_db": -8, "konusma_var": true },
+  "konusma": "Regl dönemin başladığında önce ılık bir duş al, karın kaslarını gevşet. Sonra zencefil, rezene ya da papatya çayıyla bedenini ve zihnini sakinleştir. Karnına sıcak bir yastık koy, dizlerini göğsüne çek ve yavaşça sallan. Derin nefes al.",
+  "hook": { "metin": "Regl ağrısına ne iyi gelir?", "boyut": 60, "bas": 0.2, "bit": 3.2 },
+  "adimlar": [
+    { "no": 1, "baslik": "Ilık duş", "altlar": ["Karın kaslarını gevşet"], "bas": 3.3, "bit": 5.1 },
+    { "no": 2, "baslik": "Bitki çayı", "altlar": ["Zencefil, rezene ya da papatya"], "bas": 5.2, "bit": 9.6 },
+    { "no": 3, "baslik": "Karnına sıcaklık", "altlar": ["Sıcak su torbası ya da yastık"], "bas": 10.5, "bit": 12.8 },
+    { "no": 4, "baslik": "Dizleri göğse çek", "altlar": ["Yavaşça sallan, derin nefes al"], "bas": 12.8, "bit": 17.9 },
+    { "no": "", "baslik": "Regl dönemindeki birine gönder", "altlar": ["Ağrın çok şiddetliyse doktoruna danış"], "bas": 17.9 }
+  ],
+  "cta": { "metin": "Kaydet, ihtiyacın olduğunda aç", "bas": 18.5, "y": 1420 },
+  "efektler": [
+    { "tur": "kalp", "bas": 18.0, "sure": 2.0, "x": 860, "y": 640, "boyut": 230, "ses_db": -20 }
+  ],
+  "aciklama": "Regl ağrısına ne iyi gelir? 🌸\n\nRegl döneminin ilk gününde kendine bu küçük bakım rutinini yap:\n\n1️⃣ Ilık bir duş al, karın kaslarını gevşet\n2️⃣ Zencefil, rezene ya da papatya çayı iç; bedenini ve zihnini sakinleştir\n3️⃣ Karnına sıcak su torbası ya da sıcak bir yastık koy\n4️⃣ Dizlerini göğsüne çek, yavaşça sağa sola sallan, derin nefes al\n\nSıcaklık ve hafif hareket kasları gevşeterek kramp hissini hafifletmeye yardımcı olabilir. Gün içinde kısa, hafif tempolu bir yürüyüş de iyi gelebilir.\n\n⚠️ Ağrın çok şiddetliyse, günlük hayatını engelliyorsa ya da ağrı kesiciyle geçmiyorsa bir kadın hastalıkları uzmanına danış. Hamileysen ya da düzenli ilaç kullanıyorsan bitki çaylarından önce doktoruna sor.\n\n🌸 Regl dönemindeki birine gönder.\n👇 Sana en çok ne iyi geliyor? Yorumlara yaz, birbirimize yardım edelim.\n\nBen Aslı. Bedenine Yolculuk'ta her gün birkaç saniyelik küçük adımlar.\n\n🤖 Videodaki görüntüler yapay zekâ ile üretildi.\n\n#reglağrısı #adetsancısı #reglsancısı #kadınsağlığı #regldönemi #kendineiyibak #özbakım #bedenineyolculuk #shorts"
+}
