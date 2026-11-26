@@ -591,3 +591,5 @@ Anahtar kelime: "regl ağrısına ne iyi gelir" (büyük sağlık/haber siteleri
 Ambiyans: akşam/sakin, toprak tonları. Kıyafet: C · krem fitilli üst + bal rengi bol pantolon. Sayaç yok. Hareket: sıcak yastık + dizleri göğse çekip sallanma.
 Konuşma: "Regl ağrısına ne iyi gelir? ... Karnına sıcak bir yastık koy, ... dizlerini göğsüne çek ... ve yavaşça sağa sola sallan. ... Derin nefes al."
 Not: kesin vaat yok ("hafifletmeye yardımcı olabilir"); açıklamada şiddetli ağrıda kadın doğum uzmanı uyarısı.
+Sahne 1 (yeni, başa): buharlı banyo, beyaz waffle bornoz, tezgâhta çay. "Regl dönemin başladığında önce ılık bir duş al ... karın kaslarını gevşet. ... Sonra zencefil, rezene ya da papatya çayıyla ... bedenini ve zihnini sakinleştir."
+Sahne 2 konuşması (soru başa kart olarak taşındı): "Sonra karnına sıcak bir yastık koy, ... dizlerini göğsüne çek ... ve yavaşça sallan. ... Derin nefes al."
