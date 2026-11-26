@@ -585,3 +585,9 @@ Düzenleme: 10 sn sayaç · ✓ Gerin / ✓ Derin nefes / ✓ Gülümse · kapan
 Ambiyans: "Dur. Nefes al" videosu gibi; loş, sıcak, mumlar, toprak tonları. Kıyafet: camel/oat örgü ev takımı. Kamera = ayna, ilk kare yüz.
 Konuşma: "Bugün kendine bir iltifat ettin mi? Aynaya bak ve söyle: Elimden geleni yaptım. Kendimle gurur duyuyorum."
 Düzenleme: SAYAÇ YOK (görev hissi vermesin) · "Aynaya bak" / "Elimden geleni yaptım" / "Kendimle gurur duyuyorum" · kalp · kapanış "Sen de söyle, yorumlara yaz" · yavaş handpan · yayın 20:30–21:30.
+
+## 🌸 Regl ağrısına ne iyi gelir? (26 Kasım 2026)
+Anahtar kelime: "regl ağrısına ne iyi gelir" (büyük sağlık/haber sitelerinin başlık kalıbı; varyantlar: adet sancısına ne iyi gelir, regl ağrısı nasıl geçer).
+Ambiyans: akşam/sakin, toprak tonları, gül kurusu ev takımı. Sayaç yok. Hareket: sıcak yastık + dizleri göğse çekip sallanma.
+Konuşma: "Regl ağrısına ne iyi gelir? ... Karnına sıcak bir yastık koy, ... dizlerini göğsüne çek ... ve yavaşça sağa sola sallan. ... Derin nefes al."
+Not: kesin vaat yok ("hafifletmeye yardımcı olabilir"); açıklamada şiddetli ağrıda kadın doğum uzmanı uyarısı.
